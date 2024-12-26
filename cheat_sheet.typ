@@ -1,3 +1,4 @@
+
 // global configuration
 #set page(
   flipped: true,
@@ -9,7 +10,7 @@
     #grid(
       columns: (1fr, 1fr, 1fr),
       align: (left, center, right),
-      [#text(size: 0.75em)[Source: #link("https://gitlab.dominik-schwaiger.ch/quio/Analysis_II_Cheat_Sheet")]],
+      [Source: #link("https://gitlab.dominik-schwaiger.ch/quio/Analysis_II_Cheat_Sheet", "gitlab.dominik-schwaiger.ch")],
       [#counter(page).display(
           "1 of 1",
           both: true,
@@ -21,7 +22,7 @@
   ],
 )
 #set document(
-  author: ("Dominik Schwaiger"),
+  author: "Dominik Schwaiger",
   keywords: ("Spick", "Analysis", "Analysis II", "ETH", "Prüfung", "Exam", "Cheat Sheet"),
   title: "Analysis II Cheat Sheet",
 )
