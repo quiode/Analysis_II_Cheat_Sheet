@@ -1,11 +1,21 @@
 
-// global configuration
+// CONFIGURATION
+#set document(
+  author: "Dominik Schwaiger",
+  keywords: ("Spick", "Analysis", "Analysis II", "ETH", "Prüfung", "Exam", "Cheat Sheet"),
+  title: "Analysis II Cheat Sheet",
+)
+
+#set text(size: 8pt)
+
+#set par(spacing: 0.5em)
+
 #set page(
   flipped: true,
   numbering: "1/1",
   columns: 3,
   paper: "a4",
-  margin: 1cm,
+  margin: (rest: 0.25cm, bottom: 0.75cm),
   footer: context [
     #grid(
       columns: (1fr, 1fr, 1fr),
@@ -22,11 +32,7 @@
   ],
 )
 
-#set document(
-  author: "Dominik Schwaiger",
-  keywords: ("Spick", "Analysis", "Analysis II", "ETH", "Prüfung", "Exam", "Cheat Sheet"),
-  title: "Analysis II Cheat Sheet",
-)
+// VARIABLES
 
 #let def(body) = block(body, stroke: blue, inset: 4pt, radius: 2pt)
 #let lem(body) = block(body, stroke: green, inset: 4pt, radius: 2pt)
@@ -92,7 +98,6 @@ Let $y in RR^m$.
 
   We have $ limit f(x) = y $ iff, for every sequence $(x_k)$ in $X$ sucht that $x_k -> x_0$ as $k -> + infinity$, and $x_k != x_0$, the sequence $(f(x_k))$ in $RR^m$ converges to $y$.
 ]
-
 
 #lem()[
   ==== Proposition
