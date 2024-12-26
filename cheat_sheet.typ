@@ -34,9 +34,10 @@
 
 // VARIABLES
 
-#let def(body) = block(body, stroke: blue, inset: 4pt, radius: 2pt)
-#let lem(body) = block(body, stroke: green, inset: 4pt, radius: 2pt)
-#let form(body) = block(body, radius: 2pt, fill: gray, inset: 4pt)
+#let _block = block.with(inset: 4pt, radius: 2pt, width: 100%, breakable: true);
+#let def(body) = _block(body, stroke: blue)
+#let lem(body) = _block(body, stroke: green)
+#let form(body) = _block(body, fill: gray)
 #let limit = $attach(lim, tr: x -> x_0, br: x != x_0)$
 
 = Analysis II Cheat Sheet
@@ -125,6 +126,8 @@ Let $y in RR^m$.
   Let $X subset.eq RR^n$ be a non-empty compact set and $f: X -> RR$ a continuous function. Then $f$ is bounded and achieves its *maximum* and *minimum*, or in other words, there exist $x_+$ and $x_-$ in $X$, such that
   $ f(x_+) = sup_(x in X) f(x), space.quad f(x_) = inf_(x in X) f(x) $
 ]
+
+== Partial derivatives
 
 == Formula Collection
 
