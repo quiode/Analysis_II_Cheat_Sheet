@@ -124,7 +124,7 @@ Let $y in RR^m$.
 #lem()[
   ==== Theorem
   Let $X subset.eq RR^n$ be a non-empty compact set and $f: X -> RR$ a continuous function. Then $f$ is bounded and achieves its *maximum* and *minimum*, or in other words, there exist $x_+$ and $x_-$ in $X$, such that
-  $ f(x_+) = sup_(x in X) f(x), space.quad f(x_) = inf_(x in X) f(x) $
+  $ f(x_+) = sup_(x in X) f(x), space.quad f(x_-) = inf_(x in X) f(x) $
 ]
 
 == Partial derivatives
