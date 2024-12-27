@@ -147,6 +147,23 @@ Let $y in RR^m$.
 
 === Jacobi Matrix
 
+#def()[
+  Let $X subset.eq RR^n$ open and $f: X -> RR^m$ a function with partial derivatives on X. Write
+  $ f(x) = (f_1 (x), ..., f_m (x)) $
+  For any $x in X$, the matrix
+  $ #form($ J_f(x) = (diff_(x_j) f_i (x))_(1 <= i <= m)^(1 <= j <=n) $) $
+  with $m$ rows and $n$ columns is called the *Jacobi matrix* of $f$ at $x$.
+]
+
+=== Gradient
+
+#def()[
+  Let $X subset.eq RR^n$ be open.
+  + Let $f: X -> RR$ be a function. If all partial derivatives of $f$ exists at $x_0 in X$, then the column vector
+  $ mat(diff_(x_1) f(x_0); ...; diff_(x_n) f(x_0)) $
+  if called the *gradient* of $f$ at $x_0$, and is denoted #form($ Delta f(x_0) $) 
+]
+
 == Formula Collection
 
 TODO
