@@ -13,7 +13,7 @@
 #set page(
   flipped: true,
   numbering: "1/1",
-  columns: 3,
+  columns: 4,
   paper: "a4",
   margin: (rest: 0.25cm, bottom: 0.75cm),
   footer: context [
