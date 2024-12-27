@@ -39,7 +39,7 @@
 #let lem(body) = _block(body, stroke: green)
 #let limit = $attach(lim, tr: x -> x_0, br: x != x_0)$
 
-= Analysis II Cheat Sheet
+#underline()[= Analysis II Cheat Sheet]
 
 == Continuity in $RR^n$
 
