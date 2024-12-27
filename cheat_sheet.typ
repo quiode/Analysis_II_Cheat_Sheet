@@ -86,7 +86,7 @@ Let $y in RR^m$.
 ]
 
 #lem()[
-  Let $Y subset.eq RR^m$ and $p >= 1$ an integer. Let $f: X -> Y$ and $g: Y -> RR^p$ be continuous functions. Then the composite *$g space.thin circle.small space.thin f$* is continuous.
+  Let $Y subset.eq RR^m$ and $p >= 1$ an integer. Let $f: X -> Y$ and $g: Y -> RR^p$ be continuous functions. Then the composite *$g compose f$* is continuous.
 ]
 
 === Bounds
@@ -108,7 +108,7 @@ Let $y in RR^m$.
   $ f(x_+) = sup_(x in X) f(x), space.quad f(x_-) = inf_(x in X) f(x) $
 ]
 
-== Partial derivatives
+== Partial Derivatives
 
 === Openness
 
@@ -158,7 +158,71 @@ Let $y in RR^m$.
   Let $X subset.eq RR^n$ be open.
   + Let $f: X -> RR$ be a function. If all partial derivatives of $f$ exists at $x_0 in X$, then the column vector
   $ mat(diff_(x_1) f(x_0); ...; diff_(x_n) f(x_0)) $
-  if called the *gradient* of $f$ at $x_0$, and is denoted $Delta f(x_0)$
+  if called the *gradient* of $f$ at $x_0$, and is denoted $Delta f(x_0)$.
+  + Let $f = (f_1, ..., f_n): X -> RR^n$ be a function with values in $RR^n$ sucht that all partial derivatives of all coordinates $f_i$ of $f$ exists at $x_0 in X$. Then the real number $ "Tr"(J_f (x_0)) = sum^n_(i=1) diff_(x_i) f_i (x_0), $ the trace of the Jacobi matrix, is called the *divergence* of $f$ at $x_0$, and is denoted $"div"(f)(x_0)$.
+]
+
+== The differential
+
+#def()[
+  Let $X subset.eq RR^n$ be open and $f: X -> RR^m$ be a function. Let $u$ be a linear map $RR^n -> RR^m$ and $x_0 in X$. We say that $f$ is *differentiable at $x_0$ with differential u* if
+  $ attach(lim, tr: x -> x_0, br: x != x_0) (f(x) - f(x_0) - u(x-x_0)) / (||x - x_0||) = 0 $
+  where the limit is in $RR^m$. We then denote $d f (x_0) = u$.
+
+  If $f$ is differentiable at every $x_0 in X$, then we say that $f$ is differentiable on $X$.
+
+  _This definition means that, close to $x_0$ , we can approximate $f(x)$ by the affine#footnote()["An affine function is the composition of a linear function with a translation" - so the vectors do not have to go through $(0,0)$, the origin]-linear function $g: RR^n -> RR^m$ defined by $g(x) = f(x_0) + u(x-x_0)$ with an error that becomes much smaller than $||x-x_0||$ as $x$ gets close to $x_0$._
+]
+
+#lem()[
+  Let $X subset.eq RR^n$ be open and $f: X -> RR^m$ be a function that is differentiable on $X$.
+  + The function $f$ is continuous on $X$.
+  + The function $f = (f_1, ..., f_m)$ admits all partial derivatives $diff_(x_j) f_i$ for $1 <= i <= m$, $1 <= j <= n$ on $X$.
+  + Assume that $m = 1$. Let $x_0 in X$, and let $u(x_1, ..., x_n) = a_1 x_1 + ... + a_n x_n$ be the differential of $f$ at $x_0$. We then have $diff_(x_i) f(x_0) = a_i$ for $1 <= i <= n$.
+]
+
+#lem()[
+  Let $X subset.eq RR^n$ be open, $f: X -> RR^m$ and $g: X -> RR^m$ differentiable functions on $X$.
+  + The function $f+g$ is differentiable with differential $d (f+g) = d f + d g$, and if $m = 1$, then $f dot g$ is differentiable.
+  + If $m = 1$ and of $g(x) != 0$ for all $x in X$, then $f / g$ is differentiable.
+]
+
+#lem()[
+  Let $X subset.eq RR^n$ be open, $f : X -> RR^m$ a function on $X$. If $f$ has all partial derivatives on $X$, and if the partial derivatives of $f$ are continuous on $X$, then $f$ is differentiable on $X$ with differential determined by its partial derivatives, in the sense that the matrix of the differential $d f(x_0)$, with respect to the canonical basis of $RR^n$ and $RR^m$, is the *Jacobi matrix* of $f$ at $x_0$.
+
+  _So in simpler terms: The Jacobi matrix is the differential._
+]
+
+#lem()[
+  Let $X subset.eq RR^n$ be open, $Y subset.eq RR^m$ be open, and let $f: X -> Y$ and $g: Y -> RR^p$ be differentiable functions. Then $g compose f: X -> RR^p$ is differentiable on $X$, and for any $x_0 in X$, its differential is given by the composition
+  $ d (g compose f)(x_0) = d g (f(x_0)) compose d f(x_0) $
+  In particular, the Jacobi matrix satisfies
+  $ J_(g compose f) (x_0) = J_g (f(x_0)) J_f (x_0) $
+  where the right-hand side is a matrix product.
+]
+
+=== Tangent Space
+
+#def()[
+  Let $X subset.eq RR^n$ be open and $f: X -> RR^m$ a function that is differentiable. Let $x_0 in X$ and $u = d f(x_0)$ be a differential of $f$ at $x_0$. The graph of the affine linear approximation
+  $ g(x) = f(x_0) + u(x - x_0) $
+  from $RR^n$ to $RR^m$, or in other words the set
+  $ {(x,y) in RR^n times RR^m: y = f(x_0) + u(x-x_0)} $
+  is called the *tangent space* at $x_0$ to the graph of $f$.
+]
+
+=== Directional Derivative
+
+#def()[
+  Let $X subset.eq RR^n$ be an open set and let $f: X -> RR^m$ be a function. Let $v in RR^n$ be a non-zero vector and $x_0 in X$. We say that $f$ has *directional derivative* $w in RR^m$ in the direction $v$, if the function $g: I -> RR^m$ defined on the set $I = {t in RR: x_0 + t v in X}$ by $g(t) + f(x_0 + t v)$ has a derivative at $t = 0$, and this is equal to $w$. We write this as $D_v f = w$.
+]
+
+#lem()[
+  Let $X subset.eq RR^n$ be an open set and let $f: X -> RR^m$ be a differentiable function. Then for any $x in X$ and non-zero $v in RR^n$, the function $f$ has a directional derivative at $x_0$ in the direction $v$, equal to $d f(x_0)(v)$.
+  \
+  \
+  _What is important to notice in this proposition, is that the
+values of the directional derivatives are linear with respect to the vector $v$._
 ]
 
 == Formula Collection
