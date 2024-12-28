@@ -110,7 +110,7 @@ Let $y in RR^m$.
 
 == Partial Derivatives
 
-Let $X subset.eq RR^n$ be an open set. 
+Let $X subset.eq RR^n$ be an open set.
 
 === Openness
 
@@ -157,13 +157,13 @@ Let $X subset.eq RR^n$ be an open set.
 === Gradient
 
 #def()[
-  + Let $f: X -> RR$ be a function. If all partial derivatives of $f$ exists at $x_0 in X$, then the column vector $ mat(diff_(x_1) f(x_0); ...; diff_(x_n) f(x_0)) $ if called the *gradient* of $f$ at $x_0$, and is denoted $Delta f(x_0)$.
+  + Let $f: X -> RR$ be a function. If all partial derivatives of $f$ exists at $x_0 in X$, then the column vector $ mat(diff_(x_1) f(x_0); ...; diff_(x_n) f(x_0)) $ if called the *gradient* of $f$ at $x_0$, and is denoted $gradient f(x_0)$.
   + Let $f = (f_1, ..., f_n): X -> RR^n$ be a function with values in $RR^n$ sucht that all partial derivatives of all coordinates $f_i$ of $f$ exists at $x_0 in X$. Then the real number $ "Tr"(J_f (x_0)) = sum^n_(i=1) diff_(x_i) f_i (x_0), $ the trace of the Jacobi matrix, is called the *divergence* of $f$ at $x_0$, and is denoted $"div"(f)(x_0)$.
 ]
 
 == The Differential
 
-Let $X subset.eq RR^n$ be an open set. 
+Let $X subset.eq RR^n$ be an open set.
 
 #def()[
   Let $f: X -> RR^m$ be a function. Let $u$ be a linear map $RR^n -> RR^m$ and $x_0 in X$. We say that $f$ is *differentiable at $x_0$ with differential u* if
@@ -228,12 +228,12 @@ values of the directional derivatives are linear with respect to the vector $v$.
 
 == Higher Derivatives
 
-Let $X subset.eq RR^n$ be an open set. 
+Let $X subset.eq RR^n$ be an open set.
 
 #def()[
   Let $f: X -> RR^m$.
-  We say that $f$ is of class $C^1$ if $f$ is differentiable on $X$ and all its partial derivatives are continuous. The set of functions of class $C^1$ from $X$ to $RR^m$ is denoted $C^1 (X;RR^m)$. 
-  
+  We say that $f$ is of class $C^1$ if $f$ is differentiable on $X$ and all its partial derivatives are continuous. The set of functions of class $C^1$ from $X$ to $RR^m$ is denoted $C^1 (X;RR^m)$.
+
   Let $k >= 2$. We say, by induction, that $f$ is of class $C^k$ if it is differentiable and each partial derivative $diff_(x_i) f : X -> RR^m$ is of class $C^(k-1)$. The set of functions of class *$C^k$* from $X$ to $RR^m$ is denoted $C^k (X; RR^m)$.
 
   If $f in C^k (X; RR^m)$ for all $k >= 1$, then we say that $f$ is of class $C^infinity$. The set of sucht functions is denoted $C^infinity (X; RR^m)$.
@@ -256,6 +256,31 @@ Let $X subset.eq RR^n$ be an open set.
 ]
 
 == Taylor Polynomials
+
+Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$, and fix $x_0 in X$.
+
+#def()[
+  The $k$-th *Taylor polynomial* of $f$ at the point $x_0$ is the polynomial in $n$ variables of degree $<=k$ given by
+  $
+    T_k f(y;x_0) = f(x_0) + sum^n_(i=1) (diff f) / (diff x_i) (x_0) y_i + ... \ + sum_(m_1 + ... + m_n = k) 1 / (m_1 ! dots.c m_n !) (diff^k f) / (diff x_1^(m_1) dots.c diff x_n^(m_n)) (x_0) y_1^(m_1) dots.c y_n^(m_n)
+  $
+  where the last sum ranges over the tuples of $n$ non-negative integers such that the sum is $k$.
+
+  ==== *$k = 1$*
+  $ T_1 f(y; x_0) = f(x_0) + sum^n_(i=1) diff_(x_i) f(x_0) y_i $
+
+  ==== *$k = 2$*
+  $
+    T_1 f(y; x_0) &= f(x_0) &&+ sum^n_(i=1) diff_(x_i) f(x_0) y_i \ & &&+ 1 / 2 sum^n_(i=1) diff^2_(x^2_i) f(x_0) y_i^2 \ & &&+ sum_(1 <= i < j <= n) diff^2_(x_i x_j) f(x_0) y_i y_j \
+    &= f(x_0) &&+ gradient f(x_0) dot y + 1 / 2 y^t "Hess"_f (x_0) y
+  $
+]
+
+#lem()[
+  If we define $E_k f(x; x_0)$ by $ f(x) = T_k f(x - x_0; x_0) + E_k f(x; x_0) $ then we have $ lim^(x -> x_0)_(x != x_0) (E_k f(x; x_0))/(||x-x_0||^k) = 0. $
+]
+
+== Critical Points
 
 == Formula Collection
 
