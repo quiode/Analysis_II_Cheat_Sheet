@@ -39,6 +39,8 @@
 #let _block = block.with(inset: 4pt, radius: 2pt, width: 100%, breakable: true);
 #let def(body) = _block(body, stroke: blue)
 #let lem(body) = _block(body, stroke: green)
+#let note(body) = _block(body, stroke: orange)
+#let form(body) = _block(body, stroke: black)
 #let limit = $attach(lim, tr: x -> x_0, br: x != x_0)$
 
 #underline()[= Analysis II Cheat Sheet]
