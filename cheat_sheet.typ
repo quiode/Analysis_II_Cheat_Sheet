@@ -226,6 +226,37 @@ Let $X subset.eq RR^n$ be an open set.
 values of the directional derivatives are linear with respect to the vector $v$._
 ]
 
+== Higher Derivatives
+
+Let $X subset.eq RR^n$ be an open set. 
+
+#def()[
+  Let $f: X -> RR^m$.
+  We say that $f$ is of class $C^1$ if $f$ is differentiable on $X$ and all its partial derivatives are continuous. The set of functions of class $C^1$ from $X$ to $RR^m$ is denoted $C^1 (X;RR^m)$. 
+  
+  Let $k >= 2$. We say, by induction, that $f$ is of class $C^k$ if it is differentiable and each partial derivative $diff_(x_i) f : X -> RR^m$ is of class $C^(k-1)$. The set of functions of class *$C^k$* from $X$ to $RR^m$ is denoted $C^k (X; RR^m)$.
+
+  If $f in C^k (X; RR^m)$ for all $k >= 1$, then we say that $f$ is of class $C^infinity$. The set of sucht functions is denoted $C^infinity (X; RR^m)$.
+]
+
+#lem()[
+  Let $K >= 2$ and $f: X -> RR^m$ be a function of class $C^k$. Then the partial derivatives of order $k$ are independent of the order in which the partial derivatives are taken: for any variables x and y, we have:
+  $ diff_(x,y) f = diff_(y,x) f, $
+  and for any variables $x$, $y$, $z$, we have
+  $ diff_(x,y,z) f = diff_(x,z,y) f = diff_(y,z,x) f = diff_(z,x,y) f = ... $
+  etc...
+]
+
+=== Hessian Matrix
+
+#def()[
+  Let $f: X -> RR$ a $C^2$ function. For $x in X$, the *Hessian matrix* of $f$ at $x$ is the *symmetric square* matrix
+  $ "Hess"_f (x) = (diff_(x_i , x_j) f(x))_(1 <= i,j <= n) $
+  We also sometimes write simply $H_f (x)$.
+]
+
+== Taylor Polynomials
+
 == Formula Collection
 
 TODO
