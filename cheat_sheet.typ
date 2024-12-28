@@ -306,6 +306,14 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
   + Otherwise, equivalent if $p q != 0$, the function $f$ does not have a local extremum at $x_0$. One then says that $f$ has a *saddle point* at $x_0$.
 ]
 
+== Lagrange Multipliers
+
+Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
+
+#lem()[
+  Let $g: X -> RR, f in C^1$. If $x_0 in X$ is a local extremum of the function $f$ restricted to the set $ Y = {x in X: g(x) = 0} $ then either $gradient g(x_0) = 0$, or there exists $lambda in RR$ such that $ cases(gradient f(x_0) = lambda gradient g (x_0), g(x_0) = 0\,) $ or in other words, there exists $lambda$ such that $(x_0, lambda)$ is a critical point of the differentiable function $h: X times RR -> RR$ defined by $ h(x, lambda) = f(x) - lambda g(x). $ Such a value $lambda$ is called a *Lagrange multiplier* at $x_0$.
+]
+
 == Formula Collection
 
 TODO
