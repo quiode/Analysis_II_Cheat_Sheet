@@ -282,6 +282,30 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
 
 == Critical Points
 
+Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
+
+#lem()[
+  If $x_0 in X$ is such that
+  - $f(y) <= f(x_0)$ for all $y$ close enough to $x_0$ (local maximum at $x_0$) _or_
+  - $f(y) >= f(x_0)$ for all $y$ close enough to $x_0$ (local minimum of $x_0$).
+  Then we have $d f(x_0) = 0$, or in other words $gradient f(x_0) = 0$, or equivalently $(diff f) / (diff x_i) (x_0) = 0$ for $1 <= i <= n$.
+]
+
+#def()[
+  A point $x_0 in X$ such that $gradient f (x_0)$ is called a *critical point* of the function $f$.
+]
+
+#def()[
+  Let $f in C^2$. A critical point $x_0 in X$ of $f$ is called *non-degenerate* if the Hessian matrix has non-zero determinant.
+]
+
+#lem()[
+  Let $f in C^2$. Let $x_0$ be a non-degenerate critical point of $f$. Let $p$ and $q$ be the number of positive and negative eigenvalues of $"Hess"_f (x_0)$.
+  + If $p = n$, equivalently if $q = 0$, the function $f$ has a *local minimum* at $x_0$.
+  + If $q = n$, equivalently if $p = 0$, the function $f$ has a *local maximum* at $x_0$.
+  + Otherwise, equivalent if $p q != 0$, the function $f$ does not have a local extremum at $x_0$. One then says that $f$ has a *saddle point* at $x_0$.
+]
+
 == Formula Collection
 
 TODO
