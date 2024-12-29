@@ -1,6 +1,5 @@
 # Notes for the Spick
 
-- Include the Formula as described in Series 6 (for finding out the Hesse Matrix from a Taylor Polynomial)
 - Include Common Taylor polynomials (and generally all the stuff from the Analysis I Spick)
 - Include Determinant/Trace for definiteness
 - Include rule for "separierbare ode's"
