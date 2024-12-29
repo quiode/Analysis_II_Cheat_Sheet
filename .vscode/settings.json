@@ -3,6 +3,10 @@
     "arccos",
     "arcsin",
     "arctan",
-    "colbreak"
+    "bijective",
+    "codomain",
+    "colbreak",
+    "injective",
+    "surjective"
   ]
 }

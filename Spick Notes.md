@@ -1,6 +1,5 @@
 # Notes for the Spick
 
-- Include Common Taylor polynomials (and generally all the stuff from the Analysis I Spick)
 - Include Determinant/Trace for definiteness
 - Include rule for "separierbare ode's"
 - Bild Tabelle inhomogen/homogen (Siehe Galerie)

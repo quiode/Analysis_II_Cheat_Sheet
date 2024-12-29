@@ -1,3 +1,4 @@
+
 // CONFIGURATION
 #set document(
   author: "Dominik Schwaiger",
@@ -388,83 +389,242 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 == Formula Collection
 
+#show math.equation: set block(breakable: true) // equations in the collection should wrap pages
+
+=== Functions
+
+#figure(image("Functions.svg", width: 100%))
+
 === Trigonometric Functions
 
-$ + pi <=> dot -1 $
+#form()[
+  $ + pi <=> dot -1 $
 
-#table(
-  columns: (1fr, 1fr, 1fr, 1fr, 1fr),
-  table.header([*deg*], [*rad*], [*sin*], [*cos*], [*tan*]),
-  stroke: (x, y) => if y == 0 {
-    (bottom: 0.7pt + black)
-  },
-  $0 degree$, $0$, $0$, $1$, $0$,
-  $30 degree$, $pi / 6$, $1 / 2$, $sqrt(3) / 2$, $sqrt(3) / 3$,
-  $45 degree$, $pi / 4$, $sqrt(2) / 2$, $sqrt(2) / 2$, $1$,
-  $60 degree$, $pi / 3$, $sqrt(3) / 2$, $1 / 2$, $sqrt(3)$,
-  $90 degree$, $pi / 2$, $1$, $0$, $"N/A"$,
-  $120 degree$, $(2 pi) / 3$, $sqrt(3) / 2$, $- 1 / 2$, $- sqrt(3)$,
-  $135 degree$, $(3 pi) / 4$, $sqrt(2) / 2$, $- sqrt(2) / 2$, $-1$,
-  $150 degree$, $(5 pi) / 6$, $1 / 2$, $- sqrt(3) / 2$, $- 1 / sqrt(3)$,
-  $180 degree$, $pi$, $0$, $-1$, $0$,
-)
+  #table(
+    columns: (1fr, 1fr, 1fr, 1fr, 1fr),
+    table.header([*deg*], [*rad*], [*sin*], [*cos*], [*tan*]),
+    stroke: (x, y) => if y == 0 {
+      (bottom: 0.7pt + black)
+    },
+    $0 degree$, $0$, $0$, $1$, $0$,
+    $30 degree$, $pi / 6$, $1 / 2$, $sqrt(3) / 2$, $sqrt(3) / 3$,
+    $45 degree$, $pi / 4$, $sqrt(2) / 2$, $sqrt(2) / 2$, $1$,
+    $60 degree$, $pi / 3$, $sqrt(3) / 2$, $1 / 2$, $sqrt(3)$,
+    $90 degree$, $pi / 2$, $1$, $0$, $"N/A"$,
+    $120 degree$, $(2 pi) / 3$, $sqrt(3) / 2$, $- 1 / 2$, $- sqrt(3)$,
+    $135 degree$, $(3 pi) / 4$, $sqrt(2) / 2$, $- sqrt(2) / 2$, $-1$,
+    $150 degree$, $(5 pi) / 6$, $1 / 2$, $- sqrt(3) / 2$, $- 1 / sqrt(3)$,
+    $180 degree$, $pi$, $0$, $-1$, $0$,
+  )
+]
+
+== Trigonometric Identities
+
+#form()[
+  === Doubled Angles
+
+  $
+    sin (2 alpha) &= 2 sin (alpha) cos (alpha) \
+    cos ( 2 alpha) &= cos^2 (alpha) - sin^2 (alpha) = 1 - 2 sin^2 (alpha) \
+    tan (2 alpha) &= (2 tan (alpha)) / (1 - tan^2 (alpha))
+  $
+
+  === Addition / Subtraction
+
+  $
+    sin (alpha plus.minus beta) &= sin (alpha) cos (beta) plus.minus cos (alpha) sin(beta) \
+    cos (alpha plus.minus beta) &= cos (alpha) cos (beta) minus.plus sin (alpha) sin (beta) \
+    tan (alpha plus.minus beta) &= (tan (alpha) plus.minus tan (beta)) / (1 minus.plus tan (alpha) tan (beta))
+  $
+
+  === Multiplication
+
+  $
+    sin (alpha) sin (beta) &= - (cos (alpha + beta) - cos (alpha - beta)) / 2 \
+    cos (alpha) cos (beta) &= (cos (alpha + beta) + cos (alpha - beta)) / 2 \
+    sin (alpha) cos (beta) &= (sin (alpha + beta) + sin (alpha - beta)) / 2
+  $
+
+  === Powers
+
+  $
+    sin^2 (alpha) &= 1 / 2 (1 - cos (2 alpha)) \
+    sin^3 (alpha) &= (3 sin (alpha) - sin (3 alpha)) / 4 \
+    cos^2 (alpha) &= 1 / 2 (1 + cos (2 alpha)) \
+    cos^3 (alpha) &= (3 cos (alpha) - cos (3 alpha)) / 4 \
+    tan^2 (alpha) &= (1 - cos ( 2 alpha)) / (1 + cos (2 alpha)) \
+    sin^2 (alpha) cos^2 (alpha) &= (1 - cos (4 alpha)) / 8
+  $
+
+  === Divers
+
+  $
+    sin^2 (alpha) + cos^2 (alpha) &= 1 \
+    cosh^2 (alpha) - sinh^2 (alpha) &= 1 \
+    sin (z) &= (e^(i z) - e^(- i z)) / (2 i) \
+    cos (z) &= (e^(i z) + e^(- i z)) / 2
+  $
+]
 
 === Midnight Formula
 
-#columns(2)[
-  $ x = (-b plus.minus sqrt(b^2 - 4 a c)) / (2 a) $
-  #colbreak()
-  $ b^2 - 4 a c < 0 => x "complex" $
+#form()[
+  #columns(2)[
+    $ x = (-b plus.minus sqrt(b^2 - 4 a c)) / (2 a) $
+    #colbreak()
+    $ b^2 - 4 a c < 0 \ => x "complex" $
+  ]
 ]
 
 === Taylor Polynomials
 
-$
-  e^x &= 1 + x + x^2 / 2 + x^3 / 3! + x^4 / 4! + O(x^5) \
-  sin (x) &= x - x^3 / 3! + x^5 / 5! + O(x^7) \
-  sinh (x) &= x + x^3 / 3! + x^5 / 5! + O(x^7) \
-  cos (x) &= 1 - x^2 / 2 + x^4 / 4! - x^6 / 6! + O(x^8) \
-  cosh (x) &= 1 + x^2 / 2 + x^4 / 4! + x^6 / 6! + O(x^8) \
-  tan (x) &= x + x^3 / 3 + (2 x^5) / 15 + O(x^7) \
-  tanh (x) &= x - x^3 / 3 + (2 x^5) / 15 + O(x^7) \
-  log (1 + x) &= x - x^2 / 2 + x^3 / 3 - x^4 / 4 + O(x^5) \
-  (1 + x)^alpha &= 1 + alpha x + (alpha (a - 1)) / (2 !) x^2 + (alpha (alpha - 1)(alpha - 2)) / (3!) x^3 + O(x^4) \
-  sqrt(1+x) &= 1 + x / 2 - x^2 / 8 + x^3 / 16 - O(x^4)
-$
+#form()[
+  $
+    e^x &= 1 &&+ x + x^2 / 2 + x^3 / 3! + x^4 / 4! + O(x^5) \
+    sin (x) &= x &&- x^3 / 3! + x^5 / 5! + O(x^7) \
+    sinh (x) &= x &&+ x^3 / 3! + x^5 / 5! + O(x^7) \
+    cos (x) &= 1 &&- x^2 / 2 + x^4 / 4! - x^6 / 6! + O(x^8) \
+    cosh (x) &= 1 &&+ x^2 / 2 + x^4 / 4! + x^6 / 6! + O(x^8) \
+    tan (x) &= x &&+ x^3 / 3 + (2 x^5) / 15 + O(x^7) \
+    tanh (x) &= x &&- x^3 / 3 + (2 x^5) / 15 + O(x^7) \
+    log (1 + x) &= x &&- x^2 / 2 + x^3 / 3 - x^4 / 4 + O(x^5) \
+    (1 + x)^alpha &= 1 &&+ alpha x + (alpha (a - 1)) / (2 !) x^2 \ & &&+ (alpha (alpha - 1)(alpha - 2)) / (3!) x^3 + O(x^4) \
+    sqrt(1+x) &= 1 &&+ x / 2 - x^2 / 8 + x^3 / 16 - O(x^4) \
+    e^(-x) &= 1 &&- x + x^2 / 2 - x^3 / 6 + x^4 / 24 + O(x^5)
+  $
+]
 
 === Differentials / Integrals
 
-#table(
-  columns: (1fr, 1fr),
-  table.header([*$F(x)$*], [*$F'(x) = f(x)$*]),
-  stroke: (x, y) => {
-    if y == 0 {
-      (bottom: 0.7pt + black)
-    }
-    if (x == 0) {
-      (right: 0.7pt + black)
-    }
-  },
-  $c$, $0$,
-  $x^a$, $a dot x^(a-1)$,
-  $1 / (a + 1) x^(a+1)$, $x^a$,
-  $1 / (a dot (n+1)) (a x + b)^(n+1)$, $(a x + b)^n$,
-  $(x^(alpha + 1)) / (alpha + 1)$, $x^alpha , space alpha != -1$,
-  $sqrt(x)$, $1 / (2 sqrt(x))$,
-  $root(n, x)$, $1 / n x^(1 / n - 1)$,
-  $2 / 3 x^(2 / 3)$, $sqrt(x)$,
-  $n / (n+1) x^(1 / n + 1)$, $root(n, x)$,
-  $e^x$, $e^x$,
-  $ln (|x|)$, $1 / x$,
-  $log_a (|x|)$, $1 / (x ln (a)) = log_a (e) 1 / x$,
-  $sin (x)$, $cos (x)$,
-  $cos (x)$, $- sin(x)$,
-  $tan (x)$, $1 / (cos^2 (x)) = 1 + tan^2 (x)$,
-  $cot (x)$, $1 / (- sin^2 (x))$,
-  $arcsin (x)$, $1 / sqrt(1 - x^2)$,
-  $arccos (x)$, $-1 / sqrt(1 - x^2)$,
-  $arctan (x)$, $1 / (1 + x^2)$,
-  $sinh (x)$, $cosh (x)$
-)
+#form()[
+  #table(
+    columns: (1fr, 1fr),
+    table.header([*$F(x)$*], [*$F'(x) = f(x)$*]),
+    stroke: (x, y) => {
+      if y == 0 {
+        (bottom: 0.7pt + black)
+      }
+      if (x == 0) {
+        (right: 0.7pt + black)
+      }
+    },
+    $c$, $0$,
+    $x^a$, $a dot x^(a-1)$,
+    $1 / (a + 1) x^(a+1)$, $x^a$,
+    $1 / (a dot (n+1)) (a x + b)^(n+1)$, $(a x + b)^n$,
+    $(x^(alpha + 1)) / (alpha + 1)$, $x^alpha , space alpha != -1$,
+    $sqrt(x)$, $1 / (2 sqrt(x))$,
+    $root(n, x)$, $1 / n x^(1 / n - 1)$,
+    $2 / 3 x^(2 / 3)$, $sqrt(x)$,
+    $n / (n+1) x^(1 / n + 1)$, $root(n, x)$,
+    $e^x$, $e^x$,
+    $ln (|x|)$, $1 / x$,
+    $log_a (|x|)$, $1 / (x ln (a)) = log_a (e) 1 / x$,
+    $sin (x)$, $cos (x)$,
+    $cos (x)$, $- sin(x)$,
+    $tan (x)$, $1 / (cos^2 (x)) = 1 + tan^2 (x)$,
+    $cot (x)$, $1 / (- sin^2 (x))$,
+    $arcsin (x)$, $1 / sqrt(1 - x^2)$,
+    $arccos (x)$, $-1 / sqrt(1 - x^2)$,
+    $arctan (x)$, $1 / (1 + x^2)$,
+    $sinh (x)$, $cosh (x)$,
+    $cosh (x)$, $sinh (x)$,
+    $tanh (x)$, $1 / (cosh^2 (x)) = 1 - tanh^2 (x)$,
+    $"arcsinh" (x)$, $1 / sqrt(1+x^2)$,
+    $"arccosh" (x)$, $1 / sqrt(x^2 - 1)$,
+    $"arctanh" (x)$, $1 / (1-x^2)$,
+    $1 / f(x)$, $(- f' (x)) / ((f(x))^2)$,
+    $a^(c x)$, $a^(c x) dot c ln (a)$,
+    $x^x$, $x^x dot (1 + ln (x))_( x > 0)$,
+    $(x^x)^x$, $(x^x)^x (x + 2 x ln (x))_(x > 0)$,
+    $x^((x^x))$, $x^((x^x)) dot \ (&x^(x-1) + ln (x) dot \ &x^x (1 + ln (x)))_(x > 0)$,
+    $1 / a ln (a x + b)$, $1 / (a x + b)$,
+    $(a x) / c - (a d - b c) / c^2 ln (| c x + d|)$, $(a x + b) / (c x + d)$,
+    $1 / (2 a) ln (| (x - a) / (x + a)|)$, $1 / (x^2 - a^2)$,
+    $x / 2 f(x) + a^2 / 2 ln (x + f(x))$, $sqrt(a^2 + x^2)$,
+    $x / 2 sqrt(a^2 - x^2) - a^2 / 2 arcsin (x / (|a|))$, $sqrt(a^2 - x^2)$,
+    $x / 2 f(x) - a^2 / 2 ln (x + f(x))$, $sqrt(x^2 - a^2)$,
+    $ln(x + sqrt(x^2 plus.minus a^2))$, $1 / sqrt(x^2 plus.minus a^2)$,
+    $arcsin (x / (|a|))$, $1 / sqrt(a^2 - x^2)$,
+    $1 / a arctan (x / a)$, $1 / (x^2 + a^2)$,
+    $- 1 / a cos (a x + b)$, $sin (a x + b)$,
+    $1 / a sin (a x + b)$, $cos (a x + b)$,
+    $- ln (|cos (x)|)$, $tan (x)$,
+    $ln(|sin (x)|)$, $cot (x)$,
+    $ln (| tan ( x / 2) |)$, $1 / (sin (x))$,
+    $ln (| tan (x / 2 + pi / 4) | )$, $1 / (cos (x))$,
+    $1 / 2 (x - sin (x) cos (x))$, $sin^2 (x)$,
+    $1 / 2 (x + sin (x) cos(x))$, $cos^2 (x)$,
+    $tan (x)- x$, $tan^2 (x)$,
+    $- cot (x) - x$, $cot^2 (x)$,
+    $x arcsin (x) + sqrt( 1 - x^2)$, $arcsin (x)$,
+    $x arccos (x) - sqrt(1 - x^2)$, $arccos (x)$,
+    $x arctan (x) - 1 / 2 ln (1 + x^2)$, $arctan (x)$,
+    $ln (cosh (x))$, $tanh (x)$,
+    $ln ( |f (x)|)$, $(f'(x)) / (f(x))$,
+    $x dot (ln (|x|) -1)$, $ln (|x|)$,
+    $1 / (n+1) (ln (x))^(n+1)_(n != -1)$, $1 / x (ln (x))^n$,
+    $1 / (2n) (ln (x^n))^2_(n != 0)$, $1 / x ln (x^n)$,
+    $ln (|ln (x) |)_(x > 0, x != 1)$, $1 / (x ln(x))$,
+    $1 / (b ln(a)) a^(b x)$, $a^(b x)$,
+    $(c x - 1) / (c^2) dot e^(c x)$, $x dot e^(c x)$,
+    $(x^(n + 1)) / (n + 1) (ln (x) - 1 / (n + 1))_(n != -1)$, $x^n ln(x)$,
+    $(e^(c x) (c sin (a x + b) - a cos (a x + b))) / (a^2 + c^2)$, $e^(c x) sin (a x + b)$,
+    $(e^(c x) (c cos (a x + b) + a sin (a x + b))) / (a^2 + c^2)$, $e^(c x) cos ( a x + b)$,
+    $(sin^2 (x)) / 2$, $sin (x) cos (x)$
+  )
+]
 
-#text(red)[TODO!]
+=== Binomial Formulas
+
+#form()[
+  $
+    (a + b)^2 &= a^2 + 2 a b + b^2 \
+    (a - b)^2 &= a^2 - 2 a b + b^2 \
+    (a + b) (a - b) &= a^2 - b^2
+  $
+]
+
+==== Pascal's Triangle
+
+// i wanted to do something fun. this was very fun indeed
+#form()[
+  #align(
+    center,
+    {
+      let r = 0
+      while r <= 6 {
+        let c = 0
+        while (c <= r) {
+          [$#calc.binom(r, c) space.quad$]
+          c += 1
+        }
+        [ \ ]
+        r += 1
+      }
+    },
+  )
+]
+
+=== Bijection, Injection and Surjection
+
+#form()[
+  / Injective: Every $x$ as a unique $y$
+  / Surjective: Every $y$ has a unique $x$
+  / Bijective: Injective and Surjective
+]
+
+=== Binomial Coefficient
+
+#form()[
+  $ vec(n, k) = (n!) / (k! (n - k)!) $
+]
+
+=== Constants
+
+#form()[
+  $
+    pi &= #calc.pi \
+    e &= #calc.e
+  $
+]
