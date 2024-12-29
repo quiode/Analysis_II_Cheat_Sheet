@@ -1,6 +1,3 @@
-#import "@preview/cetz:0.3.1"
-#import "@preview/cetz-plot:0.1.0"
-
 // CONFIGURATION
 #set document(
   author: "Dominik Schwaiger",
@@ -411,52 +408,6 @@ $ + pi <=> dot -1 $
   $150 degree$, $(5 pi) / 6$, $1 / 2$, $- sqrt(3) / 2$, $- 1 / sqrt(3)$,
   $180 degree$, $pi$, $0$, $-1$, $0$,
 )
-
-/*
-#let functions = (
-  "sin": calc.sin,
-  "cos": calc.cos,
-  "tan": calc.tan,
-  "arcsin": calc.asin,
-  "arccos": calc.acos,
-  "arctan": calc.atan,
-  "exp": calc.exp,
-  "ln": calc.ln,
-)
-#let precision = 1000
-#let x_axis = plt.axis(min: 0, max: 2 * calc.pi, step: (1 / 4) * calc.pi, location: "bottom")
-
-#plt.overlay(for pair in functions { }, 100%)
-
-#let c = 0
-#let sin_d = ()
-#while c > max_count { }
-*/
-
-#cetz.canvas({
-  import cetz.draw: *
-  import cetz-plot: *
-
-  let formatter(v) = if v != 0 { $ #{v/calc.pi} pi $ } else { $ 0 $ }
-
-  plot.plot(
-    size: (5, 5),
-    axis-style: "school-book",
-    x-tick-step: 1 / 2 * calc.pi,
-    y-tick-step: 0.5,
-    y-min: -1.5,
-    y-max: 1.5,
-    x-format: formatter,
-    legend: auto,
-    {
-      plot.add(domain: (-2 * calc.pi, 2 * calc.pi), calc.sin, label: $sin$)
-      plot.add(domain: (-2 * calc.pi, 2 * calc.pi), calc.cos, label: $cos$)
-      plot.add(domain: (-2 * calc.pi, 2 * calc.pi), calc.tan, label: $tan$)
-      plot.add(domain: (-2 * calc.pi, 2 * calc.pi), calc.tan, label: $tan$)
-      plot.add(domain: (-2 * calc.pi, 2 * calc.pi), calc.asin, label: $arcsin$)
-    },
-  )
-})
 
 === Midnight Formula
 
