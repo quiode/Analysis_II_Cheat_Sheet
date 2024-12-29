@@ -275,9 +275,10 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
 
   ==== *$k = 2$*
   $
-    T_1 f(y; x_0) &= f(x_0) &&+ sum^n_(i=1) diff_(x_i) f(x_0) y_i \ & &&+ 1 / 2 sum^n_(i=1) diff^2_(x^2_i) f(x_0) y_i^2 \ & &&+ sum_(1 <= i < j <= n) diff^2_(x_i x_j) f(x_0) y_i y_j \
+    T_2 f(y; x_0) &= f(x_0) &&+ sum^n_(i=1) diff_(x_i) f(x_0) y_i \ & &&+ 1 / 2 sum^n_(i=1) diff^2_(x^2_i) f(x_0) y_i^2 \ & &&+ sum_(1 <= i < j <= n) diff^2_(x_i x_j) f(x_0) y_i y_j \
     &= f(x_0) &&+ gradient f(x_0) dot y + 1 / 2 y^t "Hess"_f (x_0) y
   $
+  _Note that this can also be used to easily *calculate the Hesse Matrix* from a known Taylor polynomial._
 ]
 
 #lem()[
@@ -362,6 +363,30 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   + For any $x_0 in I$ and any $(y_0, ..., y_(k-1)) in CC^k$, there exists a unique $f in S_b$ such that $ f(x_0) = y_0, space f'(x_0) = y_1, space ..., space f^((k-1)) (x_0) = y_(k-1). $
 ]
 
+== (Solving) Linear Differential Equations Of Order 1
+
+#text(red)[TODO!] - use the lectures, not the script
+
+#note()[
+  Let $I subset.eq RR$ be an open interval. We consider the linear differential equation $ y' + a y = b, $ when $a$ and $b$ are general continuous functions defined on $I$
+
+  The solution has two steps:
+  + Solving the homogeneous equation $y' + a y = 0$.
+  + Finding a solution $f_'$ of the inhomogeneous equation, so that the set $S_b$ contains exactly the functions $f_0 + f$ where $f in S$.
+
+  === Step 1 (solving the homogeneous equation)
+  #lem()[
+    Any solution of $y' + a y = 0$ is of the form $f(x) = z exp (- A(x))$ where $A$ is a primitive of $a$. The unique solution with $f(x_0) = y_0$ is $ f(x) = y_0 exp (A(x_0) - A(x)). $
+  ]
+
+  === Step 2 (solving the inhomogeneous equation)
+
+]
+
+== Linear Differential Equations With Constant Coefficients
+
+#text(red)[TODO!]
+
 == Formula Collection
 
-TODO
+#text(red)[TODO!]
