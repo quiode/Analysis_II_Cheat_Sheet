@@ -1,0 +1,17 @@
+# Notes for the Spick
+
+- Include the Formula as described in Series 6 (for finding out the Hesse Matrix from a Taylor Polynomial)
+- Include Common Taylor polynomials (and generally all the stuff from the Analysis I Spick)
+- Include Determinant/Trace for definiteness
+- Include rule for "separierbare ode's"
+- Bild Tabelle inhomogen/homogen (Siehe Galerie)
+- Bild Diagramm Erkennung ob SVD oder nicht in R2
+- Lösungsstrategie ODE's hinzufügen
+- Taylorpolynom Trick hinzufügen
+- Lineare ODE's mit Konstanten Koeffizienten (e^(alpha \* x))
+- Inhomogene Gleichungen Spezialfälle
+- Gerade/Ungerade Trick Integral
+- Potential berechnen (maybe Beispiel?)
+- Include definition of "affine"
+- include formula for determinant
+- calculate eigenvalues / how to find when they are 0 (and reference in section to critical points)
