@@ -387,6 +387,46 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #text(red)[TODO!]
 
+== Line Integrals
+
+#def()[
+  + Let $I = [a, b]$ be a closed and bounded interval in $RR$. Let $f(t) = (f_1 (t), ..., f_n (t))$ be a continuous function from $I$ to $RR^n$, i.e., $f_i$ is continuous for $1 <= i <= n$. Then we define $ integral^b_a f(t) d t = (integral^b_a f_1 (t) d t, ..., integral^b_a f_n (t) d t) in RR^n. $
+  + A *parameterized curve* in $RR^n$ is a continuous map $gamma : [a, b] -> RR^n$ that is piecewise $C^1$, i.e., there exists $k >= 1$ and a partition $ a = t_0 < t_1 < dots.c < t_(k-1) < t_k = b $ such that the restriction of $gamma$ to $] t_(j-1), t_j [$ is $C^1$ for $1 <= j <= k$. We say that $gamma$ is a parameterized curve, or a *path*, between $gamma (a)$ and $gamma (b)$.
+  + Let $gamma: [a, b] -> RR^n$ be a parameterized curve. Let $X subset.eq RR^n$ be a subset containing the image of $gamma$, and let $f: X -> RR^n$ be a continuous function. The integral $ integral^b_a f(gamma (t)) dot gamma'(t) d t in RR $ is called the *line integral of $f$ along $gamma$*. It is denoted $ integral_gamma f(s) dot d s space.quad "or" space.quad integral_gamma f(s) dot d arrow(s). $
+]
+
+#lem()[
+  The integral of continuous functions $I -> RR^n$ satisfy much of the same rules as the Riemann integral of a function $I -> RR$, for instance $ integral^b_a (f(t) + g(t)) d t = integral^b_a f(t) d t + integral^b_a g(t) d t. $ Also, as in the one-variable case, we define $ integral^a_b f(t) d t = - integral^b_a f(t) d t, $ if $a < b$.
+
+  In the line integral, $gamma'(t)$ and $f(gamma(t))$ are both vectors in $RR^n$ for all $t$, so that the final integral is a real number.
+
+  It is customary, when working with line integrals, to say that the function $f: X -> RR^n$ is a *vector field*: a function that sends each point $x$ in $X subset.eq RR^n$ to a vector in $RR^n$, which we display as based at $x$.
+]
+
+=== Reparameterization
+
+#def()[
+  Let $gamma : [a, b] -> RR^n$ be a parameterized curve. An *oriented reparameterization* of $gamma$ is a parameterized curve $sigma : [c,d] -> RR^n$ such that $sigma = gamma compose phi$, where $phi : [c, d] -> [a, b]$ is a continuous map, differentiable on $]c,d[$, that is strictly increasing and satisfies $phi (c) = a$ and $phi (d) = b$.
+]
+
+#lem()[
+  Let $gamma$ be a parameterized curve in $RR^n$ and $sigma$ an oriented reparameterization of $gamma$. Let $X$ be a set containing the image of $gamma$, or equivalently the image of $sigma$, and $f: X -> RR^n$ a continuous function. Then we have $ integral_gamma f(s) dot d arrow(s) = integral_sigma f(s) dot d arrow(s). $
+]
+
+=== Conservativeness
+
+#def()[
+  Let $X subset.eq RR^n$ and $f: X -> RR^n$ be a continuous vector field. If, for any $x_1$, $x_2$ in $X$, the line integral $ integral_gamma f(s) dot d arrow(s) $ is independent of the choice of a parameterized curve $gamma$ in $X$ from $x_1$ to $x_2$, then we say that the vector field is *conservative*.
+]
+
+#lem()[
+  Let $X$ be an open set and $f$ a conservative vector field. Then there exists a $C^1$ function $g$ on $X$ such that $f = gradient g$.
+
+  If any two points of $X$ can be joined by a parameterized curve#footnote([so if $X$ is path-connected, so when $X$ is convex]), then $g$ is unique up to addition of a constant: if $gradient g_1 = f$, then $g - g_1$ is constant on $X$.
+
+  If $f$ is a conservative vector field on $X$, then a function $g$ such that $gradient g = f$ is called a *potential* for $f$.
+]
+
 == Formula Collection
 
 #show math.equation: set block(breakable: true) // equations in the collection should wrap pages
