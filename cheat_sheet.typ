@@ -484,7 +484,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
   ==== Special Cases
 
-  / $X = X_1 times X_2$: Assuming $X_1 subset.eq RR^(n_1)$, $X_2 subset.eq RR^(n_2)$, $f$ is continuous and $Y_(x_1) = {x_2 in RR^(n_2): (x_1, x_2) in X_1 times X_2} = X_2 subset.eq RR^(n_2)$, then $ integral_(X_1 times X_2) f(x_1, x_2) d x_1 d x_2 = \ integral_(X_1) (integral_(X_2) f(x_1, x_2) d x_2) d x_1 = \ integral_(X_2) (integral_(X_1) f(x_1, x_2) d x_1) d x_2. $ 
+  / $X = X_1 times X_2$: Assuming $X_1 subset.eq RR^(n_1)$, $X_2 subset.eq RR^(n_2)$, $f$ is continuous and $Y_(x_1) = {x_2 in RR^(n_2): (x_1, x_2) in X_1 times X_2} = X_2 subset.eq RR^(n_2)$, then $ integral_(X_1 times X_2) f(x_1, x_2) d x_1 d x_2 = \ integral_(X_1) (integral_(X_2) f(x_1, x_2) d x_2) d x_1 = \ integral_(X_2) (integral_(X_1) f(x_1, x_2) d x_1) d x_2. $
   / $X = [a_1, b_1] times dots.c times [a_n, b_n] subset.eq RR^n$: Assuming $f(x_1, ..., x_n) = f_1 (x_1) dots.c f_n (x_n)$ and each $f_i$ is continuous, then $ integral_X f(x_1, ..., x_n) d x_1 dots.c d x_n = \ (integral^(b_1)_(a_1) f_1 (x) d x) dots.c (integral^(b_n)_(a_n) f_n (x) d x) $
 
   === Domain Additivity
@@ -511,6 +511,14 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 == Improper Integrals
+
+#def()[
+  Let $f$ be continuous on $RR^2$. Assume that $f >= 0$. We say that $f$ is Riemann-integrable on $RR^2$, if the limit $ lim_(R -> + infinity) integral_([-R, R]^2) f(x, y) d x d y $ exists, which is then called the *integral of $f$ over $RR^2$* and denoted $ integral_(RR^2) f(x,y) d x d y. $
+
+  One can then show that this integral is also the limit of $ integral_(D_R) f(x,y) d x d y$ where $D_R$ is the disc of radius $R$ centered at $0$.
+
+  Also $ integral_(RR^2) f(x,y) d x d y = \ integral^(+ infinity)_(- infinity) (integral^(+ infinity)_(- infinity) f(x, y) d y) d x = \ integral^(+ infinity)_(- infinity) (integral^(+ infinity)_(- infinity) f(x, y) d x) d y. $
+]
 
 == Formula Collection
 
