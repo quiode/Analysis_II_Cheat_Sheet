@@ -558,6 +558,20 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   Let $X subset.eq RR^2$ be a compact set with a boundary $diff X$ that is the union of finitely many simple closed parameterized curves $gamma_1, ..., gamma_k$. Assume that $ gamma_i = (gamma_(i,1), gamma_(i,2)) : [a_i, b_i] -> RR^2 $ has the property that $X$ lies always "to the left" of the tangent vector $gamma_i ' (t)$ based at $gamma_i (t)$. Then we have $ "Vol"(X) = sum^k_(i = 1) integral_(gamma_i) x dot d arrow(s) = sum^k_(i = 1) integral^(b_i)_(a_i) gamma_(i,1) (t) gamma_(i,2) ' (t) d t . $
 ]
 
+== The Gauss-Ostrogradski formula
+
+#def()[
+  A parameterized surface $sum : [a,b] times [c,d] -> RR^3$ is a $2$-set in $RR^3$ such that the rank of the Jacobian matrix is $2$ at all $(s,t) in ]a,b[ times ]c,d[$.
+]
+
+#def()[
+  Let $x$ and $y$ be two linearly independent vectors in $RR^3$. The *vector product*, or *cross product* $z = x times y$ is the unique vector in $RR^3$ such that $(x,y,z)$ is a basis of $RR^3$ with $det (x,y,z) > 0$, and $ ||z|| = ||x||||y|| sin (theta), $ where $theta$ is the angle between $x$ and $y$.
+]
+
+#lem()[
+  Let $X subset.eq RR^3$ be a compact set with a boundary $diff X$ that is parameterized surface $sum : [a,b] times [c,d] -> RR^3$. Assume that $sum$ is injective in $]a,b[ times ]c,d[$, and that $sum$ has the property that the normal vector $arrow(n)$ points away from $sum$ at all points. Let $arrow(u) = arrow(n)/(||arrow(n)||)$ be the unit exterior normal vector. Let $f = (f_1, f_2, f_3)$ be a vector field of class $C^1$ defined on some open set containing $X$. Then we have $ integral_X "div"(f) d x d y d z = integral_sum (f dot arrow(u)) d sigma. $
+]
+
 == Formula Collection
 
 #show math.equation: set block(breakable: true) // equations in the collection should wrap pages
