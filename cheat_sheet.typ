@@ -520,6 +520,30 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   Also $ integral_(RR^2) f(x,y) d x d y = \ integral^(+ infinity)_(- infinity) (integral^(+ infinity)_(- infinity) f(x, y) d y) d x = \ integral^(+ infinity)_(- infinity) (integral^(+ infinity)_(- infinity) f(x, y) d x) d y. $
 ]
 
+== The Change Of Variable Formula
+
+#def()[
+  Let $dash(X) subset.eq RR^n$ and $dash(Y) subset.eq RR^n$ be compact subsets. Let $phi : dash(X) -> dash(Y)$ be a continuous map. We assume that we can write $dash(X) = X union B$ and $dash(Y) = Y union C$ where
+  + the sets $X$ and $Y$ are open;
+  + the sets $B$ and $C$ are negligible;
+  + the restriction of $phi$ to the open set $X$ is a $C^1$ bijective map from $X$ to $Y$.
+
+  In this situation, the Jacobian matrix $J_phi (x)$ is invertible at all $x in X$; we assume that we can find a continuous function on $dash(X)$ that restricts to $det (J_phi (x))$ on $X$. We abuse notation and still write $det (J_phi (x))$ for this function, even if $x in B$.
+  \
+  \
+  In the situation described above, for any continuous function $f$ on $dash(Y)$, we have $ integral_(dash(X)) f(phi (x)) | det (J_phi (x)) | d x = integral_(dash(Y)) f(y) d y. $
+]
+
+#lem()[
+  *Polar coordinates* $(r, theta)$ are useful for integrating over a disc in $RR^2$ centered at $0$, or more generally over a disc sector $Delta = Delta (a,b,R)$ defined by $ 0 <= r <= R, space.quad -pi < a <= theta <= b < pi $ for some parameters $(a,b,R)$. One then gets the formula $ integral_Delta f(x,y) d x d y = integral^R_0 integral^b_a f(r cos (theta), r sin (theta)) r d r d theta . $ Taking $r$ to vary between $0 < r_0 <= r <= R$, we obtain an annulus#footnote([region between two concentric circles]).
+]
+
+#lem()[
+  *Spherical coordinates* $(r, theta, phi)$ in $RR^3$ are useful for integrating over balls centered at $0$, or parts of them. For integrating a function $f$ over a ball $B$ of radius $R$ in $RR^3$, we have the formula $ integral_B f(x,y,z) d x d y d z = integral^R_b integral^(2 pi)_0 integral^(pi)_0 \ f(r cos (theta) sin (phi), r sin (theta) sin (phi), r cos(phi)) r^2 sin (phi) \ d r d theta d phi $
+]
+
+== Green's Formula
+
 == Formula Collection
 
 #show math.equation: set block(breakable: true) // equations in the collection should wrap pages
