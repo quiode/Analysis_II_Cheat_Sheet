@@ -661,6 +661,21 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   ]
 ]
 
+=== Determinant
+
+#form()[
+  ==== *$2 times 2$*
+  $ det (A) = |mat(a,c;b,d)| = a d - b c $
+  ==== *$3 times 3$*
+  $ det (A) = |mat(a,b,c;d,e,f;g,h,i)| = \ a e i + b f g + c d h - c e g - b d i - a f h $
+  === *$n times n$*
+  _Use recursion. Fix one element, eliminate it's row and column and calculate determinant from smaller remaining matrix. If row + column is even, multiply by $1$ else $-1$. Add all things together._
+]
+
+#form()[
+  #text(red)[TODO: Common properties]
+]
+
 === Taylor Polynomials
 
 #form()[
