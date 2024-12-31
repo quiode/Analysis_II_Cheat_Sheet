@@ -453,6 +453,65 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 == The Riemann Integral in $RR^n$
 
+#def()[
+  For any bounded closed subset $X subset.eq RR^n$ and any continuous function $f: X -> RR$, one can define the *integral of $f$ over $X$*, denoted $ integral_X f(x) d x, $ which is a real number, depending of course on $X$ and on $f$.
+]
+
+#lem()[
+  === Compatibility
+
+  If $n = 1$ and $X = [a, b]$ is an interval, then the integral of $f$ over $X$ is the Riemann integral of $f$: $ integral_([a, b]) f(x) d x = integral^b_a f(x) d x. $
+
+  === Linearity
+
+  If $f$ and $g$ are continuous on $X$ and $a$, $b$ are real numbers, then $ integral_X (a f_1 (x) + b f_2 (x)) d x = \ a integral_X f_1 (x) d x + b integral_X f_2 (x) d x. $
+
+  === Positivity
+
+  If $f <= g$, then $ integral_X f(x) d x <= integral_X g(x) d x $ and especially, if $f >= 0$, then $ integral_X f(x) d x >= 0. $ Moreover, if $Y subset.eq X$ is compact and $f >= 0$, then $ integral_Y f(x) d x <= integral_X f(x) d x. $
+
+  === Upper Bound And Triangle Inequality
+
+  In particular, since $-|f| <= f <= |f|$, we have $ |integral_X f(x) d x| <= integral_X |f(x)| d x, $ and since $|f+g| <= |f| + |g|$, we have $ |integral_X (f(x) + g(x)) d x| <= integral_X |f(x)| d x + integral_X|g(x)| d x. $
+
+  === Volume
+
+  If $f = 1$, then the integral of $f$ is the *volume* in $RR^n$ of the set $X$, and if $f >= 0$ in general, the integral of $f$ is the volume of the set $ {(x,y) in X times RR : 0 <= y <= f(x)} subset.eq RR^(n+1). $ In particular, if $X$ is a bounded rectangle, say $ X = [a_1, b_1] times dots.c times [a_n, b_n] subset.eq RR^n $ and $f = 1$, then $ integral_X d x = (b_n - a_n) dots.c (b_1 - a_1). $ We write $"Vol"(X)$ or $"Vol"_(n)(X)$ for the volume of $X$.
+
+  === Multiple Integral / Fubini's Theorem
+
+  If $n_1$ and $n_2$ are integers $>= 1$ such that $n = n_1 + n_2$, then for $x_1 in RR^(n_1)$, let $ Y_(x_1) = {x_2 in RR^(n_2) : (x_1, x_2) in X} subset.eq RR^(n_2). $ Let $X_1$ be the set of $x_1 in RR^n$ such that $Y_(x_1)$ is not empty. Then $X_1$ is compact in $RR^(n_1)$ and $Y_(x_1)$ is compact in $RR^(n_2)$ for all $x_1 in X_1$. If the function $ g(x_1) = integral_(Y_(x_1)) f(x_1, x_2) d x_2 $ on $X_1$ is continuous, then $ integral_X f(x_1, x_2) d x = integral_(X_1) g(x_1) d x_1 = \ integral_(X_1) (integral_(Y_(x_1)) f(x_1, x_2) d x_2) d x_1. $ Similarly, exchanging the role of $x_1$ and $x_2$, we have $ integral_X f(x_1, x_2) d x = integral_(X_2) (integral_(Z_(x_2)) f(x_1, x_2) d x_1) d x_2, $ where $Z_(x_2) = {x_1 : (x_1, x_2) in X}$, if the integral over $x_1$ is a continuous function.
+
+  ==== Special Cases
+
+  / $X = X_1 times X_2$: Assuming $X_1 subset.eq RR^(n_1)$, $X_2 subset.eq RR^(n_2)$, $f$ is continuous and $Y_(x_1) = {x_2 in RR^(n_2): (x_1, x_2) in X_1 times X_2} = X_2 subset.eq RR^(n_2)$, then $ integral_(X_1 times X_2) f(x_1, x_2) d x_1 d x_2 = \ integral_(X_1) (integral_(X_2) f(x_1, x_2) d x_2) d x_1 = \ integral_(X_2) (integral_(X_1) f(x_1, x_2) d x_1) d x_2. $ 
+  / $X = [a_1, b_1] times dots.c times [a_n, b_n] subset.eq RR^n$: Assuming $f(x_1, ..., x_n) = f_1 (x_1) dots.c f_n (x_n)$ and each $f_i$ is continuous, then $ integral_X f(x_1, ..., x_n) d x_1 dots.c d x_n = \ (integral^(b_1)_(a_1) f_1 (x) d x) dots.c (integral^(b_n)_(a_n) f_n (x) d x) $
+
+  === Domain Additivity
+
+  If $X_1$ and $X_2$ are compact subsets of $RR^n$, and $f$ is continuous on $X_1 union X_2$, then $ integral_(X_1 union X_2) f(x) d x + integral_(X_1 sect X_2) f(x) d x = \ integral_(X_1) f(x) d x + integral_(X_2) f(x) d x. $
+  If $X_1 sect X_2$ is *empty*, then $X_1 union X_2$, then $ integral_(X_1 union X_2) f(x) d x = integral_(X_1) f(x) d x + integral_(X_2) f(x) d x. $
+]
+
+=== Negligibleness
+
+#def()[
+  + Let $1 <= m <= b$ be an integer. A *parameterized $m$-set* in $RR^n$ is a continuous map $ f: [a_1, b_1] times dots.c times [a_m, b_m] -> RR^n $ which is $C^1$ on $ ]a_1, b_1[ times dots.c times ]a_b, b_m [ . $
+  + A subset $B subset.eq RR^n$ is *negligible* if there exist an integer $k >= 0$ and parameterized $m_i$-sets $f_i : X_i -> RR^n$, with $1 <= i <= k$ and $m_i < n$, such that $ B subset.eq f_1 (X_1) union dots.c union f_k (X_k). $
+]
+
+#lem()[
+  - Any subset of the real axis $RR times {0} subset.eq RR^2$ is negligible in $RR^2$.
+  - If $H subset.eq RR^n$ is an affine subspace of dimension $m < n$, then any subset of $RR^n$ that is contained in $H$ is negligible.
+  - The image of a parameterized curve $gamma : [a,b] -> RR^n$ is negligible, since $gamma$ is a $1$-set in $RR^n$.
+]
+
+#lem()[
+  Let $X subset.eq RR^n$ be a compact set. Assume that $X$ is negligible. Then for any continuous function on $X$, we have $ integral_X f(x) d x = 0. $
+]
+
+== Improper Integrals
+
 == Formula Collection
 
 #show math.equation: set block(breakable: true) // equations in the collection should wrap pages
