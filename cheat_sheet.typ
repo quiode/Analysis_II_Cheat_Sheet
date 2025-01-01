@@ -7,7 +7,7 @@
   title: "Analysis II Cheat Sheet",
 )
 
-#set text(size: 8pt)
+#set text(size: 8pt, lang: "en")
 
 #set par(spacing: 0.5em)
 
