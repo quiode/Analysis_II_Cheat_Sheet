@@ -6,4 +6,3 @@
 - Taylorpolynom Trick hinzufügen
 - Lineare ODE's mit Konstanten Koeffizienten (e^(alpha \* x))
 - Inhomogene Gleichungen Spezialfälle
-- Gerade/Ungerade Trick Integral
