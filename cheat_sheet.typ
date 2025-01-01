@@ -305,10 +305,22 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
 ]
 
 #lem()[
-  Let $f in C^2$. Let $x_0$ be a non-degenerate critical point of $f$. Let $p$ and $q$ be the number of positive and negative eigenvalues of $"Hess"_f (x_0)$.
+  Let $f in C^2$. Let $x_0$ be a non-degenerate critical point of $f$. Let $p$ and $q$ be the number of positive and negative eigenvalues#footnote()[can be derived using the formulas in the eigenvalues section] of $"Hess"_f (x_0)$.
   + If $p = n$, equivalently if $q = 0$, the function $f$ has a *local minimum* at $x_0$.
   + If $q = n$, equivalently if $p = 0$, the function $f$ has a *local maximum* at $x_0$.
   + Otherwise, equivalent if $p q != 0$, the function $f$ does not have a local extremum at $x_0$. One then says that $f$ has a *saddle point* at $x_0$.
+  \
+  \
+  The condition $ p = n$ means that the Hessian matrix $H$ at $x_0$ is a *positive definite symmetric matrix* (and $q = n$ means that it is a negative definite matrix). This also means that $y^t H y > 0$ for any non-zero vector $y in RR^n$. When $p q != 0$, the Hessian is also said to be *indefinite*.
+
+  === *$n=2$*
+
+  $ mat(a,b;b,d) "positive definite" <=> a > 0, a d - b^2 > 0 $
+  $ mat(a,b;b,d) "negative definite" <=> a < 0, a d - b^2 > 0 $
+  $ mat(a,b;b,d) "indefinite" <=> a d - b^2 < 0 $
+
+  === *$n = 3$*
+  $ mat(a,b,c;b,e,f;c,f,i) "positive definite" <=> \ a > 0, space.quad a e - b^2 > 0, space.quad det (A) > 0 $
 ]
 
 == Lagrange Multipliers
@@ -699,6 +711,18 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     tr (c A) &= c tr (A) \
     tr (A) &= tr (A^T) \
   $
+]
+
+=== Eigenvalues
+
+#form()[
+  $A v = lambda v$, where $v$ is the *Eigenvector* and $lambda$ the *Eigenvalue*
+
+  $ tr (A) = sum^n_(i=1) lambda_i = lambda_1 + lambda_2 + ... + lambda_n $
+
+  $ det (A) = product^n_(i = 1) lambda_i = lambda_1 lambda_2 dots.c lambda_n $
+
+  $ A "invertible" <=> "every eigenvalue is nonzero" $
 ]
 
 === Taylor Polynomials
