@@ -402,7 +402,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   + For any $x_0 in I$ and any $(y_0, ..., y_(k-1)) in CC^k$, there exists a unique $f in S_b$ such that $ f(x_0) = y_0, space f'(x_0) = y_1, space ..., space f^((k-1)) (x_0) = y_(k-1). $
 ]
 
-== (In)homogene ODE's
+== (In)homogeneous ODE's
 
 #lem()[
   We focus on $ y^((k)) + a_(k-1) y^((k-1)) + ... + a_0 y = b $ with continuous $a_0, ..., a_(k-1), b$.
