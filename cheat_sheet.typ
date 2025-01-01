@@ -405,8 +405,6 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 == (In)homogene ODE's
 
 #lem()[
-  #set text(6pt)
-
   We focus on $ y^((k)) + a_(k-1) y^((k-1)) + ... + a_0 y = b $ with continuous $a_0, ..., a_(k-1), b$.
 
   #show table.cell: it => {
