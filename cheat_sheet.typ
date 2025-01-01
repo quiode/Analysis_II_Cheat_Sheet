@@ -1,3 +1,4 @@
+#import "@preview/fletcher:0.5.3" as fletcher: diagram, node, edge, shapes
 
 // CONFIGURATION
 #set document(
@@ -318,6 +319,29 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
   $ mat(a,b;b,d) "positive definite" <=> a > 0, a d - b^2 > 0 $
   $ mat(a,b;b,d) "negative definite" <=> a < 0, a d - b^2 > 0 $
   $ mat(a,b;b,d) "indefinite" <=> a d - b^2 < 0 $
+
+  #diagram(
+    node-stroke: black + 0.5pt,
+    spacing: (0.25cm, 1cm),
+    edge((1, -0.75), auto, "-|>"),
+    node((1, 0), $det (A)$, shape: shapes.diamond),
+    node((0, 1), $tr (A)$, shape: shapes.diamond),
+    node((2, 1), $tr (A)$, shape: shapes.diamond),
+    node((0, 2), "indef."),
+    node((1, 2), "neg. semidef."),
+    node((2, 2), $A = mat(0,0;0,0)$),
+    node((0, 3), "pos. semidef."),
+    node((1, 3), "neg. def."),
+    node((2, 3), "pos. def."),
+    edge((1, 0), (0, 2), "-|>", `neg.`, bend: +10deg, label-pos: 0.1),
+    edge((1, 0), (0, 1), "-|>", $0$),
+    edge((1, 0), (2, 1), "-|>", `pos.`),
+    edge((0, 1), (1, 2), "-|>", `neg.`, label-pos: 0.75),
+    edge((0, 1), (2, 2), "-|>", $0$, bend: +30deg),
+    edge((0, 1), (0, 3), "-|>", `pos.`, bend: +33deg, label-pos: 0.75),
+    edge((2, 1), (1, 3), "-|>", `neg.`, bend: +30deg, label-pos: 0.7),
+    edge((2, 1), (2, 3), "-|>", `pos.`, bend: +20deg, label-pos: 0.75),
+  )
 
   === *$n = 3$*
   $ mat(a,b,c;b,e,f;c,f,i) "positive definite" <=> \ a > 0, space.quad a e - b^2 > 0, space.quad det (A) > 0 $
