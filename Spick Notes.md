@@ -10,7 +10,5 @@
 - Inhomogene Gleichungen Spezialfälle
 - Gerade/Ungerade Trick Integral
 - Potential berechnen (maybe Beispiel?)
-- Include definition of "affine"
-- include formula for determinant
 - calculate eigenvalues / how to find when they are 0 (and reference in section to critical points)
 - include integral/differential formulas from analysis 1

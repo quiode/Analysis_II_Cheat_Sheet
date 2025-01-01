@@ -690,6 +690,17 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   ]
 ]
 
+=== Trace
+
+#form()[
+  $
+    tr (A) &= sum^n_(i = 1) a_(i i) = a_(1 1) + a_(2 2) + dots + a_(n n) \
+    tr ( A + B) &= tr (A) + tr (B) \
+    tr (c A) &= c tr (A) \
+    tr (A) &= tr (A^T) \
+  $
+]
+
 === Taylor Polynomials
 
 #form()[
