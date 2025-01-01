@@ -9,4 +9,3 @@
 - Inhomogene Gleichungen Spezialfälle
 - Gerade/Ungerade Trick Integral
 - Potential berechnen (maybe Beispiel?)
-- include integral/differential formulas from analysis 1

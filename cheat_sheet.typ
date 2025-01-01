@@ -743,6 +743,40 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
 ]
 
+=== Logarithm Rules
+
+#form()[
+  $
+    log_b (x y) &= log_b (x) + log_b (y) \
+    log_b (x / y) &= log_b (x) - log_b (y) \
+    log_b (x^p) &= p log_b (x) \
+    log_b (root(p, x)) &= (log_b (x)) / p \
+    log_b (x) &= (log_k (x)) / (log_k (b))
+  $
+]
+
+=== Differentiation Rules
+
+$
+  (a f plus.minus b g)' &= a f' plus.minus b g' \
+  (f g)' (x) &= f' (x) g(x) + f (x) g' (x) \
+  (f (g (x)))' &= f' (g (x)) dot g' (x) \
+  g' &= 1 / (f' compose g), space.quad g "inverse of" f \
+  (1 / f(x))' &= - (f' (x)) / (f (x))^2 \
+  (f / g)' &= (f' g - g' f) / g^2
+$
+
+=== Integration Rules
+
+$
+  F(x) &= integral_a^x f(t) d t, space.quad F'(x) = f(x) \
+  integral^b_a f(x) d x &= F(b) - F(a) \
+  integral (a f plus.minus b g) d x &= a integral f d x plus.minus b integral g d x \
+  integral x^n d x &= (x^(n+1)) / (n + 1) + C \
+  integral f dot g' d x &= f dot g - integral f' g d x \
+  F compose Phi (u) &= integral f(Phi (u)) Phi ' (u) d u
+$
+
 === Differentials / Integrals
 
 #form()[
