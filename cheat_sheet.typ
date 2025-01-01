@@ -286,6 +286,10 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
   If we define $E_k f(x; x_0)$ by $ f(x) = T_k f(x - x_0; x_0) + E_k f(x; x_0) $ then we have $ lim^(x -> x_0)_(x != x_0) (E_k f(x; x_0))/(||x-x_0||^k) = 0. $
 ]
 
+#note()[
+  When we want to find the Taylor Polynomial of $n$-th order of a function that consists of other functions with already known (Taylor) Polynomials, we can just replace each function with their respective Taylor Polynomial and "ignore" all terms with order higher than $n$.
+]
+
 == Critical Points
 
 Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
