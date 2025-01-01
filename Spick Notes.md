@@ -1,6 +1,5 @@
 # Notes for the Spick
 
-- Include Determinant/Trace for definiteness
 - Include rule for "separierbare ode's"
 - Bild Tabelle inhomogen/homogen (Siehe Galerie)
 - Bild Diagramm Erkennung ob SVD oder nicht in R2
