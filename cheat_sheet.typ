@@ -34,6 +34,7 @@
 )
 
 #set enum(numbering: "1a1.")
+#set underline(offset: 1pt)
 
 // VARIABLES
 
@@ -401,6 +402,48 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     + If the functions $a_i$ are real-valued, the dimension of the space of real-valued solutions, as a real vector space, is $k$, and for any choice of $x_0 in I$ and any $(y_0, ... y_(k-1)) in RR^k$, there exists a unique real-valued solution $f$ such that $ f(x_0) = y_0, space f'(x_0) = y_1, space ..., space f^((k-1)) (x_0) = y_(k-1). $ If $b$ and the coefficients of $a_i$ are real-valued, there exists a real-valued solution.
   + Let $b$ be a continuous function on $I$. There exists a solution $f_0$ to the inhomogeneous equation $ y^((k)) + a_(k-1) y^((k-1)) + dots.c + a_1 y' + a_0 y = b, $ and the set $S_b$ is the set of functions $f + f_0$ where $f in S$.
   + For any $x_0 in I$ and any $(y_0, ..., y_(k-1)) in CC^k$, there exists a unique $f in S_b$ such that $ f(x_0) = y_0, space f'(x_0) = y_1, space ..., space f^((k-1)) (x_0) = y_(k-1). $
+]
+
+== (In)homogene ODE's
+
+#lem()[
+  #set text(6pt)
+
+  We focus on $ y^((k)) + a_(k-1) y^((k-1)) + ... + a_0 y = b $ with continuous $a_0, ..., a_(k-1), b$.
+
+  #show table.cell: it => {
+    if it.y == 0 or calc.odd(it.y) {
+      strong(it)
+    } else {
+      it
+    }
+  }
+
+  #align(
+    center,
+    table(
+      columns: (1fr, 1fr),
+      stroke: (x, y) => {
+        if x == 0 and calc.even(y) {
+          (right: 0.7pt + black)
+        }
+        (top: 0.7pt + black, bottom: 0.7pt + black)
+      },
+      table.header(
+        underline()[Solutions],
+        underline()[real-valued Solutions#footnote([if $a_0,...,a_(n-1), b$ real-valued])],
+        table.hline(),
+      ),
+      table.cell(colspan: 2)[Homogeneous ODE], table.hline(),
+      [create a vector space $S$ with $dim_CC (S) = k$], [create a $RR$-vector space $S_RR$ of $S$ with $dim_RR (S_RR) = k$],
+      table.cell(colspan: 2)[Inhomogeneous ODE], table.hline(),
+      [has a solution for $f_0$ with solution space $= f_0 + S = {f_0 + f | f in S}$], [has a real-valued solution $f_0$ with real-valued solution space $= f_0 + S_RR$],
+      table.cell(
+        colspan: 2,
+      )[Initial Value Problem (IVP/AWP) \ $y(x_0) = y_0$ \ $y'(x_0) = y_1,...,y^((k-1)) (x_0) = y_(k-1)$], table.hline(),
+      [has exactly one solution], [has exactly one real-valued solution],
+    ),
+  )
 ]
 
 == (Solving) Linear Differential Equations Of Order 1
