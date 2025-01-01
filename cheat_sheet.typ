@@ -8,9 +8,7 @@
 )
 
 #set text(size: 8pt, lang: "en")
-
 #set par(spacing: 0.5em)
-
 #set page(
   flipped: true,
   numbering: "1/1",
@@ -32,7 +30,6 @@
     )
   ],
 )
-
 #set enum(numbering: "1a1.")
 #set underline(offset: 1pt)
 
