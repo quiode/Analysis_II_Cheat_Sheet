@@ -673,7 +673,21 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #form()[
-  #text(red)[TODO: Common properties]
+  $
+    det (I) &= 1 &&\
+    det (A^T) &= det (A) &&\
+    det (A^(-1)) &= 1 / (det (A)) &&\
+    det (A B) &= det (A) det (B), space.quad &&A, B in RR^(n times n) \
+    det (c A) &= c^n det (A), space.quad &&A in RR^(n times n) \
+    det (A) &= a_11 a_22 dots.c a_(n n), space.quad &&A "triangular" \
+  $
+  #align(center)[
+    one column / row is $0 => det (A) = 0$
+
+    two rows / columns are equal $ => det (A) = 0$
+
+    two rows / columns are swapped $=>$ sign switches
+  ]
 ]
 
 === Taylor Polynomials
