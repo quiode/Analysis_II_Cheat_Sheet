@@ -30,6 +30,7 @@
     )
   ],
 )
+#set columns(gutter: 12pt)
 #set enum(numbering: "1a1.")
 #set underline(offset: 1pt)
 
