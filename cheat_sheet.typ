@@ -43,13 +43,21 @@
 #let form(body) = _block(body, stroke: black)
 #let limit = $attach(lim, tr: x -> x_0, br: x != x_0)$
 
+#table(columns: 2, stroke: none)[
 #underline()[= Analysis II Cheat Sheet]
+
 
 == Continuity in $RR^n$
 
 Let $x_0 in X subset.eq RR^n$ and $f: X -> RR^m$
 
 === Convergence
+][
+  #figure(
+    image("cat.jpeg"),
+      caption: [ Toshi believes in you `<3`]
+  )
+]
 
 #def()[
   Let $(x_k)_(k in NN)$ where $x_k in RR^n$. Write $ x_k = (x_(k,1), ..., x_(k,n)) $
@@ -384,6 +392,12 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   Suppose $F: RR^2 -> RR$ is a continuously differentiable function of two variables. Let $x_0 in RR$ and $y_0 in RR$. Then the *ordinary differential equation* $ y' = F(x,y) $ has a unique solution $f$ defined on a "largest" open interval $I$ containing $x_0$ such that $f(x_0) = y_0$. In other words, there exists $I$ and a function $f: I -> RR$ such that for all $x in I$, we have $f'(x) = F(x, f(x))$, and one cannot find a larger interval containing $I$ with such a solution.
 ]
 
+#note[
+  *separation of variables*: ODE of the form $y' = a(y)b(x)$,
+  for $a, b$ continuous. Find the antiderivative
+  $A, B$ of $1/a, b ==> "Solve" A(y) = B(x) + c "for" c in RR$.
+]
+
 == Linear Differential Equations
 
 #def()[
@@ -400,6 +414,14 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     + If the functions $a_i$ are real-valued, the dimension of the space of real-valued solutions, as a real vector space, is $k$, and for any choice of $x_0 in I$ and any $(y_0, ... y_(k-1)) in RR^k$, there exists a unique real-valued solution $f$ such that $ f(x_0) = y_0, space f'(x_0) = y_1, space ..., space f^((k-1)) (x_0) = y_(k-1). $ If $b$ and the coefficients of $a_i$ are real-valued, there exists a real-valued solution.
   + Let $b$ be a continuous function on $I$. There exists a solution $f_0$ to the inhomogeneous equation $ y^((k)) + a_(k-1) y^((k-1)) + dots.c + a_1 y' + a_0 y = b, $ and the set $S_b$ is the set of functions $f + f_0$ where $f in S$.
   + For any $x_0 in I$ and any $(y_0, ..., y_(k-1)) in CC^k$, there exists a unique $f in S_b$ such that $ f(x_0) = y_0, space f'(x_0) = y_1, space ..., space f^((k-1)) (x_0) = y_(k-1). $
+]
+
+#note[
+  *Solution strategy (very general, not concrete)*:
+  1. Find a basis $f_1, dots, f_k$ of the solution space $S$ of the homoginous ODE.
+  2. Find particular solution $f_0$ of the homoginous ODE.
+    The general solution is given by:  $f_0 + sum_(i = 1)^k lambda_i f_i$
+  3. (Plug in initial values and solve LSE to obtain (some) $lambda_1, dots, lambda_k$)
 ]
 
 == (In)homogeneous ODE's
@@ -447,7 +469,11 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #text(red)[TODO!] - use the lectures, not the script
 
 #note()[
-  Let $I subset.eq RR$ be an open interval. We consider the linear differential equation $ y' + a y = b, $ when $a$ and $b$ are general continuous functions defined on $I$
+  // Let $I subset.eq RR$ be an open interval. We consider the linear differential equation $ y' + a y = b, $ when $a$ and $b$ are general continuous functions defined on $I$
+
+  LDE $y' + a y = b "with" a, b: I -> CC "and" I "open"$
+
+  // The solutions are of the form $z e^(-A(x))$ for $z in CC, A "antiderivative" "of" a$
 
   The solution has two steps:
   + Solving the homogeneous equation $y' + a y = 0$.
@@ -459,12 +485,57 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   ]
 
   === Step 2 (solving the inhomogeneous equation)
-
+  *variation of constants*: \
+  $
+  f(x) = z(x) e^(-A(x)) &<==> z "is antiderivative of" e^A b
+  $
+  Integrate $z' = e^A b$, plug in initial values, solve LSE.
 ]
 
 == Linear Differential Equations With Constant Coefficients
 
 #text(red)[TODO!]
+
+#note[
+  $y^((k)) + a_(k-1)y^((k-1)) + dots + a_0y = b$ with $a_(k-1), dots, a_0 in CC$ and constant, $b: I -> CC$ continuous.
+
+  === Step 1 (homogeneous ODE) $y = e^(alpha x), alpha in CC$ 
+  #def[
+    === characterisitc polynomial of the linear ODE
+    $P(t) = t^k + a_(k - 1) t^(k-1) + dots + a_0$
+
+    $
+     y = e^(alpha x)$ is a solution $<==>$ $P(alpha) = 0
+    $
+  ]
+  
+  Let $alpha_1, dots, alpha_l$ be the zeros of $P$ with multiplicities
+  $v_1, dots, v_l$.
+  The basis of the solution space is given by
+  ${ x^j e^(alpha_i x) | 1 <= i <= l, 0 <= j < v_(i-1) }$
+
+  === Step 2 (inhomogeneous ODE)
+  #def[
+    *Superposition principle*:
+    $
+      f_0 &"sol of ODE with inhomogeneity" &&b, \
+      g_0 & wide #line(length: 20%) '' #line(length: 20%) &&c \
+      lambda f_0 + mu g_0 & wide #line(length: 20%) '' #line(length: 20%)  &&lambda b + lambda mu
+    $
+  ]
+  ==== method of undetermined coefficients
+  *Idea*: find a solution of the "same type" as the inhomogeneity $b(x)$
+
+  *Case*: $b(x) = x^d e^(alpha x)$ \
+  $==> "solution" f_0(x) = Q(x)e^(alpha x)$ with polynomial $Q$, $deg Q <= d + j$ where $alpha$ zero of $P$ with mult. of $j$
+
+  *Case* $b(x) = x^d cos(alpha x)$ or $b(x) = x^d sin(alpha x)$ \
+  $==> "solution" f_0(x) = Q_1(x)cos(alpha x) + Q_2(x) sin(alpha x)$
+  where $Q_1, Q_2$ are polynomials with $deg <= d + j$ where $alpha$ is zero of $P$ with mult. $j$.
+
+
+]
+
 
 == Line Integrals
 
@@ -650,6 +721,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #lem()[
   Let $X subset.eq RR^3$ be a compact set with a boundary $diff X$ that is parameterized surface $sum : [a,b] times [c,d] -> RR^3$. Assume that $sum$ is injective in $]a,b[ times ]c,d[$, and that $sum$ has the property that the normal vector $arrow(n)$ points away from $sum$ at all points. Let $arrow(u) = arrow(n)/(||arrow(n)||)$ be the unit exterior normal vector. Let $f = (f_1, f_2, f_3)$ be a vector field of class $C^1$ defined on some open set containing $X$. Then we have $ integral_X "div"(f) d x d y d z = integral_sum (f dot arrow(u)) d sigma. $
 ]
+
+#pagebreak() // formula collection should start on a new page if enough space is available
 
 == Formula Collection
 
