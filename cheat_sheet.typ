@@ -301,7 +301,7 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
 ]
 
 #def()[
-  A point $x_0 in X$ such that $gradient f (x_0)$ is called a *critical point* of the function $f$.
+  A point $x_0 in X$ such that $gradient f (x_0) = 0$ is called a *critical point* of the function $f$.
 ]
 
 #def()[
