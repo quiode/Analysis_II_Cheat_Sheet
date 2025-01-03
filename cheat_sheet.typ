@@ -722,6 +722,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   Let $X subset.eq RR^3$ be a compact set with a boundary $diff X$ that is parameterized surface $sum : [a,b] times [c,d] -> RR^3$. Assume that $sum$ is injective in $]a,b[ times ]c,d[$, and that $sum$ has the property that the normal vector $arrow(n)$ points away from $sum$ at all points. Let $arrow(u) = arrow(n)/(||arrow(n)||)$ be the unit exterior normal vector. Let $f = (f_1, f_2, f_3)$ be a vector field of class $C^1$ defined on some open set containing $X$. Then we have $ integral_X "div"(f) d x d y d z = integral_sum (f dot arrow(u)) d sigma. $
 ]
 
+#pagebreak() // formula collection should start on a new page if enough space is available
+
 == Formula Collection
 
 #show math.equation: set block(breakable: true) // equations in the collection should wrap pages
