@@ -893,7 +893,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     $a^(c x)$, $a^(c x) dot c ln (a)$,
     $x^x$, $x^x dot (1 + ln (x))_( x > 0)$,
     $(x^x)^x$, $(x^x)^x (x + 2 x ln (x))_(x > 0)$,
-    $x^((x^x))$, $x^((x^x)) dot \ (&x^(x-1) + ln (x) dot \ &x^x (1 + ln (x)))_(x > 0)$,
+    $x^((x^x))$, $x^((x^x)) (&x^(x-1) + ln (x) dot  &x^x (1 + ln (x))), space.quad x > 0$,
     $1 / a ln (a x + b)$, $1 / (a x + b)$,
     $(a x) / c - (a d - b c) / c^2 ln (| c x + d|)$, $(a x + b) / (c x + d)$,
     $1 / (2 a) ln (| (x - a) / (x + a)|)$, $1 / (x^2 - a^2)$,
