@@ -384,6 +384,12 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   Suppose $F: RR^2 -> RR$ is a continuously differentiable function of two variables. Let $x_0 in RR$ and $y_0 in RR$. Then the *ordinary differential equation* $ y' = F(x,y) $ has a unique solution $f$ defined on a "largest" open interval $I$ containing $x_0$ such that $f(x_0) = y_0$. In other words, there exists $I$ and a function $f: I -> RR$ such that for all $x in I$, we have $f'(x) = F(x, f(x))$, and one cannot find a larger interval containing $I$ with such a solution.
 ]
 
+#note[
+  *separation of variables*: ODE of the form $y' = a(y)b(x)$,
+  for $a, b$ continuous. Find the antiderivative
+  $A, B$ of $1/a, b ==> "Solve" A(y) = B(x) + c "for" c in RR$.
+]
+
 == Linear Differential Equations
 
 #def()[
