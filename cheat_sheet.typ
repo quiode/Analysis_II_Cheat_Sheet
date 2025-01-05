@@ -46,18 +46,18 @@
 #let limit = $attach(lim, tr: x -> x_0, br: x != x_0)$
 
 #table(columns: 2, stroke: none)[
-#underline()[= Analysis II Cheat Sheet]
+  #underline()[= Analysis II Cheat Sheet]
 
 
-== Continuity in $RR^n$
+  == Continuity in $RR^n$
 
-Let $x_0 in X subset.eq RR^n$ and $f: X -> RR^m$
+  Let $x_0 in X subset.eq RR^n$ and $f: X -> RR^m$
 
-=== Convergence
+  === Convergence
 ][
   #figure(
     image("cat.jpeg"),
-      caption: [ Toshi believes in you `<3`]
+    caption: [ Toshi believes in you `<3`],
   )
 ]
 
@@ -422,7 +422,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   *Solution strategy (very general, not concrete)*:
   1. Find a basis $f_1, dots, f_k$ of the solution space $S$ of the homoginous ODE.
   2. Find particular solution $f_0$ of the homoginous ODE.
-    The general solution is given by:  $f_0 + sum_(i = 1)^k lambda_i f_i$
+    The general solution is given by: $f_0 + sum_(i = 1)^k lambda_i f_i$
   3. (Plug in initial values and solve LSE to obtain (some) $lambda_1, dots, lambda_k$)
 ]
 
@@ -489,7 +489,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   === Step 2 (solving the inhomogeneous equation)
   *variation of constants*: \
   $
-  f(x) = z(x) e^(-A(x)) &<==> z "is antiderivative of" e^A b
+    f(x) = z(x) e^(-A(x)) &<==> z "is antiderivative of" e^A b
   $
   Integrate $z' = e^A b$, plug in initial values, solve LSE.
 ]
@@ -501,7 +501,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #note[
   $y^((k)) + a_(k-1)y^((k-1)) + dots + a_0y = b$ with $a_(k-1), dots, a_0 in CC$ and constant, $b: I -> CC$ continuous.
 
-  === Step 1 (homogeneous ODE) $y = e^(alpha x), alpha in CC$ 
+  === Step 1 (homogeneous ODE) $y = e^(alpha x), alpha in CC$
   #def[
     === characterisitc polynomial of the linear ODE
     $P(t) = t^k + a_(k - 1) t^(k-1) + dots + a_0$
@@ -510,7 +510,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
      y = e^(alpha x)$ is a solution $<==>$ $P(alpha) = 0
     $
   ]
-  
+
   Let $alpha_1, dots, alpha_l$ be the zeros of $P$ with multiplicities
   $v_1, dots, v_l$.
   The basis of the solution space is given by
@@ -736,63 +736,72 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 === Unit Circle
 
-#context {
-  set align(center)
-  set text(size: 6.5pt)
+#form()[
+  #context {
+    set align(center)
+    set text(size: 6.5pt)
 
-  cetz.canvas(length: 1.5cm, {
-    import cetz.draw: *
+    cetz.canvas(
+      length: 1.5cm,
+      {
+        import cetz.draw: *
 
-    let entries = (
-      (0deg, $0$),
-      (15deg, $pi / 12$),
-      (30deg, $pi / 6$),
-      (45deg, $pi / 4$),
-      (60deg, $pi / 3$),
-      (75deg, $(5pi) / 12$),
-      (90deg, $pi / 2$),
-      (105deg, $(7pi) / 12$),
-      (120deg, $(2pi) / 3$),
-      (135deg, $(3pi) / 4$),
-      (150deg, $(5pi) / 6$),
-      (165deg, $(11pi)/12$),
-      (180deg, $pi$),
-      (195deg, $(13pi)/12$),
-      (210deg, $(7pi) / 6$),
-      (225deg, $(5pi) / 4$),
-      (240deg, $(4pi) / 3$),
-      (255deg, $(17pi)/12$),
-      (270deg, $(3pi) / 2$),
-      (285deg, $(19pi)/12$),
-      (300deg, $(5pi) / 3$),
-      (315deg, $(7pi) / 4$),
-      (330deg, $(11pi) / 6$),
-      (345deg, $(23pi)/12$),
+        let entries = (
+          (0deg, $0$),
+          (15deg, $pi / 12$),
+          (30deg, $pi / 6$),
+          (45deg, $pi / 4$),
+          (60deg, $pi / 3$),
+          (75deg, $(5pi) / 12$),
+          (90deg, $pi / 2$),
+          (105deg, $(7pi) / 12$),
+          (120deg, $(2pi) / 3$),
+          (135deg, $(3pi) / 4$),
+          (150deg, $(5pi) / 6$),
+          (165deg, $(11pi) / 12$),
+          (180deg, $pi$),
+          (195deg, $(13pi) / 12$),
+          (210deg, $(7pi) / 6$),
+          (225deg, $(5pi) / 4$),
+          (240deg, $(4pi) / 3$),
+          (255deg, $(17pi) / 12$),
+          (270deg, $(3pi) / 2$),
+          (285deg, $(19pi) / 12$),
+          (300deg, $(5pi) / 3$),
+          (315deg, $(7pi) / 4$),
+          (330deg, $(11pi) / 6$),
+          (345deg, $(23pi) / 12$),
+        )
+
+        set-style(mark: (fill: black, scale: 2), stroke: (thickness: 0.4pt, cap: "round"), content: (padding: 1pt))
+
+        let inner_factor = 1.15 // factor by which cos/sin are scaled for the inner text ring
+        let outer_factor = 1.35 // factor by which cos/sin are scaled for the outer text ring
+
+        for (deg, label) in entries {
+          let text_angle = if deg < 180deg { deg - 90deg } else { deg + 90deg }
+
+          line(
+            (0, 0),
+            (calc.cos(deg), calc.sin(deg)),
+            stroke: (dash: "dashed"),
+          )
+          content((calc.cos(deg) * inner_factor, calc.sin(deg) * inner_factor), label, angle: text_angle)
+          content(
+            (calc.cos(deg) * outer_factor, calc.sin(deg) * outer_factor),
+            $ #calc.round(deg.deg())° $,
+            angle: text_angle,
+          )
+        }
+
+        circle((0, 0), radius: 1)
+
+        line((-1, 0), (1, 0))
+        line((0, -1), (0, 1))
+      },
     )
-
-    set-style(mark: (fill: black, scale: 2), stroke: (thickness: 0.4pt, cap: "round"), content: (padding: 1pt))
-
-    let inner_factor = 1.15; // factor by which cos/sin are scaled for the inner text ring
-    let outer_factor = 1.35; // factor by which cos/sin are scaled for the outer text ring
-
-    for (deg, label) in entries {
-      let text_angle = if deg < 180deg { deg - 90deg } else { deg + 90deg }
-
-      line(
-        (0, 0),
-        (calc.cos(deg), calc.sin(deg)),
-        stroke: (dash: "dashed"),
-      )
-      content((calc.cos(deg) * inner_factor, calc.sin(deg) * inner_factor), label, angle: text_angle)
-      content((calc.cos(deg) * outer_factor, calc.sin(deg) * outer_factor), $ #calc.round(deg.deg())° $, angle: text_angle)
-    }
-
-    circle((0, 0), radius: 1)
-
-    line((-1, 0), (1, 0))
-    line((0, -1), (0, 1))
-  })
-}
+  }
+]
 
 === Trigonometric Functions
 
@@ -1028,7 +1037,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     $a^(c x)$, $a^(c x) dot c ln (a)$,
     $x^x$, $x^x dot (1 + ln (x))_( x > 0)$,
     $(x^x)^x$, $(x^x)^x (x + 2 x ln (x))_(x > 0)$,
-    $x^((x^x))$, $x^((x^x)) (&x^(x-1) + ln (x) dot  &x^x (1 + ln (x))), space.quad x > 0$,
+    $x^((x^x))$, $x^((x^x)) (&x^(x-1) + ln (x) dot &x^x (1 + ln (x))), space.quad x > 0$,
     $1 / a ln (a x + b)$, $1 / (a x + b)$,
     $(a x) / c - (a d - b c) / c^2 ln (| c x + d|)$, $(a x + b) / (c x + d)$,
     $1 / (2 a) ln (| (x - a) / (x + a)|)$, $1 / (x^2 - a^2)$,
