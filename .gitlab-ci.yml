@@ -15,6 +15,7 @@ build:
 
 upload-comsol:
   stage: upload
+  image: curlimages/curl
   dependencies:
     - build
   script:
