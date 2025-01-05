@@ -1,0 +1,24 @@
+stages:
+  - build
+  - upload
+
+build:
+  stage: build
+  image:
+    name: ghcr.io/typst/typst:latest
+    entrypoint: [""]
+  script:
+    - typst compile cheat_sheet.typ cheat_sheet.pdf
+  artifacts:
+    paths:
+      - cheat_sheet.pdf
+
+upload-comsol:
+  stage: upload
+  dependencies:
+    - build
+  script:
+    - |
+      curl https://exams.vis.ethz.ch/api/document/dschwaiger/analysis-ii-cheatsheet-hs24/files/402/update/ \
+        -H "Authorization: $TOKEN" \
+        -F "file=@cheat_sheet.pdf"
