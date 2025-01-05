@@ -1,4 +1,6 @@
 #import "@preview/fletcher:0.5.3" as fletcher: diagram, node, edge, shapes
+#import "@preview/cetz:0.3.1"
+#import "@preview/cetz-plot:0.1.0": *
 
 // CONFIGURATION
 #set document(
@@ -731,6 +733,66 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 === Functions
 
 #figure(image("Functions.svg", width: 100%))
+
+=== Unit Circle
+
+#context {
+  set align(center)
+  set text(size: 6.5pt)
+
+  cetz.canvas(length: 1.5cm, {
+    import cetz.draw: *
+
+    let entries = (
+      (0deg, $0$),
+      (15deg, $pi / 12$),
+      (30deg, $pi / 6$),
+      (45deg, $pi / 4$),
+      (60deg, $pi / 3$),
+      (75deg, $(5pi) / 12$),
+      (90deg, $pi / 2$),
+      (105deg, $(7pi) / 12$),
+      (120deg, $(2pi) / 3$),
+      (135deg, $(3pi) / 4$),
+      (150deg, $(5pi) / 6$),
+      (165deg, $(11pi)/12$),
+      (180deg, $pi$),
+      (195deg, $(13pi)/12$),
+      (210deg, $(7pi) / 6$),
+      (225deg, $(5pi) / 4$),
+      (240deg, $(4pi) / 3$),
+      (255deg, $(17pi)/12$),
+      (270deg, $(3pi) / 2$),
+      (285deg, $(19pi)/12$),
+      (300deg, $(5pi) / 3$),
+      (315deg, $(7pi) / 4$),
+      (330deg, $(11pi) / 6$),
+      (345deg, $(23pi)/12$),
+    )
+
+    set-style(mark: (fill: black, scale: 2), stroke: (thickness: 0.4pt, cap: "round"), content: (padding: 1pt))
+
+    let inner_factor = 1.15; // factor by which cos/sin are scaled for the inner text ring
+    let outer_factor = 1.35; // factor by which cos/sin are scaled for the outer text ring
+
+    for (deg, label) in entries {
+      let text_angle = if deg < 180deg { deg - 90deg } else { deg + 90deg }
+
+      line(
+        (0, 0),
+        (calc.cos(deg), calc.sin(deg)),
+        stroke: (dash: "dashed"),
+      )
+      content((calc.cos(deg) * inner_factor, calc.sin(deg) * inner_factor), label, angle: text_angle)
+      content((calc.cos(deg) * outer_factor, calc.sin(deg) * outer_factor), $ #calc.round(deg.deg())° $, angle: text_angle)
+    }
+
+    circle((0, 0), radius: 1)
+
+    line((-1, 0), (1, 0))
+    line((0, -1), (0, 1))
+  })
+}
 
 === Trigonometric Functions
 
