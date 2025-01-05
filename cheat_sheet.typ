@@ -25,7 +25,7 @@
           both: true,
         )],
       [
-        Version: #datetime.today().display("[day].[month].[year]")
+        Revision: #raw(sys.inputs.at("REV", default: "local")), #datetime.today().display("[day].[month].[year repr:last_two]")
       ],
     )
   ],
@@ -499,7 +499,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #note[
   $y^((k)) + a_(k-1)y^((k-1)) + dots + a_0y = b$ with $a_(k-1), dots, a_0 in CC$ and constant, $b: I -> CC$ continuous.
 
-  === Step 1 (homogeneous ODE) $y = e^(alpha x), alpha in CC$ 
+  === Step 1 (homogeneous ODE) $y = e^(alpha x), alpha in CC$
   #def[
     === characterisitc polynomial of the linear ODE
     $P(t) = t^k + a_(k - 1) t^(k-1) + dots + a_0$
@@ -508,7 +508,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
      y = e^(alpha x)$ is a solution $<==>$ $P(alpha) = 0
     $
   ]
-  
+
   Let $alpha_1, dots, alpha_l$ be the zeros of $P$ with multiplicities
   $v_1, dots, v_l$.
   The basis of the solution space is given by

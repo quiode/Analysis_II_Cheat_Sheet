@@ -8,7 +8,7 @@ build:
     name: ghcr.io/typst/typst:latest
     entrypoint: [""]
   script:
-    - typst compile cheat_sheet.typ cheat_sheet.pdf
+    - typst compile cheat_sheet.typ cheat_sheet.pdf --input REV=$CI_COMMIT_SHORT_SHA
   artifacts:
     paths:
       - cheat_sheet.pdf
