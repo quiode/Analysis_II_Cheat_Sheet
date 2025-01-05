@@ -22,4 +22,5 @@ upload-comsol:
     - |
       curl https://exams.vis.ethz.ch/api/document/dschwaiger/analysis-ii-cheatsheet-hs24/files/402/update/ \
         -H "Authorization: $TOKEN" \
-        -F "file=@cheat_sheet.pdf"
+        -F "file=@cheat_sheet.pdf" \
+        -f
