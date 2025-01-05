@@ -27,7 +27,7 @@
           both: true,
         )],
       [
-        Version: #datetime.today().display("[day].[month].[year]")
+        Revision: #raw(sys.inputs.at("REV", default: "local")), #datetime.today().display("[day].[month].[year repr:last_two]")
       ],
     )
   ],
