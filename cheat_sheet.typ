@@ -1016,7 +1016,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #form()[
   $
-    log_b (x * y) &= log_b (x) + log_b (y) \
+    log_b (x dot y) &= log_b (x) + log_b (y) \
     log_b (x / y) &= log_b (x) - log_b (y) \
     log_b (x^p) &= p log_b (x) \
     log_b (root(p, x)) &= (log_b (x)) / p \
@@ -1031,7 +1031,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     exp (x) exp (y) &= exp (x + y) \
     exp (x) &gt 1 forall x gt 0 \
-    x^a &= exp (a * ln (x)) \
+    x^a &= exp (a dot ln (x)) \
     exp (i z) &= cos (z) + i sin (z) \
     exp (i pi/2) = i, " "exp (i pi) &= -1 " und " exp (2i pi) = 1
   $
@@ -1046,7 +1046,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     (f (g (x)))' &= f' (g (x)) dot g' (x) \
     g' &= 1 / (f' compose g), space.quad g "inverse of" f \
     (1 / f(x))' &= - (f' (x)) / (f (x))^2 \
-    (f / g)' &= (f' g - g' f) / g^2
+    (f / g)' &= (f' g - g' f) / g^2 \
+    (a^f)' &= ln (a) dot a^f dot f'
   $
 ]
 
