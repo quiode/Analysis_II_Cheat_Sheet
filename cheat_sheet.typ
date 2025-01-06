@@ -172,7 +172,9 @@ Let $X subset.eq RR^n$ be an open set.
 
 #def()[
   + Let $f: X -> RR$ be a function. If all partial derivatives of $f$ exists at $x_0 in X$, then the column vector $ mat(diff_(x_1) f(x_0); ...; diff_(x_n) f(x_0)) $ if called the *gradient* of $f$ at $x_0$, and is denoted $gradient f(x_0)$.
+  - The gradient indicates the direction of the steepest increase of the function $f$, and its magnitude $|∇f(x_0)|$ represents the rate of change in that direction.
   + Let $f = (f_1, ..., f_n): X -> RR^n$ be a function with values in $RR^n$ sucht that all partial derivatives of all coordinates $f_i$ of $f$ exists at $x_0 in X$. Then the real number $ "Tr"(J_f (x_0)) = sum^n_(i=1) diff_(x_i) f_i (x_0), $ the trace of the Jacobi matrix, is called the *divergence* of $f$ at $x_0$, and is denoted $"div"(f)(x_0)$.
+  - Divergence measures the rate at which the vector field spreads out (positive value, source) or converges (negative value, sink) into a point.
 ]
 
 == The Differential
