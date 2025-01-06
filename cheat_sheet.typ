@@ -876,6 +876,14 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 == Trigonometric Identities
 
 #form()[
+  $
+    cos (x) &= cos (-x) \
+    sin (x) &= sin (-x) \
+    cos (pi - x) &= -cos (x) \
+    sin (pi - x) &= sin (x) \
+    |sin (x)| lt.eq.slant x
+  $
+
   === Doubled Angles
 
   $
@@ -917,7 +925,14 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     sin^2 (alpha) + cos^2 (alpha) &= 1 \
     cosh^2 (alpha) - sinh^2 (alpha) &= 1 \
     sin (z) &= (e^(i z) - e^(- i z)) / (2 i) \
-    cos (z) &= (e^(i z) + e^(- i z)) / 2
+    cos (z) &= (e^(i z) + e^(- i z)) / 2 \
+    tan (x) &= (sin (x)) / (cos (x)) \
+    cot (x) &= (cos (x)) / (sin (x)) \
+    \
+    sin (arctan (x)) &= x / sqrt(x^2 + 1) \
+    cos (arctan (x)) &= 1 / sqrt(x^2 + 1) \
+    sin (x) &= (tan (x)) / sqrt(1 + tan^2 (x)) \
+    cos (x) &= 1 / sqrt(1 + tan^2 (x))
   $
 ]
 
