@@ -1020,11 +1020,24 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #form()[
   $
-    log_b (x y) &= log_b (x) + log_b (y) \
+    log_b (x * y) &= log_b (x) + log_b (y) \
     log_b (x / y) &= log_b (x) - log_b (y) \
     log_b (x^p) &= p log_b (x) \
     log_b (root(p, x)) &= (log_b (x)) / p \
-    log_b (x) &= (log_k (x)) / (log_k (b))
+    log_b (a) &= (log_k (a)) / (log_k (b)) = (ln (a)) / (ln (a)) \
+    ln (1) &= 0," " ln (e) = 1
+  $
+]
+
+=== Exponentialfunction Rules
+
+#form()[
+  $
+    exp (x) exp (y) &= exp (x + y) \
+    exp (x) &gt 1 forall x gt 0 \
+    x^a &= exp (a * ln (x)) " und " x^0 = 1 \
+    exp (i z) &= cos (z) + i sin (z) \
+    exp (i pi/2) = i, " "exp (i pi) &= -1 " und " exp (2i pi) = 1
   $
 ]
 
