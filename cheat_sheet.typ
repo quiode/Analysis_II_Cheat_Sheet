@@ -315,6 +315,21 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
   _Note that this can also be used to easily *calculate the Hesse Matrix* from a known Taylor polynomial._
 ]
 
+#def()[
+  Let $f in C^k (U, RR)$ and $y in U$. Then the $k$-th *Taylor polynomial* of $f$ at $y$ is given by: 
+
+  $
+    T_k f(x) = sum_(|i| <= k) (partial_i f(y) (x - y)^i) / (i!)
+  $
+
+  where $i$ is a so-called *multi-index*:
+  + $i$ is a tuple of $n$ non-negative integers $i = (i_1, dots, i_n)$.
+  + $|i| = i_1 + dots + i_n$
+  + $partial_i = partial_1^(i_1) * partial_2^(i_2) * dots * partial_n^(i_n)$
+  + $(x - y)^i = (x_1 - y_1)^(i_1) * dots * (x_n - y_n)^(i_n)$
+  + $i! = i_1 ! * dots * i_n !$
+]
+
 #lem()[
   If we define $E_k f(x; x_0)$ by $ f(x) = T_k f(x - x_0; x_0) + E_k f(x; x_0) $ then we have $ lim^(x -> x_0)_(x != x_0) (E_k f(x; x_0))/(||x-x_0||^k) = 0. $
 ]
