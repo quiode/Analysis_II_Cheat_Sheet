@@ -302,7 +302,7 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
   $
     T_k f(y;x_0) = f(x_0) + sum^n_(i=1) (diff f) / (diff x_i) (x_0) y_i + ... \ + sum_(m_1 + ... + m_n = k) 1 / (m_1 ! dots.c m_n !) (diff^k f) / (diff x_1^(m_1) dots.c diff x_n^(m_n)) (x_0) y_1^(m_1) dots.c y_n^(m_n)
   $
-  where the last sum ranges over the tuples of $n$ non-negative integers such that the sum is $k$.
+  where the last sum ranges over the tuples of $n$ non-negative integers such that the sum is $k$ and y = x - $x_0$
 
   ==== *$k = 1$*
   $ T_1 f(y; x_0) = f(x_0) + sum^n_(i=1) diff_(x_i) f(x_0) y_i $
