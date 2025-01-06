@@ -21,7 +21,7 @@
     #grid(
       columns: (1fr, 1fr, 1fr),
       align: (left, center, right),
-      [Source: #link("https://gitlab.dominik-schwaiger.ch/quio/Analysis_II_Cheat_Sheet", "gitlab.dominik-schwaiger.ch")],
+      [Source: #link("https://gitlab.dominik-schwaiger.ch/quio/Analysis_II_Cheat_Sheet")],
       [#counter(page).display(
           "1 of 1",
           both: true,
