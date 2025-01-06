@@ -1031,7 +1031,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     exp (x) exp (y) &= exp (x + y) \
     exp (x) &gt 1 forall x gt 0 \
-    x^a &= exp (a * ln (x)) " und " x^0 = 1 \
+    x^a &= exp (a * ln (x)) \
     exp (i z) &= cos (z) + i sin (z) \
     exp (i pi/2) = i, " "exp (i pi) &= -1 " und " exp (2i pi) = 1
   $
