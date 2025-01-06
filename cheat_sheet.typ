@@ -208,6 +208,27 @@ Let $X subset.eq RR^n$ be an open set.
   _So in simpler terms: The Jacobi matrix is the differential._
 ]
 
+#diagram(
+  node-stroke: blue + 1pt,
+  spacing: (0.5cm, 0.5cm), // Abstand zwischen den Knoten reduziert
+
+  // Nodes
+  node((0, 0), "f stetig diffbar"),
+  node((1, 0), "f Ableitungen stetig"),
+  node((0, 1), "f diffbar"),
+  node((1, 1), "f Ableitungen exisiteren"),
+  node((0, 2), "f stetig"),
+
+  // Edges
+  edge((0, 0), (1, 0), "<->", stroke: green + 0.5pt),
+  edge((0, 0), (0, 1), "-|>", stroke: green + 0.5pt),
+  edge((0, 1), (0, 2), "-|>", stroke: green + 0.5pt),
+  edge((1, 0), (1, 1), "-|>", stroke: green + 0.5pt),
+  edge((1, 1), (0, 1), "-|>", stroke: red + 0.5pt),
+  edge((1, 1), (0, 2), "-|>", stroke: red + 0.5pt),
+)
+
+
 #lem()[
   Let $Y subset.eq RR^m$ be open and let $f: X -> Y$ and $g: Y -> RR^p$ be differentiable functions. Then $g compose f: X -> RR^p$ is differentiable on $X$, and for any $x_0 in X$, its differential is given by the composition
   $ d (g compose f)(x_0) = d g (f(x_0)) compose d f(x_0) $
