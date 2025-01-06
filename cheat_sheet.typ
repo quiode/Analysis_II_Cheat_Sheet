@@ -877,10 +877,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #form()[
   $
-    cos (x) &= cos (-x) \
-    sin (x) &= sin (-x) \
-    cos (pi - x) &= -cos (x) \
-    sin (pi - x) &= sin (x) \
+    cos (x) &= cos (-x), " " sin (x) = sin (-x) \
+    cos (pi - x) &= -cos (x), " " sin (pi - x) = sin (x) \
     |sin (x)| lt.eq.slant x
   $
 
@@ -926,9 +924,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     cosh^2 (alpha) - sinh^2 (alpha) &= 1 \
     sin (z) &= (e^(i z) - e^(- i z)) / (2 i) \
     cos (z) &= (e^(i z) + e^(- i z)) / 2 \
-    tan (x) &= (sin (x)) / (cos (x)) \
-    cot (x) &= (cos (x)) / (sin (x)) \
-    \
+    tan (x) = (sin (x)) / (cos (x))&, " " cot (x) = (cos (x)) / (sin (x)) \
     sin (arctan (x)) &= x / sqrt(x^2 + 1) \
     cos (arctan (x)) &= 1 / sqrt(x^2 + 1) \
     sin (x) &= (tan (x)) / sqrt(1 + tan^2 (x)) \
