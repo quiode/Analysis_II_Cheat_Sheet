@@ -172,9 +172,9 @@ Let $X subset.eq RR^n$ be an open set.
 
 #def()[
   + Let $f: X -> RR$ be a function. If all partial derivatives of $f$ exists at $x_0 in X$, then the column vector $ mat(diff_(x_1) f(x_0); ...; diff_(x_n) f(x_0)) $ if called the *gradient* of $f$ at $x_0$, and is denoted $gradient f(x_0)$.
-  - The gradient indicates the direction of the steepest increase of the function $f$, and its magnitude $|∇f(x_0)|$ represents the rate of change in that direction.
+    + _The gradient indicates the direction of the steepest increase of the function $f$, and its magnitude $|gradient f(x_0)|$ represents the rate of change in that direction._
   + Let $f = (f_1, ..., f_n): X -> RR^n$ be a function with values in $RR^n$ sucht that all partial derivatives of all coordinates $f_i$ of $f$ exists at $x_0 in X$. Then the real number $ "Tr"(J_f (x_0)) = sum^n_(i=1) diff_(x_i) f_i (x_0), $ the trace of the Jacobi matrix, is called the *divergence* of $f$ at $x_0$, and is denoted $"div"(f)(x_0)$.
-  - Divergence measures the rate at which the vector field spreads out (positive value, source) or converges (negative value, sink) into a point.
+    + _Divergence measures the rate at which the vector field spreads out (positive value, source) or converges (negative value, sink) into a point._
 ]
 
 == The Differential
@@ -210,25 +210,26 @@ Let $X subset.eq RR^n$ be an open set.
   _So in simpler terms: The Jacobi matrix is the differential._
 ]
 
-#diagram(
-  node-stroke: blue + 1pt,
-  spacing: (0.5cm, 0.5cm), // Abstand zwischen den Knoten reduziert
+#lem()[
+  #diagram(
+    node-stroke: black + 0.5pt,
 
-  // Nodes
-  node((0, 0), "f stetig diffbar"),
-  node((1, 0), "f Ableitungen stetig"),
-  node((0, 1), "f diffbar"),
-  node((1, 1), "f Ableitungen exisiteren"),
-  node((0, 2), "f stetig"),
+    // Nodes
+    node((0, 0), [$f$ cont.#footnote()[continuous] differentiable]),
+    node((1, 0), [$f$ cont. derivatives]),
+    node((0, 1), [$f$ differentiable]),
+    node((1, 1), [$f$ derivatives exist]),
+    node((0, 2), [$f$ continuous]),
 
-  // Edges
-  edge((0, 0), (1, 0), "<->", stroke: green + 0.5pt),
-  edge((0, 0), (0, 1), "-|>", stroke: green + 0.5pt),
-  edge((0, 1), (0, 2), "-|>", stroke: green + 0.5pt),
-  edge((1, 0), (1, 1), "-|>", stroke: green + 0.5pt),
-  edge((1, 1), (0, 1), "-|>", stroke: red + 0.5pt),
-  edge((1, 1), (0, 2), "-|>", stroke: red + 0.5pt),
-)
+    // Edges
+    edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
+    edge((0, 0), (0, 1), "-|>", stroke: green + 0.5pt),
+    edge((0, 1), (0, 2), "-|>", stroke: green + 0.5pt),
+    edge((1, 0), (1, 1), "-|>", stroke: green + 0.5pt),
+    edge((1, 1), (0, 1), "-x-|>", stroke: red + 0.5pt),
+    edge((1, 1), (0, 2), "-x-|>", stroke: red + 0.5pt),
+  )
+]
 
 
 #lem()[
