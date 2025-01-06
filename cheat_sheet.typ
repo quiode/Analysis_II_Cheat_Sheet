@@ -669,6 +669,14 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
   If $f = 1$, then the integral of $f$ is the *volume* in $RR^n$ of the set $X$, and if $f >= 0$ in general, the integral of $f$ is the volume of the set $ {(x,y) in X times RR : 0 <= y <= f(x)} subset.eq RR^(n+1). $ In particular, if $X$ is a bounded rectangle, say $ X = [a_1, b_1] times dots.c times [a_n, b_n] subset.eq RR^n $ and $f = 1$, then $ integral_X d x = (b_n - a_n) dots.c (b_1 - a_1). $ We write $"Vol"(X)$ or $"Vol"_(n)(X)$ for the volume of $X$.
 
+  === Center of Mass
+
+  The center of mass $dash(x)$ in $RR^n$ of a compact set $U subset.eq RR^n$ is defined as:
+
+  $
+  dash(x)_i = 1 / "Vol(U)" integral_U x_i "dx"
+  $
+
   === Multiple Integral / Fubini's Theorem
 
   If $n_1$ and $n_2$ are integers $>= 1$ such that $n = n_1 + n_2$, then for $x_1 in RR^(n_1)$, let $ Y_(x_1) = {x_2 in RR^(n_2) : (x_1, x_2) in X} subset.eq RR^(n_2). $ Let $X_1$ be the set of $x_1 in RR^n$ such that $Y_(x_1)$ is not empty. Then $X_1$ is compact in $RR^(n_1)$ and $Y_(x_1)$ is compact in $RR^(n_2)$ for all $x_1 in X_1$. If the function $ g(x_1) = integral_(Y_(x_1)) f(x_1, x_2) d x_2 $ on $X_1$ is continuous, then $ integral_X f(x_1, x_2) d x = integral_(X_1) g(x_1) d x_1 = \ integral_(X_1) (integral_(Y_(x_1)) f(x_1, x_2) d x_2) d x_1. $ Similarly, exchanging the role of $x_1$ and $x_2$, we have $ integral_X f(x_1, x_2) d x = integral_(X_2) (integral_(Z_(x_2)) f(x_1, x_2) d x_1) d x_2, $ where $Z_(x_2) = {x_1 : (x_1, x_2) in X}$, if the integral over $x_1$ is a continuous function.
