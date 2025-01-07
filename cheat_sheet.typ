@@ -45,21 +45,18 @@
 #let form(body) = _block(body, stroke: black)
 #let limit = $attach(lim, tr: x -> x_0, br: x != x_0)$
 
-#table(columns: 2, stroke: none)[
-  #underline()[= Analysis II Cheat Sheet]
+#underline()[= Analysis II Cheat Sheet]
 
+#figure(
+  image("cat.jpeg", width: 75%),
+  caption: [ Toshi believes in you `<3`],
+)
 
-  == Continuity in $RR^n$
+== Continuity in $RR^n$
 
-  Let $x_0 in X subset.eq RR^n$ and $f: X -> RR^m$
+Let $x_0 in X subset.eq RR^n$ and $f: X -> RR^m$
 
-  === Convergence
-][
-  #figure(
-    image("cat.jpeg"),
-    caption: [ Toshi believes in you `<3`],
-  )
-]
+=== Convergence
 
 #def()[
   Let $(x_k)_(k in NN)$ where $x_k in RR^n$. Write $ x_k = (x_(k,1), ..., x_(k,n)) $
