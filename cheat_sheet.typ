@@ -302,7 +302,7 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
   $
     T_k f(y;x_0) = f(x_0) + sum^n_(i=1) (diff f) / (diff x_i) (x_0) y_i + ... \ + sum_(m_1 + ... + m_n = k) 1 / (m_1 ! dots.c m_n !) (diff^k f) / (diff x_1^(m_1) dots.c diff x_n^(m_n)) (x_0) y_1^(m_1) dots.c y_n^(m_n)
   $
-  where the last sum ranges over the tuples of $n$ non-negative integers such that the sum is $k$ and y = x - $x_0$
+  where the last sum ranges over the tuples of $n$ non-negative integers such that the sum is $k$ and y = x - $x_0$.
 
   ==== *$k = 1$*
   $ T_1 f(y; x_0) = f(x_0) + sum^n_(i=1) diff_(x_i) f(x_0) y_i $
@@ -316,18 +316,18 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
 ]
 
 #def()[
-  Let $f in C^k (U, RR)$ and $y in U$. Then the $k$-th *Taylor polynomial* of $f$ at $y$ is given by: 
+  Let $f in C^k (U, RR)$ and $y in U$. Then the $k$-th *Taylor polynomial* of $f$ at $y$ is given by:
 
   $
     T_k f(x) = sum_(|i| <= k) (partial_i f(y) (x - y)^i) / (i!)
   $
 
   where $i$ is a so-called *multi-index*:
-  + $i$ is a tuple of $n$ non-negative integers $i = (i_1, dots, i_n)$.
-  + $|i| = i_1 + dots + i_n$
-  + $partial_i = partial_1^(i_1) * partial_2^(i_2) * dots * partial_n^(i_n)$
-  + $(x - y)^i = (x_1 - y_1)^(i_1) * dots * (x_n - y_n)^(i_n)$
-  + $i! = i_1 ! * dots * i_n !$
+  + $i$ is a tuple of $n$ non-negative integers $i = (i_1, dots, i_n)$
+  + $|i| = i_1 + ... + i_n$
+  + $partial_i = partial_1^(i_1) dot partial_2^(i_2) dots.c partial_n^(i_n)$
+  + $(x - y)^i = (x_1 - y_1)^(i_1) dots.c (x_n - y_n)^(i_n)$
+  + $i! = i_1 ! dots.c i_n !$
 ]
 
 #lem()[
@@ -674,7 +674,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   The center of mass $dash(x)$ in $RR^n$ of a compact set $U subset.eq RR^n$ is defined as:
 
   $
-  dash(x)_i = 1 / "Vol(U)" integral_U x_i "dx"
+    dash(x)_i = 1 / "Vol(U)" integral_U x_i "dx"
   $
 
   === Multiple Integral / Fubini's Theorem
@@ -876,9 +876,11 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 == Trigonometric Identities
 
 #form()[
+  === Inverse
+
   $
-    cos (x) &= cos (-x), " " sin (x) = sin (-x) \
-    cos (pi - x) &= -cos (x), " " sin (pi - x) = sin (x) \
+    cos (x) = cos (-x) &, space sin (x) = sin (-x) \
+    cos (pi - x) = -cos (x) &, space sin (pi - x) = sin (x) \
     |sin (x)| lt.eq.slant x
   $
 
@@ -924,13 +926,13 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     cosh^2 (alpha) - sinh^2 (alpha) &= 1 \
     sin (z) &= (e^(i z) - e^(- i z)) / (2 i) \
     cos (z) &= (e^(i z) + e^(- i z)) / 2 \
-    tan (x) = (sin (x)) / (cos (x))&, " " cot (x) = (cos (x)) / (sin (x)) \
+    tan (x) = (sin (x)) / (cos (x)) &, space cot (x) = (cos (x)) / (sin (x)) \
     sin (arctan (x)) &= x / sqrt(x^2 + 1) \
     cos (arctan (x)) &= 1 / sqrt(x^2 + 1) \
     sin (x) &= (tan (x)) / sqrt(1 + tan^2 (x)) \
     cos (x) &= 1 / sqrt(1 + tan^2 (x)) \
-    cosh (x)^k &= cosh (x) " für gerade k" \
-    cosh (x)^k &= sinh (x) " für ungerade k"
+    cosh (x)^k &= cosh (x) "for even" k \
+    cosh (x)^k &= sinh (x) "for odd" k
   $
 ]
 
@@ -1023,19 +1025,19 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     log_b (x^p) &= p log_b (x) \
     log_b (root(p, x)) &= (log_b (x)) / p \
     log_b (a) &= (log_k (a)) / (log_k (b)) = (ln (a)) / (ln (a)) \
-    ln (1) &= 0," " ln (e) = 1
+    ln (1) = 0 &, space ln (e) = 1
   $
 ]
 
-=== Exponentialfunction Rules
+=== Exponential Rules
 
 #form()[
   $
     exp (x) exp (y) &= exp (x + y) \
-    exp (x) &gt 1 forall x gt 0 \
+    exp (x) &gt 1, space.quad x > 0 \
     x^a &= exp (a dot ln (x)) \
     exp (i z) &= cos (z) + i sin (z) \
-    exp (i pi/2) = i, " "exp (i pi) &= -1 " und " exp (2i pi) = 1
+    exp ((i pi) / 2) = i, space exp (i pi) &= -1, space exp (2i pi) = 1
   $
 ]
 
