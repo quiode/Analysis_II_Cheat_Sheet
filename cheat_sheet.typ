@@ -615,11 +615,15 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #lem()[
-  Equivalently, $f$ is conservative iff $ integral_gamma f(s) dot d arrow(s) = 0 $ for any closed#footnote([$gamma (a) = gamma(b)$]) parameterized curve in $X$.
+  Equivalently, *$f$ is conservative* iff $ integral_gamma f(s) dot d arrow(s) = 0 $ for any closed#footnote([$gamma (a) = gamma(b)$]) parameterized curve in $X$.
+]
+
+#def()[
+  A subset $X subset.eq RR^n$ is *path-connected* if for all $v, w in U$, there exists a path from v to w.
 ]
 
 #lem()[
-  Let $X$ be an open set and $f$ a conservative vector field. Then there exists a $C^1$ function $g$ on $X$ such that $f = gradient g$.
+  Let $X$ be an *open* set and *$f$ a conservative* vector field. Then there exists a $C^1$ function $g$ on $X$ such that *$f = gradient g$*.
 
   If any two points of $X$ can be joined by a parameterized curve#footnote([so if $X$ is path-connected, so when $X$ is convex]), then $g$ is unique up to addition of a constant: if $gradient g_1 = f$, then $g - g_1$ is constant on $X$.
 
@@ -627,13 +631,17 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #lem()[
-  Let $X subset.eq RR^n$ be an open set and $f: X -> RR^n$ a vector field of class $C^1$. Write $f(x)= (f_1(x), ..., f_n(x)).$ If $f$ is conservative, then we have $ (diff f_i) / (diff x_j) = (diff f_j) / (diff x_i) $ for any integers with $1 <= i != j <= n$.
+  Let $X subset.eq RR^n$ be an open set and $f: X -> RR^n$ a vector field of class $C^1$. Write $f(x)= (f_1(x), ..., f_n(x)).$ If *$f$ is conservative*, then we have (a symmetric Jacobi Matrix for all $x in U$)$ (diff f_i) / (diff x_j) = (diff f_j) / (diff x_i) $ for any integers with $1 <= i != j <= n$. \
+  This means
 ]
 
-#def()[A subset $X subset.eq RR^n$ is *star shaped* if there exists $x_0 in X$ such that, for all $x in X$, the line segment joining $x_0$ to $x$ is contained in $X$. We then also say that $X$ is star-shaped around $x_0$.]
+#def()[
+  A subset $X subset.eq RR^n$ is *star shaped* if there exists $x_0 in X$ such that, for all $x in X$, the line segment joining $x_0$ to $x$ is contained in $X$. We then also say that $X$ is star-shaped around $x_0$. \
+  *Note:* $"konvex"  arrow.r  "star shaped"  arrow.r  "path-connected"$
+]
 
 #lem()[
-  Let $X$ be a star-shaped open subset of $RR^n$. Let $f$ be a $C^1$ vector field such that $ (diff f_i) / (diff x_j) = (diff f_j) / (diff x_i) $ on $X$ for all $i != j$ between $1$ and $n$. Then the vector field $f$ is conservative.
+  Let $X$ be a *star-shaped open* subset of $RR^n$. Let $f$ be a $C^1$ vector field such that $ (diff f_i) / (diff x_j) = (diff f_j) / (diff x_i) $ on $X$ for all $i != j$ between $1$ and $n$. Then the vector field *$f$ is conservative*.
 ]
 
 === Curl
@@ -644,6 +652,26 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #lem()[
   For a $3$-dimensional vector field, $"curl"(f) = 0$ means precisely that $f$ is conservative.
+]
+
+#lem()[
+  #diagram(
+    node-stroke: black + 0.5pt,
+
+    // Nodes
+    node((0, 0), [$f$ = $gradient g$]),
+    node((1, 0), [$f$ conservative]),
+    node((2, 0), [$integral_gamma f(s) dot d arrow(s) = 0$]),
+    node((1, 1), [$JJ_f$ symmetric]),
+    node((2, 1), [curl $f = 0$]),
+
+    // Edges
+    edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
+    edge((1, 0), (2, 0), "<|-|>", stroke: green + 0.5pt),
+    edge((1, 0), (1, 1), "-|>", stroke: green + 0.5pt),
+    edge((1, 1), (1, 0), "-|>", "if U is star-shaped", stroke: blue + 0.5pt),
+    edge((2, 1), (1, 1), "<|-|>", "n = 3", stroke: orange + 0.5pt), 
+  )
 ]
 
 == The Riemann Integral in $RR^n$
