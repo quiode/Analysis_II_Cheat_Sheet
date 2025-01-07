@@ -1200,3 +1200,52 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     e &= #calc.e
   $
 ]
+
+=== Partial Integration
+
+#form()[
+  Let $a lt b$ be real numbers and $f, g: [a, b] arrow.r RR$ be continuously differentiable. Then the following holds:
+
+  $
+    integral_a^b (f dot g') d x &= f dot g bar_a^b - integral_a^b (f' dot g) d x
+  $
+
+  For indefinite integrals:
+  $
+    integral (f dot g') d x &= f dot g - integral (f' dot g) d x
+  $
+
+  Useful if arc- or log-functions appear, $x^n$, $1 / (1 - x^2)$, $1 / (1 + x^2)$, $dots$
+
+]
+
+=== Substitution
+
+#form()[
+  Substitution is the inverse of the chain rule and is particularly useful when working with composite functions.
+
+  Let $a lt b$, $phi : [a, b] arrow.r RR$ be continuously differentiable, $I subset.eq RR$ an interval such that $phi ([a, b]) subset.eq I$, and $f : I arrow.r RR$ a continuous function. Then the following holds:
+  $
+    integral_a^b f (phi (t)) dot phi'(t) d t &= integral_(phi (a))^(phi (b)) f (x) d x
+  $
+
+  For indefinite integrals:
+  $
+    integral f (phi (t)) dot phi'(t) d t &= integral f (x) d x
+  $
+
+  Example:
+  $
+    integral x / sqrt(9 - x^2) d x " substitute " t = sqrt(9 - x^2)
+  $
+
+  1. Rewrite:
+  $
+    x = sqrt(9 - t^2) arrow.r.double x' = (-2t) / (2 sqrt(9 - t^2)) arrow.r.double d x = (-t dot d t) / sqrt(9 - t^2)
+  $
+
+  2. Substitution simplifies the integral:
+  $
+    integral - d t = -t " back substitution " arrow.r.double -sqrt(9 - x^2)
+  $
+]
