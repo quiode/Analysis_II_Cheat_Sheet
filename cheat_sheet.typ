@@ -223,7 +223,8 @@ Let $X subset.eq RR^n$ be an open set.
     edge((0, 0), (0, 1), "-|>", stroke: green + 0.5pt),
     edge((0, 1), (0, 2), "-|>", stroke: green + 0.5pt),
     edge((1, 0), (1, 1), "-|>", stroke: green + 0.5pt),
-    edge((1, 1), (0, 1), "-x-|>", stroke: red + 0.5pt),
+    edge((0, 1), (1, 1), "-|>", stroke: green + 0.5pt, bend: 10deg),
+    edge((1, 1), (0, 1), "-x-|>", stroke: red + 0.5pt, bend: 10deg),
     edge((1, 1), (0, 2), "-x-|>", stroke: red + 0.5pt),
   )
 ]
