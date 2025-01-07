@@ -631,8 +631,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #lem()[
-  Let $X subset.eq RR^n$ be an open set and $f: X -> RR^n$ a vector field of class $C^1$. Write $f(x)= (f_1(x), ..., f_n(x)).$ If *$f$ is conservative*, then we have (a symmetric Jacobi Matrix for all $x in U$)$ (diff f_i) / (diff x_j) = (diff f_j) / (diff x_i) $ for any integers with $1 <= i != j <= n$. \
-  This means
+  Let $X subset.eq RR^n$ be an open set and $f: X -> RR^n$ a vector field of class $C^1$. Write $f(x)= (f_1(x), ..., f_n(x)).$ If *$f$ is conservative*, then we have (a symmetric Jacobi Matrix for all $x in U$)$ (diff f_i) / (diff x_j) = (diff f_j) / (diff x_i) $ for any integers with $1 <= i != j <= n$.
 ]
 
 #def()[
@@ -656,21 +655,21 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #lem()[
   #diagram(
-    node-stroke: black + 0.5pt,
+    node-stroke: black + 0.25pt,
 
     // Nodes
     node((0, 0), [$f$ = $gradient g$]),
-    node((1, 0), [$f$ conservative]),
-    node((2, 0), [$integral_gamma f(s) dot d arrow(s) = 0$]),
-    node((1, 1), [$JJ_f$ symmetric]),
-    node((2, 1), [curl $f = 0$]),
+    node((1, 1), [$f$ conservative]),
+    node((1, 0), [$integral_gamma f(s) dot d arrow(s) = 0$]),
+    node((0, 2), [$JJ_f$ symmetric]),
+    node((1, 2), [curl $f = 0$]),
 
     // Edges
-    edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
-    edge((1, 0), (2, 0), "<|-|>", stroke: green + 0.5pt),
-    edge((1, 0), (1, 1), "-|>", stroke: green + 0.5pt),
-    edge((1, 1), (1, 0), "-|>", "if U is star-shaped", stroke: blue + 0.5pt),
-    edge((2, 1), (1, 1), "<|-|>", "n = 3", stroke: orange + 0.5pt), 
+    edge((0, 0), (1, 1), "<|-|>", stroke: green + 0.5pt),
+    edge((1, 1), (1, 0), "<|-|>", stroke: green + 0.5pt),
+    edge((1, 1), (0, 2), "-|>", stroke: green + 0.5pt),
+    edge((0, 2), (1, 1), "-|>", label: "if U is star-shaped", stroke: blue + 0.5pt),
+    edge((1, 2), (0, 2), "<|-|>", label: "n = 3", stroke: orange + 0.5pt), 
   )
 ]
 
@@ -721,7 +720,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   === Domain Additivity
 
   If $X_1$ and $X_2$ are compact subsets of $RR^n$, and $f$ is continuous on $X_1 union X_2$, then $ integral_(X_1 union X_2) f(x) d x + integral_(X_1 sect X_2) f(x) d x = \ integral_(X_1) f(x) d x + integral_(X_2) f(x) d x. $
-  If $X_1 sect X_2$ is *empty*, then $X_1 union X_2$, then $ integral_(X_1 union X_2) f(x) d x = integral_(X_1) f(x) d x + integral_(X_2) f(x) d x. $
+  If $X_1 sect X_2$ is *empty*, then $X_1 union X_2$, then $ integral_(X_1 union X_2) f(x) d x = integral_(X_1) f(x) d x + integral_(X_2) f(x) d x. $ \
+  Otherwise by Inclusion-Exclusion $ integral_(X_1 union X_2) f(x) d x = integral_(X_1) f(x) d x + integral_(X_2) f(x) d x - integral_(X_1 sect X_2) f(x) d x$
 ]
 
 === Negligibleness
@@ -749,6 +749,13 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   One can then show that this integral is also the limit of $ integral_(D_R) f(x,y) d x d y$ where $D_R$ is the disc of radius $R$ centered at $0$.
 
   Also $ integral_(RR^2) f(x,y) d x d y = \ integral^(+ infinity)_(- infinity) (integral^(+ infinity)_(- infinity) f(x, y) d y) d x = \ integral^(+ infinity)_(- infinity) (integral^(+ infinity)_(- infinity) f(x, y) d x) d y. $
+]
+
+#def()[
+  Let $f: [a, infinity] arrow.r$ be continuous, then 
+  $
+    integral_([a, infinity] times [c, d]) f(x,y) d x d y := lim_(b arrow.r infinity) integral_([a, b] times [c, d]) f(x,y) d x d y
+  $
 ]
 
 == The Change Of Variable Formula
