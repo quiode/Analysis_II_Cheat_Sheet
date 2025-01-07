@@ -48,7 +48,7 @@
 #underline()[= Analysis II Cheat Sheet]
 
 #figure(
-  image("toshi.jpeg", width: 75%),
+  image("images/toshi.jpeg", width: 75%),
   caption: [ Toshi believes in you `<3`],
 )
 
@@ -504,8 +504,6 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 == (Solving) Linear Differential Equations Of Order 1
 
-#text(red)[TODO!] - use the lectures, not the script
-
 #note()[
   // Let $I subset.eq RR$ be an open interval. We consider the linear differential equation $ y' + a y = b, $ when $a$ and $b$ are general continuous functions defined on $I$
 
@@ -531,8 +529,6 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 == Linear Differential Equations With Constant Coefficients
-
-#text(red)[TODO!]
 
 #note[
   $y^((k)) + a_(k-1)y^((k-1)) + dots + a_0y = b$ with $a_(k-1), dots, a_0 in CC$ and constant, $b: I -> CC$ continuous.
@@ -776,7 +772,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 === Functions
 
-#figure(image("Functions.svg", width: 100%))
+#figure(image("images/Functions.svg", width: 100%))
 
 === Unit Circle
 
