@@ -1257,3 +1257,46 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     integral - d t = -t " back substitution " arrow.r.double -sqrt(9 - x^2)
   $
 ]
+
+=== Important Parameterizations (for line integrals)
+
+#form()[ 
+  *Ellipse:*\
+  Clockwise:
+  $
+    x = a dot cos (t), space y = -b dot sin (t)
+  $
+  Counter-clockwise:
+  $
+    x = a dot cos (t), space y = b dot sin (t)
+  $
+
+  $
+    gamma: [0 ; 2 pi] arrow.r (a dot cos (t), plus.minus b dot sin (t))
+  $
+
+  *Circle:* \ 
+  Clockwise:
+  $
+    x = r dot cos (t), space y = -r dot sin (t)
+  $
+  Counter-clockwise:
+  $
+    x = r dot cos (t), space y = r dot sin (t)
+  $
+
+  $
+    gamma: [0 ; 2 pi] arrow.r (r dot cos (t), plus.minus r dot sin (t))
+  $
+
+  *Line-Segment:* \
+  From $(x_0, y_0) " to " (x_1, y_1)$
+  $
+    x = (1 - t) dot x_0 + t dot x_1 \
+    y = (1 - t) dot y_0 + t dot y_1
+  $
+
+  $
+    gamma: [0 ; 1] arrow.r (x, y)
+  $
+]
