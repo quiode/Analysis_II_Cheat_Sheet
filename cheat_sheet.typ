@@ -48,7 +48,7 @@
 #underline()[= Analysis II Cheat Sheet]
 
 #figure(
-  image("cat.jpeg", width: 75%),
+  image("toshi.jpeg", width: 75%),
   caption: [ Toshi believes in you `<3`],
 )
 
