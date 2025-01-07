@@ -369,6 +369,13 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
   $ mat(a,b;b,d) "negative definite" <=> a < 0, a d - b^2 > 0 $
   $ mat(a,b;b,d) "indefinite" <=> a d - b^2 < 0 $
 
+  === Summary
+  Let y be a critical point so that $gradient f(y) = 0$
+  - $H_f(y)$ pos def $arrow.r.double$ y lok Min $arrow.r.double$ $H_f(y)$ pos semidef
+  - $H_f(y)$ neg def $arrow.r.double$ y lok Max $arrow.r.double$ $H_f(y)$ neg semidef
+  - $H_f(y)$ indef $arrow.r.double$ y saddle
+  - $det(H_f(y)) = 0$ $arrow.r.double$ y is degenerated
+
   #diagram(
     node-stroke: black + 0.5pt,
     spacing: (0.25cm, 1cm),
