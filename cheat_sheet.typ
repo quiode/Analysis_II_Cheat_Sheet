@@ -656,8 +656,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #lem()[
   #diagram(
-    node-stroke: black + 0.5pt,
-    spacing: (0.5cm, 1cm),
+    node-stroke: black + 0.25pt,
 
     // Nodes
     node((0, 0), [$f$ = $gradient g$]),
@@ -667,11 +666,11 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     node((1, 2), [curl $f = 0$]),
 
     // Edges
-    edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
-    edge((1, 0), (2, 0), "<|-|>", stroke: green + 0.5pt),
-    edge((1.15, 0), (1.15, 1), "-|>", stroke: green + 0.5pt),
-    edge((0.75, 1), (0.75, 0), "-|>", $"if" U "is star-shaped"$, stroke: blue + 0.5pt, label-side: left),
-    edge((2, 1), (1, 1), "<|-|>", $n=3$, stroke: orange + 0.5pt),
+    edge((0, 0), (1, 1), "<|-|>", stroke: green + 0.5pt),
+    edge((1, 1), (1, 0), "<|-|>", stroke: green + 0.5pt),
+    edge((1, 1), (0, 2), "-|>", stroke: green + 0.5pt),
+    edge((0, 2), (1, 1), "-|>", label: "if U is star-shaped", stroke: blue + 0.5pt, bend: 30deg),
+    edge((1, 2), (0, 2), "<|-|>", label: "n = 3", stroke: orange + 0.5pt), 
   )
 ]
 
