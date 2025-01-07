@@ -584,7 +584,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #def()[
   + Let $I = [a, b]$ be a closed and bounded interval in $RR$. Let $f(t) = (f_1 (t), ..., f_n (t))$ be a continuous function from $I$ to $RR^n$, i.e., $f_i$ is continuous for $1 <= i <= n$. Then we define $ integral^b_a f(t) d t = (integral^b_a f_1 (t) d t, ..., integral^b_a f_n (t) d t) in RR^n. $
   + A *parameterized curve* in $RR^n$ is a continuous map $gamma : [a, b] -> RR^n$ that is piecewise $C^1$, i.e., there exists $k >= 1$ and a partition $ a = t_0 < t_1 < dots.c < t_(k-1) < t_k = b $ such that the restriction of $gamma$ to $] t_(j-1), t_j [$ is $C^1$ for $1 <= j <= k$. We say that $gamma$ is a parameterized curve, or a *path*, between $gamma (a)$ and $gamma (b)$.
-  + Let $gamma: [a, b] -> RR^n$ be a parameterized curve. Let $X subset.eq RR^n$ be a subset containing the image of $gamma$, and let $f: X -> RR^n$ be a continuous function. The integral $ integral_gamma f(s) dot d arrow(s) = integral^b_a f(gamma (t)) dot gamma'(t) d t in RR $ is called the *line integral of $f$ along $gamma$*. It is denoted $ integral_gamma f(s) dot d s space.quad "or" space.quad integral_gamma f(s) dot d arrow(s). $
+  + Let $gamma: [a, b] -> RR^n$ be a parameterized curve. Let $X subset.eq RR^n$ be a subset containing the image of $gamma$, and let $f: X -> RR^n$ be a continuous function. The integral $ integral_gamma f(s) dot d arrow(s) = integral^b_a <f(gamma (t)), gamma'(t)> d t in RR $ is called the *line integral of $f$ along $gamma$*. It is denoted $ integral_gamma f(s) dot d s space.quad "or" space.quad integral_gamma f(s) dot d arrow(s). $
 ]
 
 #def()[
