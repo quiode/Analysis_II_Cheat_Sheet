@@ -752,6 +752,23 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   Also $ integral_(RR^2) f(x,y) d x d y = \ integral^(+ infinity)_(- infinity) (integral^(+ infinity)_(- infinity) f(x, y) d y) d x = \ integral^(+ infinity)_(- infinity) (integral^(+ infinity)_(- infinity) f(x, y) d x) d y. $
 ]
 
+== Normaldomains
+
+#def()[
+  A set $Omega subset.eq RR^n$ is called a *normal domain* if it can be expressed as:
+
+  $
+    Omega = {(x_1,..., x_n) in RR^n | a lt.eq x_1 lt.eq b, f_1(x_1) lt.eq x_2 lt.eq g_1(x_1)\ ,..., f_(n-1)(x_1, x_2,..., x_(n-1)) lt.eq x_n lt.eq g_(n-1)(x_1, x_2,..., x_(n-1))}
+  $
+  where $f_i$ and $g_i$ are continuous functions. \
+
+  For such domains, the following formula holds:
+
+  $
+    integral_Omega f d mu = integral_a^b d x_1 integral_(f_1(x_1))^(g_1(x_1)) d x_2 ... integral_(f_(n-1)(x_1, x_2,..., x_(n-1)))^(g_(n-1)(x_1, x_2,..., x_(n-1))) d x_n
+  $
+]
+
 #def()[
   Let $f: [a, infinity] arrow.r$ be continuous, then 
   $
