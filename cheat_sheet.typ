@@ -928,7 +928,9 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     sin (arctan (x)) &= x / sqrt(x^2 + 1) \
     cos (arctan (x)) &= 1 / sqrt(x^2 + 1) \
     sin (x) &= (tan (x)) / sqrt(1 + tan^2 (x)) \
-    cos (x) &= 1 / sqrt(1 + tan^2 (x))
+    cos (x) &= 1 / sqrt(1 + tan^2 (x)) \
+    cosh (x)^k &= cosh (x) " für gerade k" \
+    cosh (x)^k &= sinh (x) " für ungerade k"
   $
 ]
 
