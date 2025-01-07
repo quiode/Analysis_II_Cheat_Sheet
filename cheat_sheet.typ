@@ -654,10 +654,10 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   For a $3$-dimensional vector field, $"curl"(f) = 0$ means precisely that $f$ is conservative.
 ]
 
-/*
 #lem()[
   #diagram(
-    node-stroke: black + 0.25pt,
+    node-stroke: black + 0.5pt,
+    spacing: (0.5cm, 1cm),
 
     // Nodes
     node((0, 0), [$f$ = $gradient g$]),
@@ -669,12 +669,11 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     // Edges
     edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
     edge((1, 0), (2, 0), "<|-|>", stroke: green + 0.5pt),
-    edge((1, 0), (1, 1), "-|>", stroke: green + 0.5pt),
-    edge((1, 1), (1, 0), "-|>", "if U is star-shaped", stroke: blue + 0.5pt),
-    edge((2, 1), (1, 1), "<|-|>", "n = 3", stroke: orange + 0.5pt),
+    edge((1.15, 0), (1.15, 1), "-|>", stroke: green + 0.5pt),
+    edge((0.75, 1), (0.75, 0), "-|>", $"if" U "is star-shaped"$, stroke: blue + 0.5pt, label-side: left),
+    edge((2, 1), (1, 1), "<|-|>", $n=3$, stroke: orange + 0.5pt),
   )
 ]
-*/
 
 == The Riemann Integral in $RR^n$
 
