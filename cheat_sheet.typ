@@ -774,11 +774,11 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #lem()[
-  *Polar coordinates* $(r, theta)$ are useful for integrating over a disc in $RR^2$ centered at $0$, or more generally over a disc sector $Delta = Delta (a,b,R)$ defined by $ 0 <= r <= R, space.quad -pi < a <= theta <= b < pi $ for some parameters $(a,b,R)$. One then gets the formula $ integral_Delta f(x,y) d x d y = integral^R_0 integral^b_a f(r cos (theta), r sin (theta)) r d r d theta . $ Taking $r$ to vary between $0 < r_0 <= r <= R$, we obtain an annulus#footnote([region between two concentric circles]).
+  *Polar coordinates* $(r, theta)$ are useful for integrating over a disc in $RR^2$ centered at $0$, or more generally over a disc sector $Delta = Delta (a,b,R)$ defined by $ 0 <= r <= R, space.quad -pi < a <= theta <= b < pi $ for some parameters $(a,b,R)$. One then gets the formula $ integral_Delta f(x,y) d x d y = integral^R_0 integral^b_a f(r cos (theta), r sin (theta)) r  d theta d r. $ Taking $r$ to vary between $0 < r_0 <= r <= R$, we obtain an annulus#footnote([region between two concentric circles]).
 ]
 
 #lem()[
-  *Spherical coordinates* $(r, theta, phi)$ in $RR^3$ are useful for integrating over balls centered at $0$, or parts of them. For integrating a function $f$ over a ball $B$ of radius $R$ in $RR^3$, we have the formula $ integral_B f(x,y,z) d x d y d z = integral^R_b integral^(2 pi)_0 integral^(pi)_0 \ f(r cos (theta) sin (phi), r sin (theta) sin (phi), r cos(phi)) r^2 sin (phi) \ d r d theta d phi $
+  *Spherical coordinates* $(r, theta, phi)$ in $RR^3$ are useful for integrating over balls centered at $0$, or parts of them. For integrating a function $f$ over a ball $B$ of radius $R$ in $RR^3$, we have the formula $ integral_B f(x,y,z) d x d y d z = integral^R_b integral^(2 pi)_0 integral^(pi)_0 \ f(r cos (theta) sin (phi), r sin (theta) sin (phi), r cos(phi)) r^2 sin (phi) \ d phi d theta  d r $
 ]
 
 == Green's Formula
