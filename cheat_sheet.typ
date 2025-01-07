@@ -619,7 +619,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #def()[
-  A subset $X subset.eq RR^n$ is *path-connected* if for all $v, w in U$, there exists a path from v to w.
+  A subset $X subset.eq RR^n$ is *path-connected* if for all $v, w in U$, there exists a path from $v$ to $w$.
 ]
 
 #lem()[
@@ -635,8 +635,9 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #def()[
-  A subset $X subset.eq RR^n$ is *star shaped* if there exists $x_0 in X$ such that, for all $x in X$, the line segment joining $x_0$ to $x$ is contained in $X$. We then also say that $X$ is star-shaped around $x_0$. \
-  *Note:* $"konvex"  arrow.r  "star shaped"  arrow.r  "path-connected"$
+  A subset $X subset.eq RR^n$ is *star shaped* if there exists $x_0 in X$ such that, for all $x in X$, the line segment joining $x_0$ to $x$ is contained in $X$. We then also say that $X$ is star-shaped around $x_0$.
+
+  _konvex $arrow.r$ star shaped $arrow.r$ path-connected_
 ]
 
 #lem()[
@@ -653,6 +654,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   For a $3$-dimensional vector field, $"curl"(f) = 0$ means precisely that $f$ is conservative.
 ]
 
+/*
 #lem()[
   #diagram(
     node-stroke: black + 0.25pt,
@@ -665,13 +667,14 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     node((1, 2), [curl $f = 0$]),
 
     // Edges
-    edge((0, 0), (1, 1), "<|-|>", stroke: green + 0.5pt),
-    edge((1, 1), (1, 0), "<|-|>", stroke: green + 0.5pt),
-    edge((1, 1), (0, 2), "-|>", stroke: green + 0.5pt),
-    edge((0, 2), (1, 1), "-|>", label: "if U is star-shaped", stroke: blue + 0.5pt),
-    edge((1, 2), (0, 2), "<|-|>", label: "n = 3", stroke: orange + 0.5pt), 
+    edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
+    edge((1, 0), (2, 0), "<|-|>", stroke: green + 0.5pt),
+    edge((1, 0), (1, 1), "-|>", stroke: green + 0.5pt),
+    edge((1, 1), (1, 0), "-|>", "if U is star-shaped", stroke: blue + 0.5pt),
+    edge((2, 1), (1, 1), "<|-|>", "n = 3", stroke: orange + 0.5pt),
   )
 ]
+*/
 
 == The Riemann Integral in $RR^n$
 
@@ -1295,13 +1298,13 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 === Important Parameterizations (for line integrals)
 
-#form()[ 
-  *Ellipse:*\
-  Clockwise:
+#form()[
+  ==== Ellipse
+  ===== Clockwise
   $
     x = a dot cos (t), space y = -b dot sin (t)
   $
-  Counter-clockwise:
+  ===== Counter-clockwise
   $
     x = a dot cos (t), space y = b dot sin (t)
   $
@@ -1310,12 +1313,12 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     gamma: [0 ; 2 pi] arrow.r (a dot cos (t), plus.minus b dot sin (t))
   $
 
-  *Circle:* \ 
-  Clockwise:
+  ==== Circle
+  ===== Clockwise
   $
     x = r dot cos (t), space y = -r dot sin (t)
   $
-  Counter-clockwise:
+  ====== Counter-clockwise
   $
     x = r dot cos (t), space y = r dot sin (t)
   $
@@ -1324,8 +1327,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     gamma: [0 ; 2 pi] arrow.r (r dot cos (t), plus.minus r dot sin (t))
   $
 
-  *Line-Segment:* \
-  From $(x_0, y_0) " to " (x_1, y_1)$
+  ==== Line-Segment
+  From $(x_0, y_0)$ to $(x_1, y_1)$
   $
     x = (1 - t) dot x_0 + t dot x_1 \
     y = (1 - t) dot y_0 + t dot y_1
