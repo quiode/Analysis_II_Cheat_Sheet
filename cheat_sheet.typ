@@ -288,7 +288,7 @@ Let $X subset.eq RR^n$ be an open set.
 
 #def()[
   Let $f: X -> RR$ a $C^2$ function. For $x in X$, the *Hessian matrix* of $f$ at $x$ is the *symmetric square* matrix
-  $ "Hess"_f (x) = (diff_(x_i , x_j) f(x))_(1 <= i,j <= n) $
+  $ "Hess"_f (x_0) = ((diff^2 f(x_0))/(diff x_i diff x_j))_(1 <= i,j <= n) $
   We also sometimes write simply $H_f (x)$.
 ]
 
