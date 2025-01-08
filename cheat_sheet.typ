@@ -1125,9 +1125,9 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #form()[
   $
     e^x &= 1 &&+ x + x^2 / 2 + x^3 / 3! + x^4 / 4! + O(x^5) \
-    sin (x) &= x &&- x^3 / 3! + x^5 / 5! + O(x^7) \
-    sinh (x) &= x &&+ x^3 / 3! + x^5 / 5! + O(x^7) \
-    cos (x) &= 1 &&- x^2 / 2 + x^4 / 4! - x^6 / 6! + O(x^8) \
+    sin (x) &= x &&- x^3 / 3! + x^5 / 5! + O(x^7) = sum_(i=0)^infinity ((-1)^i x^(2i + 1))/((2i + 1)!)\
+    sinh (x) &= x &&+ x^3 / 3! + x^5 / 5! + O(x^7)\
+    cos (x) &= 1 &&- x^2 / 2 + x^4 / 4! - x^6 / 6! + O(x^8) = sum_(i=0)^infinity ((-1)^i x^(2i))/((2i)!)\
     cosh (x) &= 1 &&+ x^2 / 2 + x^4 / 4! + x^6 / 6! + O(x^8) \
     tan (x) &= x &&+ x^3 / 3 + (2 x^5) / 15 + O(x^7) \
     tanh (x) &= x &&- x^3 / 3 + (2 x^5) / 15 + O(x^7) \
@@ -1437,6 +1437,18 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     arrow.r.double C' = 0 arrow C = "constant"
   $
   Since the constant cancels out in differentiation $g$ can easily be used to calculate line integrals for $f$.
+]
+
+#form()[
+  === Guesses for $y_p(x)$
+  
+  $
+    sum_(i=0)^m A_i x^i \
+    e^(alpha x) sum_(i=0)^m A_i x^i \
+    sin(omega x) sum_(i=0)^m A_i x^i + cos(omega x) sum_(i=0)^m B_i x^i \
+    sinh(omega x) sum_(i=0)^m A_i x^i + cosh(omega x) sum_(i=0)^m B_i x^i \
+    e^(alpha x) sin(omega x) sum_(i=0)^m A_i x^i + e^(alpha x) cos(omega x) sum_(i=0)^m B_i x^i
+  $
 ]
 
 #note()[
