@@ -624,6 +624,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #def()[
   Let $X subset.eq RR^n$ and $f: X -> RR^n$ be a continuous vector field. If, for any $x_1$, $x_2$ in $X$, the line integral $ integral_gamma f(s) dot d arrow(s) $ is independent of the choice of a parameterized curve $gamma$ in $X$ from $x_1$ to $x_2$, then we say that the vector field is *conservative*.
+  This meaning we can choose simpler Parameterization with the same start and endpoint.
 ]
 
 #lem()[
@@ -640,6 +641,11 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   If any two points of $X$ can be joined by a parameterized curve#footnote([so if $X$ is path-connected, so when $X$ is convex]), then $g$ is unique up to addition of a constant: if $gradient g_1 = f$, then $g - g_1$ is constant on $X$.
 
   If $f$ is a conservative vector field on $X$, then a function $g$ such that $gradient g = f$ is called a *potential* for $f$.
+
+  We can use this potential to calculate the line integral:
+  $ 
+    integral_gamma f(s) dot d arrow(s) = integral_gamma gradient g(s) dot d arrow(s) = g(gamma (b)) - g(gamma (a))
+  $
 ]
 
 #lem()[
@@ -1375,4 +1381,24 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     gamma: [0 ; 1] arrow.r (x, y)
   $
+]
+
+== Examples
+  
+#form()[
+  === finding a potential
+    If $f$ is conservative we can find a potential $g$ s.t $f = gradient g$
+    $
+      f(x,y) = vec(e^(x y) (1 + x y), e^(x y) x^2) eq.quest vec(diff_g / diff_x, diff_g / diff_y) = gradient g
+    $
+    Start with finding the integral for one equation
+    $
+      diff_g / diff_y = e^(x y) x^2 arrow.r.double g(x,y) = integral e^(x y) x^2 d y = x e^(x y) + C(x)
+    $
+    Where C is a helper function / placeholder for the function of x. Now we solve the second equation to find C
+    $
+      diff_g / diff_x = e^(x y) + x y e^(x y) + C' eq.quest e^(x y) (1 + x y) = f_1(x, y) \
+      arrow.r.double C' = 0 arrow C = "constant"
+    $
+    Since the constant cancels out in differentiation $g$ can easily be used to calculate line integrals for $f$
 ]
