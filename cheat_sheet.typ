@@ -1432,3 +1432,32 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
   Since the constant cancels out in differentiation $g$ can easily be used to calculate line integrals for $f$.
 ]
+
+#note()[
+  === Solve higher order ODE
+  $
+    y'' - 2y' - 8y = 0, space y(1) = 1, space y'(1) = 0 \
+  $
+  We can now use the characterisitc polynomial to solve for $P(alpha) = 0$ and substitute $y = e^(lambda x)$ so we get \
+  $
+    arrow.r.l.double lambda^2 e^(lambda x) - 2 lambda e^(lambda x) - 8 e^(lambda x) = 0 \
+    arrow.r.l.double lambda^2 - 2 lambda - 8 = 0 \
+    arrow.r.l.double (lambda - 4) (lambda + 2) = 0
+  $
+  With solutions: $lambda_1 = 4, space lambda_2 = 2$ \
+  We can now formulate the solution and solve for the starting values
+  $
+    y(x) = A e^(4 x) + B e^(-2 x) \
+    y(1) = A e^(4) + B e^(-2) eq.quest 1 \
+
+    y'(x) = 4 A e^(4 x) - 2 B e^(-2 x) \
+    y'(1) = 4 A e^(4) - 2 B e^(-2) eq.quest 0
+  $
+  We can solve the equation system y(1) and y'(1) and get \
+  $
+    2*y(1) + y(2) arrow.r.l.double 6 A e^4 = 2 \
+    arrow.r.l.double A = 1/3 e^(-4), space B = 2/3 e^2 \
+    arrow.r.l.double y(x) = 1/3 e^(4 x - 4) + 2/3 e^(2 - 2 x)
+  $
+  
+]
