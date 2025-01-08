@@ -1439,7 +1439,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #note()[
-  === Solve homogeneous ODE with starting values
+  === Solve homogeneous ODE with initial values
   $
     y'' - 2y' - 8y = 0, space y(1) = 1, space y'(1) = 0 \
   $
@@ -1450,7 +1450,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     arrow.r.l.double (lambda - 4) (lambda + 2) = 0
   $
   With solutions: $lambda_1 = 4, space lambda_2 = 2$ \
-  We can now formulate the solution and solve for the starting values
+  We can now formulate the solution and solve for the initial values
   $
     y(x) = A e^(4 x) + B e^(-2 x) \
     y(1) = A e^(4) + B e^(-2) eq.quest 1 \
