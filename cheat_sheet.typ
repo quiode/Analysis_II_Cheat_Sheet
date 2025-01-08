@@ -642,11 +642,19 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   If any two points of $X$ can be joined by a parameterized curve#footnote([so if $X$ is path-connected, so when $X$ is convex]), then $g$ is unique up to addition of a constant: if $gradient g_1 = f$, then $g - g_1$ is constant on $X$.
 
   If $f$ is a conservative vector field on $X$, then a function $g$ such that $gradient g = f$ is called a *potential* for $f$.
+]
 
+#note()[
   We can use this potential to calculate the line integral:
   $
     integral_gamma f(s) dot d arrow(s) = integral_gamma gradient g(s) dot d arrow(s) = g(gamma (b)) - g(gamma (a))
   $
+
+  To find the potential $g$ for a function s.t $gradient g = f$, we can use the following sheme: \
+  - $diff_(x_1) g = f_1(x_1,...,x_n) arrow.r.l.double \ h := g(x_1,...,x_n) = integral f_1(x_1,...,x_n) d x_1$
+  - $diff_(x_2) g = f_2(x_1,...,x_n) arrow.r.double diff_(x_2)h = f_2(x_1,...,x_n)$
+  - ...
+  - $diff_(x_n) g = f_n (x_1,...,x_n) arrow.r.double diff_(x_n)h = f_n (x_1,...,x_n)$
 ]
 
 #lem()[
