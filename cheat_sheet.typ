@@ -624,7 +624,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #def()[
   Let $X subset.eq RR^n$ and $f: X -> RR^n$ be a continuous vector field. If, for any $x_1$, $x_2$ in $X$, the line integral $ integral_gamma f(s) dot d arrow(s) $ is independent of the choice of a parameterized curve $gamma$ in $X$ from $x_1$ to $x_2$, then we say that the vector field is *conservative*.
-  This meaning we can choose simpler Parameterization with the same start and endpoint.
+  This means we can choose a simpler Parameterization with the same start- and endpoint.
 ]
 
 #lem()[
@@ -1385,8 +1385,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 == Examples
   
-#form()[
-  === finding a potential
+#note()[
+  === Finding a Potential
     If $f$ is conservative we can find a potential $g$ s.t $f = gradient g$
     $
       f(x,y) = vec(e^(x y) (1 + x y), e^(x y) x^2) eq.quest vec(diff_g / diff_x, diff_g / diff_y) = gradient g
@@ -1395,10 +1395,10 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     $
       diff_g / diff_y = e^(x y) x^2 arrow.r.double g(x,y) = integral e^(x y) x^2 d y = x e^(x y) + C(x)
     $
-    Where C is a helper function / placeholder for the function of x. Now we solve the second equation to find C
+    Where $C$ is a helper function / placeholder for the function of $x$. Now we solve the second equation to find $C$
     $
       diff_g / diff_x = e^(x y) + x y e^(x y) + C' eq.quest e^(x y) (1 + x y) = f_1(x, y) \
       arrow.r.double C' = 0 arrow C = "constant"
     $
-    Since the constant cancels out in differentiation $g$ can easily be used to calculate line integrals for $f$
+    Since the constant cancels out in differentiation $g$ can easily be used to calculate line integrals for $f$.
 ]
