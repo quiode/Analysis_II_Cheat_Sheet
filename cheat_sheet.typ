@@ -404,6 +404,7 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
   $ mat(a,b,c;b,e,f;c,f,i) "positive definite" <=> \ a > 0, space.quad a e - b^2 > 0, space.quad det (A) > 0 $
 ]
 
+/* NOT exam relevant
 == Lagrange Multipliers
 
 Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
@@ -411,6 +412,7 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
 #lem()[
   Let $g: X -> RR, f in C^1$. If $x_0 in X$ is a local extremum of the function $f$ restricted to the set $ Y = {x in X: g(x) = 0} $ then either $gradient g(x_0) = 0$, or there exists $lambda in RR$ such that $ cases(gradient f(x_0) = lambda gradient g (x_0), g(x_0) = 0\,) $ or in other words, there exists $lambda$ such that $(x_0, lambda)$ is a critical point of the differentiable function $h: X times RR -> RR$ defined by $ h(x, lambda) = f(x) - lambda g(x). $ Such a value $lambda$ is called a *Lagrange multiplier* at $x_0$.
 ]
+*/
 
 == Inverse Theorem
 
@@ -424,11 +426,13 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR^n$ be differentiable.
   If $x_0 in X$ is such that $det (J_f (x_0)) != 0$, i.e., such that the Jacobian matrix of $f$ at $x_0$ is invertible, then $f$ is a change of variable around $x_0$. Moreover, the Jacobian of $g$ at $x_0$ is determined by $ J_g (f(x_0)) = J_f (x_0)^(-1). $ In addition, if $f$ is of class $C^k$, then $g$ is of class $C^k$.
 ]
 
+/* NOT exam relevant
 == Implicit Function Theorem
 
 #def()[
   Let $X subset.eq RR^(n+1)$ be open and let $g: X -> RR$ be of class $C^k$ with $k >= 1$. Let $(x_0, y_0) in RR^n times RR$ be such that $g(x_0, y_0) = 0$. Assume that $ diff_y g(x_0, y_0) != 0. $ Then there exists an open set $U subset.eq RR^n$ containing $x_0$, an open interval $I subset.eq RR$ containing $y_0$, and a function $f: U -> RR$ of class $C^k$ such that the system of equations $ cases(g(x, y) = 0, x in U\, space y in I) $ is equivalent with $y = f(x)$. In particular, $f(x_0) = y_0$. Moreover, the gradient of $f$ at $x_0$ is given by $ gradient f(x_0) = - 1/((diff_y g)(x_0, y_0)) gradient_x g(x_0, y_0), $ where $gradient_x g = (diff_(x_1) g, ..., diff_(x_n) g)$.
 ]
+*/
 
 == Ordinary Differential Equations
 
@@ -822,6 +826,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   Let $X subset.eq RR^2$ be a compact set with a boundary $diff X$ that is the union of finitely many simple closed parameterized curves $gamma_1, ..., gamma_k$. Assume that $ gamma_i = (gamma_(i,1), gamma_(i,2)) : [a_i, b_i] -> RR^2 $ has the property that $X$ lies always "to the left" of the tangent vector $gamma_i ' (t)$ based at $gamma_i (t)$. Then we have $ "Vol"(X) = sum^k_(i = 1) integral_(gamma_i) x dot d arrow(s) = sum^k_(i = 1) integral^(b_i)_(a_i) gamma_(i,1) (t) gamma_(i,2) ' (t) d t . $
 ]
 
+/* NOT exam relevant
 == The Gauss-Ostrogradski formula
 
 #def()[
@@ -835,6 +840,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #lem()[
   Let $X subset.eq RR^3$ be a compact set with a boundary $diff X$ that is parameterized surface $sum : [a,b] times [c,d] -> RR^3$. Assume that $sum$ is injective in $]a,b[ times ]c,d[$, and that $sum$ has the property that the normal vector $arrow(n)$ points away from $sum$ at all points. Let $arrow(u) = arrow(n)/(||arrow(n)||)$ be the unit exterior normal vector. Let $f = (f_1, f_2, f_3)$ be a vector field of class $C^1$ defined on some open set containing $X$. Then we have $ integral_X "div"(f) d x d y d z = integral_sum (f dot arrow(u)) d sigma. $
 ]
+*/
 
 #pagebreak() // formula collection should start on a new page if enough space is available
 
