@@ -43,6 +43,7 @@
 #let lem(body) = _block(body, stroke: green)
 #let note(body) = _block(body, stroke: orange)
 #let form(body) = _block(body, stroke: black)
+#let not_relevant(body) = _block(body, stroke: (paint: gray, dash: "dashed"))
 #let limit = $attach(lim, tr: x -> x_0, br: x != x_0)$
 
 #underline()[= Analysis II Cheat Sheet]
@@ -404,15 +405,15 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
   $ mat(a,b,c;b,e,f;c,f,i) "positive definite" <=> \ a > 0, space.quad a e - b^2 > 0, space.quad det (A) > 0 $
 ]
 
-/* NOT exam relevant
-== Lagrange Multipliers
+#not_relevant()[
+  == Lagrange Multipliers
 
-Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
+  Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
 
-#lem()[
-  Let $g: X -> RR, f in C^1$. If $x_0 in X$ is a local extremum of the function $f$ restricted to the set $ Y = {x in X: g(x) = 0} $ then either $gradient g(x_0) = 0$, or there exists $lambda in RR$ such that $ cases(gradient f(x_0) = lambda gradient g (x_0), g(x_0) = 0\,) $ or in other words, there exists $lambda$ such that $(x_0, lambda)$ is a critical point of the differentiable function $h: X times RR -> RR$ defined by $ h(x, lambda) = f(x) - lambda g(x). $ Such a value $lambda$ is called a *Lagrange multiplier* at $x_0$.
+  #lem()[
+    Let $g: X -> RR, f in C^1$. If $x_0 in X$ is a local extremum of the function $f$ restricted to the set $ Y = {x in X: g(x) = 0} $ then either $gradient g(x_0) = 0$, or there exists $lambda in RR$ such that $ cases(gradient f(x_0) = lambda gradient g (x_0), g(x_0) = 0\,) $ or in other words, there exists $lambda$ such that $(x_0, lambda)$ is a critical point of the differentiable function $h: X times RR -> RR$ defined by $ h(x, lambda) = f(x) - lambda g(x). $ Such a value $lambda$ is called a *Lagrange multiplier* at $x_0$.
+  ]
 ]
-*/
 
 == Inverse Theorem
 
@@ -426,13 +427,13 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR^n$ be differentiable.
   If $x_0 in X$ is such that $det (J_f (x_0)) != 0$, i.e., such that the Jacobian matrix of $f$ at $x_0$ is invertible, then $f$ is a change of variable around $x_0$. Moreover, the Jacobian of $g$ at $x_0$ is determined by $ J_g (f(x_0)) = J_f (x_0)^(-1). $ In addition, if $f$ is of class $C^k$, then $g$ is of class $C^k$.
 ]
 
-/* NOT exam relevant
-== Implicit Function Theorem
+#not_relevant()[
+  == Implicit Function Theorem
 
-#def()[
-  Let $X subset.eq RR^(n+1)$ be open and let $g: X -> RR$ be of class $C^k$ with $k >= 1$. Let $(x_0, y_0) in RR^n times RR$ be such that $g(x_0, y_0) = 0$. Assume that $ diff_y g(x_0, y_0) != 0. $ Then there exists an open set $U subset.eq RR^n$ containing $x_0$, an open interval $I subset.eq RR$ containing $y_0$, and a function $f: U -> RR$ of class $C^k$ such that the system of equations $ cases(g(x, y) = 0, x in U\, space y in I) $ is equivalent with $y = f(x)$. In particular, $f(x_0) = y_0$. Moreover, the gradient of $f$ at $x_0$ is given by $ gradient f(x_0) = - 1/((diff_y g)(x_0, y_0)) gradient_x g(x_0, y_0), $ where $gradient_x g = (diff_(x_1) g, ..., diff_(x_n) g)$.
+  #def()[
+    Let $X subset.eq RR^(n+1)$ be open and let $g: X -> RR$ be of class $C^k$ with $k >= 1$. Let $(x_0, y_0) in RR^n times RR$ be such that $g(x_0, y_0) = 0$. Assume that $ diff_y g(x_0, y_0) != 0. $ Then there exists an open set $U subset.eq RR^n$ containing $x_0$, an open interval $I subset.eq RR$ containing $y_0$, and a function $f: U -> RR$ of class $C^k$ such that the system of equations $ cases(g(x, y) = 0, x in U\, space y in I) $ is equivalent with $y = f(x)$. In particular, $f(x_0) = y_0$. Moreover, the gradient of $f$ at $x_0$ is given by $ gradient f(x_0) = - 1/((diff_y g)(x_0, y_0)) gradient_x g(x_0, y_0), $ where $gradient_x g = (diff_(x_1) g, ..., diff_(x_n) g)$.
+  ]
 ]
-*/
 
 == Ordinary Differential Equations
 
@@ -643,7 +644,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   If $f$ is a conservative vector field on $X$, then a function $g$ such that $gradient g = f$ is called a *potential* for $f$.
 
   We can use this potential to calculate the line integral:
-  $ 
+  $
     integral_gamma f(s) dot d arrow(s) = integral_gamma gradient g(s) dot d arrow(s) = g(gamma (b)) - g(gamma (a))
   $
 ]
@@ -833,21 +834,21 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   Let $X subset.eq RR^2$ be a compact set with a boundary $diff X$ that is the union of finitely many simple closed parameterized curves $gamma_1, ..., gamma_k$. Assume that $ gamma_i = (gamma_(i,1), gamma_(i,2)) : [a_i, b_i] -> RR^2 $ has the property that $X$ lies always "to the left" of the tangent vector $gamma_i ' (t)$ based at $gamma_i (t)$. Then we have $ "Vol"(X) = sum^k_(i = 1) integral_(gamma_i) x dot d arrow(s) = sum^k_(i = 1) integral^(b_i)_(a_i) gamma_(i,1) (t) gamma_(i,2) ' (t) d t . $
 ]
 
-/* NOT exam relevant
-== The Gauss-Ostrogradski formula
+#not_relevant()[
+  == The Gauss-Ostrogradski formula
 
-#def()[
-  A parameterized surface $sum : [a,b] times [c,d] -> RR^3$ is a $2$-set in $RR^3$ such that the rank of the Jacobian matrix is $2$ at all $(s,t) in ]a,b[ times ]c,d[$.
-]
+  #def()[
+    A parameterized surface $sum : [a,b] times [c,d] -> RR^3$ is a $2$-set in $RR^3$ such that the rank of the Jacobian matrix is $2$ at all $(s,t) in ]a,b[ times ]c,d[$.
+  ]
 
-#def()[
-  Let $x$ and $y$ be two linearly independent vectors in $RR^3$. The *vector product*, or *cross product* $z = x times y$ is the unique vector in $RR^3$ such that $(x,y,z)$ is a basis of $RR^3$ with $det (x,y,z) > 0$, and $ ||z|| = ||x||||y|| sin (theta), $ where $theta$ is the angle between $x$ and $y$.
-]
+  #def()[
+    Let $x$ and $y$ be two linearly independent vectors in $RR^3$. The *vector product*, or *cross product* $z = x times y$ is the unique vector in $RR^3$ such that $(x,y,z)$ is a basis of $RR^3$ with $det (x,y,z) > 0$, and $ ||z|| = ||x||||y|| sin (theta), $ where $theta$ is the angle between $x$ and $y$.
+  ]
 
-#lem()[
-  Let $X subset.eq RR^3$ be a compact set with a boundary $diff X$ that is parameterized surface $sum : [a,b] times [c,d] -> RR^3$. Assume that $sum$ is injective in $]a,b[ times ]c,d[$, and that $sum$ has the property that the normal vector $arrow(n)$ points away from $sum$ at all points. Let $arrow(u) = arrow(n)/(||arrow(n)||)$ be the unit exterior normal vector. Let $f = (f_1, f_2, f_3)$ be a vector field of class $C^1$ defined on some open set containing $X$. Then we have $ integral_X "div"(f) d x d y d z = integral_sum (f dot arrow(u)) d sigma. $
+  #lem()[
+    Let $X subset.eq RR^3$ be a compact set with a boundary $diff X$ that is parameterized surface $sum : [a,b] times [c,d] -> RR^3$. Assume that $sum$ is injective in $]a,b[ times ]c,d[$, and that $sum$ has the property that the normal vector $arrow(n)$ points away from $sum$ at all points. Let $arrow(u) = arrow(n)/(||arrow(n)||)$ be the unit exterior normal vector. Let $f = (f_1, f_2, f_3)$ be a vector field of class $C^1$ defined on some open set containing $X$. Then we have $ integral_X "div"(f) d x d y d z = integral_sum (f dot arrow(u)) d sigma. $
+  ]
 ]
-*/
 
 #pagebreak() // formula collection should start on a new page if enough space is available
 
@@ -1384,21 +1385,21 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 == Examples
-  
+
 #note()[
   === Finding a Potential
-    If $f$ is conservative we can find a potential $g$ s.t $f = gradient g$
-    $
-      f(x,y) = vec(e^(x y) (1 + x y), e^(x y) x^2) eq.quest vec(diff_g / diff_x, diff_g / diff_y) = gradient g
-    $
-    Start with finding the integral for one equation
-    $
-      diff_g / diff_y = e^(x y) x^2 arrow.r.double g(x,y) = integral e^(x y) x^2 d y = x e^(x y) + C(x)
-    $
-    Where $C$ is a helper function / placeholder for the function of $x$. Now we solve the second equation to find $C$
-    $
-      diff_g / diff_x = e^(x y) + x y e^(x y) + C' eq.quest e^(x y) (1 + x y) = f_1(x, y) \
-      arrow.r.double C' = 0 arrow C = "constant"
-    $
-    Since the constant cancels out in differentiation $g$ can easily be used to calculate line integrals for $f$.
+  If $f$ is conservative we can find a potential $g$ s.t $f = gradient g$
+  $
+    f(x,y) = vec(e^(x y) (1 + x y), e^(x y) x^2) eq.quest vec(diff_g / diff_x, diff_g / diff_y) = gradient g
+  $
+  Start with finding the integral for one equation
+  $
+    diff_g / diff_y = e^(x y) x^2 arrow.r.double g(x,y) = integral e^(x y) x^2 d y = x e^(x y) + C(x)
+  $
+  Where $C$ is a helper function / placeholder for the function of $x$. Now we solve the second equation to find $C$
+  $
+    diff_g / diff_x = e^(x y) + x y e^(x y) + C' eq.quest e^(x y) (1 + x y) = f_1(x, y) \
+    arrow.r.double C' = 0 arrow C = "constant"
+  $
+  Since the constant cancels out in differentiation $g$ can easily be used to calculate line integrals for $f$.
 ]
