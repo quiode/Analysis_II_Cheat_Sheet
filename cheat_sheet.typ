@@ -808,6 +808,26 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   \
   \
   In the situation described above, for any continuous function $f$ on $dash(Y)$, we have $ integral_(dash(X)) f(phi (x)) | det (J_phi (x)) | d x = integral_(dash(Y)) f(y) d y. $
+
+  Frequently, we use this to switch to polar coordinates in order to calculate areas of circles. So the following hold:
+
+  $
+    phi vec(x,y) arrow.r vec(r cos (theta), r sin (theta))
+  $
+
+  $
+    J_phi = mat(cos (theta), -r sin (theta); sin (theta), r cos (theta))
+  $
+
+  $
+    |det(J_phi)| = r
+  $
+
+  $
+    d x d y = d r d theta
+  $
+
+  Thus, we can replace $d x d y$ with $r d r d theta$, substitute $x$ and $y$, and adjust the limits of integration accordingly.
 ]
 
 #lem()[
