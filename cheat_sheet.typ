@@ -1010,11 +1010,19 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 === Midnight Formula
 
 #form()[
+  *General*: 
   #columns(2)[
     $ x = (-b plus.minus sqrt(b^2 - 4 a c)) / (2 a) $
+
+    *Simple* ($x^2 + p x + q = 0$):
+    $ x = -p/2 plus.minus sqrt((p/2)^2 - q) $
+
     #colbreak()
     $ b^2 - 4 a c < 0 \ => x "complex" $
+    #linebreak()
+    $ (p/2)^2 - q < 0 \ => x "complex" $
   ]
+
 ]
 
 === Determinant
