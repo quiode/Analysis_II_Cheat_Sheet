@@ -1459,5 +1459,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     arrow.r.l.double A = 1/3 e^(-4), space B = 2/3 e^2 \
     arrow.r.l.double y(x) = 1/3 e^(4 x - 4) + 2/3 e^(2 - 2 x)
   $
+
+  !Todo add example for inhomogeneous part
   
 ]
