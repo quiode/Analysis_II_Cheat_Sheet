@@ -858,7 +858,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 === Functions
 
-#figure(image("images/Functions.svg", width: 100%))
+#figure(image("images/Functions_1.svg", width: 100%))
+#figure(image("images/Functions_2.svg", width: 100%))
 
 === Unit Circle
 
