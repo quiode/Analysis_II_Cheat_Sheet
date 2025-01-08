@@ -287,9 +287,9 @@ Let $X subset.eq RR^n$ be an open set.
 === Hessian Matrix
 
 #def()[
-  Let $f: X -> RR$ a $C^2$ function. For $x in X$, the *Hessian matrix* of $f$ at $x$ is the *symmetric square* matrix
+  Let $f: X -> RR$ a $C^2$ function. For $x_0 in X$, the *Hessian matrix* of $f$ at $x$ is the *symmetric square* matrix
   $ "Hess"_f (x_0) = ((diff^2 f(x_0))/(diff x_i diff x_j))_(1 <= i,j <= n) $
-  We also sometimes write simply $H_f (x)$.
+  We also sometimes write simply $H_f (x_0)$.
 ]
 
 == Taylor Polynomials
