@@ -1434,7 +1434,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #note()[
-  === Solve higher order ODE
+  === Solve homogeneous ODE with starting values
   $
     y'' - 2y' - 8y = 0, space y(1) = 1, space y'(1) = 0 \
   $
@@ -1460,6 +1460,26 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     arrow.r.l.double y(x) = 1/3 e^(4 x - 4) + 2/3 e^(2 - 2 x)
   $
 
-  !Todo add example for inhomogeneous part
+  === Solve inhomogeneous ODE
+  $
+    y'' + y' = x + 1, space y_h = A + B e ^(-x) 
+  $
+  - first solve for $y_h$ as seen in example above
+  - now we can solve for $y_p$. First take "educated guess" \
+  $
+    y_p = a x^2 + b x, space y_p' = 2 a x + b, space y_p'' = 2 a \
+  $
+  Now substitute in given equation \
+  $
+    arrow.r.double 2 a + 2 a x + b = x + 1 \
+    arrow.r.l.double (2a dot x) + (2a + b) = x + 1
+  $
+  So now we have to equations which we can solve for a and b \
+  + $2a dot x = x arrow.r.l.double 2a = 1 arrow.r.l.double a = 1/2$
+  + $2a + b = 1 arrow.r.l.double 1 + b = 1 arrow.r.l.double b = 0$
+  We get $y_p = 1/2 x^2$ and $y = y_h + y_p$
+  $
+    y = A + B e^(-x) + 1/2 x^2
+  $
   
 ]
