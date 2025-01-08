@@ -847,7 +847,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 === Spherical coordinates
 
 #lem()[
-  *Spherical coordinates* $(r, theta, phi)$ in $RR^3$ are useful for integrating over balls centered at $0$, or parts of them. For integrating a function $f$ over a ball $B$ of radius $R$ in $RR^3$, we have the formula $ integral_B f(x,y,z) d x d y d z = integral^R_b integral^(2 pi)_0 integral^(pi)_0 \ f(r cos (theta) sin (phi), r sin (theta) sin (phi), r cos(phi)) r^2 sin (phi) \ d phi d theta  d r $
+  *Spherical coordinates* $(r, theta, phi)$ in $RR^3$ are useful for integrating over balls centered at $0$, or parts of them. For integrating a function $f$ over a ball $B$ of radius $R$ in $RR^3$, we have the formula $ integral_B f(x,y,z) d x d y d z = integral^R_b integral^(2 pi)_0 integral^(pi)_0 \ f(r cos (theta) sin (phi), r sin (theta) sin (phi), r cos(phi)) \ r^2 sin (phi) d phi d theta  d r $
+  Where $theta$ is the rotation in the plain and $phi$ is the angle from the z-achsis.
 ]
 
 == Green's Formula
