@@ -371,11 +371,11 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
   $ mat(a,b;b,d) "indefinite" <=> a d - b^2 < 0 $
 
   === Summary
-  Let y be a critical point so that $gradient f(y) = 0$
-  - $H_f(y)$ pos def $arrow.r.double$ y lok Min $arrow.r.double$ $H_f(y)$ pos semidef
-  - $H_f(y)$ neg def $arrow.r.double$ y lok Max $arrow.r.double$ $H_f(y)$ neg semidef
-  - $H_f(y)$ indef $arrow.r.double$ y saddle
-  - $det(H_f(y)) = 0$ $arrow.r.double$ y is degenerated
+  Let $y$ be a critical point such that $gradient f(y) = 0$, then
+  - $H_f(y)$ pos. def. $arrow.r.double$ $y$ loc. min. $arrow.r.double$ $H_f(y)$ pos. semidef.
+  - $H_f(y)$ neg. def. $arrow.r.double$ $y$ loc. max. $arrow.r.double$ $H_f(y)$ neg. semidef.
+  - $H_f(y)$ indef. $arrow.r.double$ $y$ saddle
+  - $det(H_f(y)) = 0$ $arrow.r.double$ $y$ is degenerated
 
   #diagram(
     node-stroke: black + 0.5pt,
@@ -674,15 +674,16 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     node((0, 0), [$f$ = $gradient g$]),
     node((1, 1), [$f$ conservative]),
     node((1, 0), [$integral_gamma f(s) dot d arrow(s) = 0$]),
-    node((0, 2), [$JJ_f$ symmetric]),
+    node((0, 2), [$J_f$ symmetric]),
     node((1, 2), [curl $f = 0$]),
 
     // Edges
     edge((0, 0), (1, 1), "<|-|>", stroke: green + 0.5pt),
     edge((1, 1), (1, 0), "<|-|>", stroke: green + 0.5pt),
+    edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
     edge((1, 1), (0, 2), "-|>", stroke: green + 0.5pt),
     edge((0, 2), (1, 1), "-|>", label: "if U is star-shaped", stroke: blue + 0.5pt, bend: 30deg),
-    edge((1, 2), (0, 2), "<|-|>", label: "n = 3", stroke: orange + 0.5pt), 
+    edge((1, 2), (0, 2), "<|-|>", label: "n = 3", stroke: orange + 0.5pt),
   )
 ]
 
@@ -782,7 +783,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #def()[
-  Let $f: [a, infinity] arrow.r$ be continuous, then 
+  Let $f: [a, infinity] arrow.r$ be continuous, then
   $
     integral_([a, infinity] times [c, d]) f(x,y) d x d y := lim_(b arrow.r infinity) integral_([a, b] times [c, d]) f(x,y) d x d y
   $
@@ -1010,19 +1011,19 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 === Midnight Formula
 
 #form()[
-  *General*: 
+  ==== General ($a x^2 + b x + c = 0$)
   #columns(2)[
     $ x = (-b plus.minus sqrt(b^2 - 4 a c)) / (2 a) $
-
-    *Simple* ($x^2 + p x + q = 0$):
-    $ x = -p/2 plus.minus sqrt((p/2)^2 - q) $
-
     #colbreak()
     $ b^2 - 4 a c < 0 \ => x "complex" $
-    #linebreak()
-    $ (p/2)^2 - q < 0 \ => x "complex" $
   ]
 
+  === Simple ($x^2 + p x + q = 0$)
+  #columns(2)[
+    $ x = -p / 2 plus.minus sqrt((p/2)^2 - q) $
+    #colbreak()
+    $ (p / 2)^2 - q < 0 \ => x "complex" $
+  ]
 ]
 
 === Determinant
