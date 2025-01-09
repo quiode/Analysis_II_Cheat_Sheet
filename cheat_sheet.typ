@@ -1456,16 +1456,16 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #note()[
   === Solve homogeneous ODE with initial values
   $
-    y'' - 2y' - 8y = 0, space y(1) = 1, space y'(1) = 0 \
+    y'' - 2y' - 8y = 0, space y(1) = 1, space y'(1) = 0 
   $
-  We can now use the characterisitc polynomial to solve for $P(alpha) = 0$ and substitute $y = e^(lambda x)$ so we get \
+  We can now use the characterisitc polynomial to solve for $P(alpha) = 0$ and substitute $y = e^(lambda x)$ so we get 
   $
     arrow.r.l.double lambda^2 e^(lambda x) - 2 lambda e^(lambda x) - 8 e^(lambda x) = 0 \
     arrow.r.l.double lambda^2 - 2 lambda - 8 = 0 \
     arrow.r.l.double (lambda - 4) (lambda + 2) = 0
   $
   With solutions: $lambda_1 = 4, space lambda_2 = -2$ \
-  We can now formulate the solution and solve for the initial values
+  Formulate the solution base and solve for the constants with the initial values
   $
     y(x) = A e^(4 x) + B e^(-2 x) \
     y(1) = A e^(4) + B e^(-2) eq.quest 1 \
@@ -1473,7 +1473,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     y'(x) = 4 A e^(4 x) - 2 B e^(-2 x) \
     y'(1) = 4 A e^(4) - 2 B e^(-2) eq.quest 0
   $
-  We can solve the equation system y(1) and y'(1) and get \
+  Solve the LSE y(1) and y'(1) to get
   $
     2*y(1) + y(2) arrow.r.l.double 6 A e^4 = 2 \
     arrow.r.l.double A = 1/3 e^(-4), space B = 2/3 e^2 \
@@ -1484,17 +1484,17 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     y'' + y' = x + 1, space y_h = A + B e ^(-x) 
   $
-  - first solve for $y_h$ as seen in example above
-  - now we can solve for $y_p$. First take "educated guess" \
+  First solve for $y_h$ as seen in example before \
+  Solve for $y_p$. First take "educated guess"
   $
-    y_p = a x^2 + b x, space y_p ' = 2 a x + b, space y_p '' = 2 a \
+    y_p = a x^2 + b x, space y_p ' = 2 a x + b, space y_p '' = 2 a
   $
-  Now substitute in given equation \
+  Substitute in given equation
   $
     arrow.r.double 2 a + 2 a x + b = x + 1 \
     arrow.r.l.double (2a dot x) + (2a + b) = x + 1
   $
-  So now we have to equations which we can solve for a and b \
+  Solve the LSE for a and b
   + $2a dot x = x arrow.r.l.double 2a = 1 arrow.r.l.double a = 1/2$
   + $2a + b = 1 arrow.r.l.double 1 + b = 1 arrow.r.l.double b = 0$
   We get $y_p = 1/2 x^2$ and $y = y_h + y_p$
@@ -1514,22 +1514,23 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   First isolate y', then seperate y and x, finally integrate and solve for y and *dont forget the constant*
   $
     arrow.r.l.double y' = - (1 / (x^2 + 1)) dot y^2 \
-    arrow.r.l.double d y / d x dot 1 / y^2= - (1 / (x^2 + 1)) \
+    arrow.r.l.double (d y) / (d x) dot 1 / y^2= - (1 / (x^2 + 1)) \
     arrow.r.l.double integral 1 / y^2 d y = integral - (1 / (x^2 + 1)) d x \
     arrow.r.l.double -(1 / y) = - arctan (x) + c \
-    arrow.r.l.double y = 1 / arctan (x) + c, space c in RR
+    arrow.r.l.double y = 1 / (arctan (x)) + c, space c in RR
   $
 
   === variation of constants (inhomogeneous solution)
   $
     sin (x) y' + cos (x) y = e^x
   $
-  - first find a homogeneous solution $y_h = C / sin (x)$ \
-  - Use $y_h$ as substitution to find $y_p$ "guess the function"
+  first find a homogeneous solution $y_h = C / (sin (x))$ \
+  Use $y_h$ as substitution to find $y_p$ "guess the function"
   $
-    y_p = (C (x)) / sin (x), space y_p' = C' / (sin (x)) - (C cos (x)) / (sin^2 (x))
+    y_p = (C (x)) / (sin (x)), space y_p' = C' / (sin (x)) - (C cos (x)) / (sin^2 (x))
   $
-  - Now substitute back in the inhomogeneous equation and solve for C
+
+  Now substitute back in the inhomogeneous equation and solve for C
   $
     sin (x) (C' / (sin (x)) - (C cos (x)) / (sin^2 (x))) + cos (x) C / (sin (x)) = e^x \
     arrow.r.double C' = e^x arrow.r.double C (x) = integral e^x d x = e^x \
@@ -1541,7 +1542,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     y' = 1/2 (y^2 / x^2 + 1)
   $
-  We can now use the following substitution (see table) 
+  Use a suitable substitution from the table here $y' = h(y / x)$ 
   $ 
     z(x) = y / x, space y' = z + x z' \
     z + x z' = 1 / 2 (z^2 + 1) arrow.r.double z' = 1 / (2 x) (z - 1)^2
