@@ -288,7 +288,7 @@ Let $X subset.eq RR^n$ be an open set.
 
 #def()[
   Let $f: X -> RR$ a $C^2$ function. For $x_0 in X$, the *Hessian matrix* of $f$ at $x_0$ is the *symmetric square* matrix
-  $ "Hess"_f (x_0) = ((diff^2 f(x_0))/(diff x_i diff x_j))_(1 <= i,j <= n) $
+  $ "Hess"_f (x_0) = ((diff^2 f(x_0)) / (diff x_i diff x_j))_(1 <= i,j <= n) $
   We also sometimes write simply $H_f (x_0)$.
   *Reminder:* Use Taylor polynomials (up to second order) if a specific value for $x_0$ is provided, to simplify the identification of differences.
 ]
@@ -993,7 +993,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   === Inverse
 
   $
-    cos (x) = cos (-x) &, space sin (x) = sin (-x) \
+    cos (x) = cos (-x) &, space - sin (x) = sin (-x) \
     cos (pi - x) = -cos (x) &, space sin (pi - x) = sin (x) \
     |sin (x)| lt.eq.slant x
   $
@@ -1125,9 +1125,9 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #form()[
   $
     e^x &= 1 &&+ x + x^2 / 2 + x^3 / 3! + x^4 / 4! + O(x^5) \
-    sin (x) &= x &&- x^3 / 3! + x^5 / 5! + O(x^7) = sum_(i=0)^infinity ((-1)^i x^(2i + 1))/((2i + 1)!)\
+    sin (x) &= x &&- x^3 / 3! + x^5 / 5! + O(x^7) = sum_(i=0)^infinity ((-1)^i x^(2i + 1)) / ((2i + 1)!)\
     sinh (x) &= x &&+ x^3 / 3! + x^5 / 5! + O(x^7)\
-    cos (x) &= 1 &&- x^2 / 2 + x^4 / 4! - x^6 / 6! + O(x^8) = sum_(i=0)^infinity ((-1)^i x^(2i))/((2i)!)\
+    cos (x) &= 1 &&- x^2 / 2 + x^4 / 4! - x^6 / 6! + O(x^8) = sum_(i=0)^infinity ((-1)^i x^(2i)) / ((2i)!)\
     cosh (x) &= 1 &&+ x^2 / 2 + x^4 / 4! + x^6 / 6! + O(x^8) \
     tan (x) &= x &&+ x^3 / 3 + (2 x^5) / 15 + O(x^7) \
     tanh (x) &= x &&- x^3 / 3 + (2 x^5) / 15 + O(x^7) \
@@ -1441,7 +1441,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #form()[
   === Guesses for $y_p (x)$
-  
+
   $
     sum_(i=0)^m A_i x^i \
     e^(alpha x) sum_(i=0)^m A_i x^i \
@@ -1451,14 +1451,14 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
 ]
 
-==  LDE with constant coefficients
+== LDE with constant coefficients
 
 #note()[
   === Solve homogeneous ODE with initial values
   $
-    y'' - 2y' - 8y = 0, space y(1) = 1, space y'(1) = 0 
+    y'' - 2y' - 8y = 0, space y(1) = 1, space y'(1) = 0
   $
-  We can now use the characterisitc polynomial to solve for $P(alpha) = 0$ and substitute $y = e^(lambda x)$ so we get 
+  We can now use the characterisitc polynomial to solve for $P(alpha) = 0$ and substitute $y = e^(lambda x)$ so we get
   $
     arrow.r.l.double lambda^2 e^(lambda x) - 2 lambda e^(lambda x) - 8 e^(lambda x) = 0 \
     arrow.r.l.double lambda^2 - 2 lambda - 8 = 0 \
@@ -1469,20 +1469,19 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     y(x) = A e^(4 x) + B e^(-2 x) \
     y(1) = A e^(4) + B e^(-2) eq.quest 1 \
-
     y'(x) = 4 A e^(4 x) - 2 B e^(-2 x) \
     y'(1) = 4 A e^(4) - 2 B e^(-2) eq.quest 0
   $
   Solve the LSE y(1) and y'(1) to get
   $
     2*y(1) + y(2) arrow.r.l.double 6 A e^4 = 2 \
-    arrow.r.l.double A = 1/3 e^(-4), space B = 2/3 e^2 \
-    arrow.r.l.double y(x) = 1/3 e^(4 x - 4) + 2/3 e^(2 - 2 x)
+    arrow.r.l.double A = 1 / 3 e^(-4), space B = 2 / 3 e^2 \
+    arrow.r.l.double y(x) = 1 / 3 e^(4 x - 4) + 2 / 3 e^(2 - 2 x)
   $
 
   === Solve inhomogeneous ODE
   $
-    y'' + y' = x + 1, space y_h = A + B e ^(-x) 
+    y'' + y' = x + 1, space y_h = A + B e^(-x)
   $
   First solve for $y_h$ as seen in example before \
   Solve for $y_p$. First take "educated guess"
@@ -1495,18 +1494,18 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     arrow.r.l.double (2a dot x) + (2a + b) = x + 1
   $
   Solve the LSE for a and b
-  + $2a dot x = x arrow.r.l.double 2a = 1 arrow.r.l.double a = 1/2$
+  + $2a dot x = x arrow.r.l.double 2a = 1 arrow.r.l.double a = 1 / 2$
   + $2a + b = 1 arrow.r.l.double 1 + b = 1 arrow.r.l.double b = 0$
   We get $y_p = 1/2 x^2$ and $y = y_h + y_p$
   $
-    y = A + B e^(-x) + 1/2 x^2
+    y = A + B e^(-x) + 1 / 2 x^2
   $
-  
+
 ]
 
 == ODE of Order 1
 
-#note()[ 
+#note()[
   === separation of variable (homogeneous solution)
   $
     (x^2 + 1) y' + y^2 = 0
@@ -1540,17 +1539,17 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   === substitution (simplify to use seperaton of variables)
   if the ODE doesnt seem seperable, we can use substitution to simplify the equation and get a solution
   $
-    y' = 1/2 (y^2 / x^2 + 1)
+    y' = 1 / 2 (y^2 / x^2 + 1)
   $
-  Use a suitable substitution from the table here $y' = h(y / x)$ 
-  $ 
+  Use a suitable substitution from the table here $y' = h(y / x)$
+  $
     z(x) = y / x, space y' = z + x z' \
     z + x z' = 1 / 2 (z^2 + 1) arrow.r.double z' = 1 / (2 x) (z - 1)^2
   $
   With this simplification we can use seperation of variable
   $
     arrow.r.double (d z) / (d x) = 1 / (2 x) (z - 1)^2 arrow.r.double integral 1 / ((z-1)^2) d z = integral 1 / (2 x) d x \
-    arrow.r.double (-1) / (z - 1) = (log (x)) / 2  + C arrow.r.double z = 1 - (2 / (log (x)) + C)
+    arrow.r.double (-1) / (z - 1) = (log (x)) / 2 + C arrow.r.double z = 1 - (2 / (log (x)) + C)
   $
   Lastly we backsubstitute with $y(x) = x z(x)$
   $
