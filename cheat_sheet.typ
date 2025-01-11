@@ -336,6 +336,29 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
 
 #note()[
   When we want to find the Taylor Polynomial of $n$-th order of a function that consists of other functions with already known (Taylor) Polynomials, we can just replace each function with their respective Taylor Polynomial and "ignore" all terms with order higher than $n$.
+  $
+    T_n [f±g](x) = T_n [f](x) ± T_n [g](x) \
+    T_n [f⋅g](x) = T_n [f](x) dot T_n [g](x)
+  $
+]
+
+=== Landau Notation
+#def()[
+  $
+    U subset.eq RR^m, space h: U arrow.r RR, space y in U. space "then:" \
+    o(h) = {f: U arrow.r RR | lim^(x arrow.r y)_(x eq.not y) f(x) / h(x) = 0}
+  $
+
+  $o(h)$ describes the set of functions that approach 0 faster than h as $x arrow.r y$
+]
+
+#lem()[
+  $
+    lambda o(h) + mu o(h) &subset.eq o(h) space "for" lambda, mu in RR\
+    g dot o(h) &subset.eq o(g) dot o(h) subset.eq o(g dot h) \
+    o(o(h)) &subset.eq o(h) \
+    o(||x - y||^d) &subset.eq o(||x - y||^e) space "for" e lt.eq d
+  $
 ]
 
 == Critical Points
@@ -1124,17 +1147,20 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #form()[
   $
-    e^x &= 1 &&+ x + x^2 / 2 + x^3 / 3! + x^4 / 4! + O(x^5) \
-    sin (x) &= x &&- x^3 / 3! + x^5 / 5! + O(x^7) = sum_(i=0)^infinity ((-1)^i x^(2i + 1)) / ((2i + 1)!)\
-    sinh (x) &= x &&+ x^3 / 3! + x^5 / 5! + O(x^7)\
-    cos (x) &= 1 &&- x^2 / 2 + x^4 / 4! - x^6 / 6! + O(x^8) = sum_(i=0)^infinity ((-1)^i x^(2i)) / ((2i)!)\
-    cosh (x) &= 1 &&+ x^2 / 2 + x^4 / 4! + x^6 / 6! + O(x^8) \
-    tan (x) &= x &&+ x^3 / 3 + (2 x^5) / 15 + O(x^7) \
-    tanh (x) &= x &&- x^3 / 3 + (2 x^5) / 15 + O(x^7) \
-    log (1 + x) &= x &&- x^2 / 2 + x^3 / 3 - x^4 / 4 + O(x^5) \
-    (1 + x)^alpha &= 1 &&+ alpha x + (alpha (a - 1)) / (2 !) x^2 \ & &&+ (alpha (alpha - 1)(alpha - 2)) / (3!) x^3 + O(x^4) \
-    sqrt(1+x) &= 1 &&+ x / 2 - x^2 / 8 + x^3 / 16 - O(x^4) \
-    e^(-x) &= 1 &&- x + x^2 / 2 - x^3 / 6 + x^4 / 24 + O(x^5)
+    e^x &= 1 &&+ x + x^2 / 2 + x^3 / 3! + x^4 / 4! + o(x^4) = sum_(i=0)^infinity x^i / i! \
+    sin (x) &= x &&- x^3 / 3! + x^5 / 5! + o(x^5) = sum_(i=0)^infinity ((-1)^i x^(2i + 1)) / ((2i + 1)!)\
+    sinh (x) &= x &&+ x^3 / 3! + x^5 / 5! + o(x^5)\
+    cos (x) &= 1 &&- x^2 / 2 + x^4 / 4! - x^6 / 6! + o(x^6) = sum_(i=0)^infinity ((-1)^i x^(2i)) / ((2i)!)\
+    cosh (x) &= 1 &&+ x^2 / 2 + x^4 / 4! + x^6 / 6! + o(x^6) \
+    tan (x) &= x &&+ x^3 / 3 + (2 x^5) / 15 + o(x^5) \
+    tanh (x) &= x &&- x^3 / 3 + (2 x^5) / 15 + o(x^5) \
+    log (1 + x) &= x &&- x^2 / 2 + x^3 / 3 - x^4 / 4 + o(x^4) \
+    (1 + x)^alpha &= 1 &&+ alpha x + (alpha (a - 1)) / (2 !) x^2 \ & &&+ (alpha (alpha - 1)(alpha - 2)) / (3!) x^3 + o(x^3) \
+    sqrt(1+x) &= 1 &&+ x / 2 - x^2 / 8 + x^3 / 16 - o(x^3) \
+    e^(-x) &= 1 &&- x + x^2 / 2 - x^3 / 6 + x^4 / 24 + o(x^4) \
+  $
+  $
+    1 / (1 - x) = 1 + x + x^2 + o(x^2) = sum_(i=0)^infinity x^i
   $
 ]
 
