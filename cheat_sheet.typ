@@ -1156,7 +1156,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     cosh (x) &= 1 &&+ x^2 / 2 + x^4 / 4! + x^6 / 6! + o(x^6) \
     tan (x) &= x &&+ x^3 / 3 + (2 x^5) / 15 + o(x^5) \
     tanh (x) &= x &&- x^3 / 3 + (2 x^5) / 15 + o(x^5) \
-    log (1 + x) &= x &&- x^2 / 2 + x^3 / 3 - x^4 / 4 + o(x^4) \
+    ln (1 + x) &= x &&- x^2 / 2 + x^3 / 3 - x^4 / 4 + o(x^4) \
     (1 + x)^alpha &= 1 &&+ alpha x + (alpha (a - 1)) / (2 !) x^2 \ & &&+ (alpha (alpha - 1)(alpha - 2)) / (3!) x^3 + o(x^3) \
     sqrt(1+x) &= 1 &&+ x / 2 - x^2 / 8 + x^3 / 16 - o(x^3) \
     e^(-x) &= 1 &&- x + x^2 / 2 - x^3 / 6 + x^4 / 24 + o(x^4) \
