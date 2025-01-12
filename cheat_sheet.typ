@@ -1447,6 +1447,33 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
 ]
 
+=== Useful Substitutions
+
+#form()[
+  If y' is of form... substitute with: \
+  ==== *$y' = h (y / x)$:*
+  $
+    z(x) = y / x, space y(x) = x z, space y' = z + x z'
+  $
+  ==== *$y' = h(a x + b y + c)$:*
+  $
+    z(x) = a x + b y + c, space y(x) = (z - a x - c) / b, space y' = (z' - a) / b
+  $
+  ==== *$y' = h((a x + b y + c) / (d x + c y + f))$:*
+  First check det if solution is unique then solve the LSE
+  $
+    det(mat(a, b; d, e)) eq.not 0 \
+    a x + b y + c = 0, space d x + e y + f = 0 space "solve for" (x_0, y_0)
+  $
+  $
+    y = z + y_0, space x = t - x_0, space y' = z'
+  $
+  ==== *$y' = y / x h(x y)$:*
+  $
+    z(x) = x y, space y(x) = z / x, space y' = (x z' - z) / x^2
+  $
+]
+
 == Examples
 
 #note()[
@@ -1486,7 +1513,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     y'' - 2y' - 8y = 0, space y(1) = 1, space y'(1) = 0
   $
-  We can now use the characterisitc polynomial to solve for $P(alpha) = 0$ and substitute $y = e^(lambda x)$ so we get
+  We can now use the characteristic polynomial to solve for $P(alpha) = 0$ and substitute $y = e^(lambda x)$ so we get
   $
     arrow.r.l.double lambda^2 e^(lambda x) - 2 lambda e^(lambda x) - 8 e^(lambda x) = 0 \
     arrow.r.l.double lambda^2 - 2 lambda - 8 = 0 \
@@ -1534,11 +1561,11 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 == ODE of Order 1
 
 #note()[
-  === separation of variable (homogeneous solution)
+  === Separation of Variable (Homogeneous Solution)
   $
     (x^2 + 1) y' + y^2 = 0
   $
-  First isolate y', then seperate y and x, finally integrate and solve for y and *dont forget the constant*
+  First isolate $y'$, then separate $y$ and $x$, finally integrate and solve for $y$ and *don't forget the constant*
   $
     arrow.r.l.double y' = - (1 / (x^2 + 1)) dot y^2 \
     arrow.r.l.double (d y) / (d x) dot 1 / y^2= - (1 / (x^2 + 1)) \
@@ -1547,7 +1574,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     arrow.r.l.double y = 1 / (arctan (x)) + c, space c in RR
   $
 
-  === variation of constants (inhomogeneous solution)
+  === Variation of Constants (Inhomogeneous Solution)
   $
     sin (x) y' + cos (x) y = e^x
   $
@@ -1564,8 +1591,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     arrow.r.double y_p (x) = e^x / (sin (x)) arrow.r.double y = y_h + y_p = (C + e^x) / (sin (x))
   $
 
-  === substitution (simplify to use seperaton of variables)
-  if the ODE doesnt seem seperable, we can use substitution to simplify the equation and get a solution
+  === Substitution (Simplify to use Separation of Variables)
+  if the ODE doesn't seem separable, we can use substitution to simplify the equation and get a solution
   $
     y' = 1 / 2 (y^2 / x^2 + 1)
   $
@@ -1574,7 +1601,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     z(x) = y / x, space y' = z + x z' \
     z + x z' = 1 / 2 (z^2 + 1) arrow.r.double z' = 1 / (2 x) (z - 1)^2
   $
-  With this simplification we can use seperation of variable
+  With this simplification we can use separation of variable
   $
     arrow.r.double (d z) / (d x) = 1 / (2 x) (z - 1)^2 arrow.r.double integral 1 / ((z-1)^2) d z = integral 1 / (2 x) d x \
     arrow.r.double (-1) / (z - 1) = (log (x)) / 2 + C arrow.r.double z = 1 - (2 / (log (x)) + C)
@@ -1582,32 +1609,5 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   Lastly we backsubstitute with $y(x) = x z(x)$
   $
     y(x) = x - (2 x) / (log (x) + C)
-  $
-]
-
-=== Useful substitutions
-
-#form()[
-  If y' is of form... substitute with: \
-  ==== *$y' = h (y / x)$:*
-  $
-    z(x) = y / x, space y(x) = x z, space y' = z + x z'
-  $
-  ==== *$y' = h(a x + b y + c)$:*
-  $
-    z(x) = a x + b y + c, space y(x) = (z - a x - c) / b, space y' = (z' - a) / b
-  $
-  ==== *$y' = h((a x + b y + c) / (d x + c y + f))$:*
-  First check det if solution is unique then solve the LSE
-  $
-    det(mat(a, b; d, e)) eq.not 0 \
-    a x + b y + c = 0, space d x + e y + f = 0 space "solve for" (x_0, y_0)
-  $
-  $
-    y = z + y_0, space x = t - x_0, space y' = z'
-  $
-  ==== *$y' = y / x h(x y)$:*
-  $
-    z(x) = x y, space y(x) = z / x, space y' = (x z' - z) / x^2
   $
 ]
