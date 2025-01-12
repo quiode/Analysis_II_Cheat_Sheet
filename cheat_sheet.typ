@@ -492,9 +492,9 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #note[
-  *Solution strategy (very general, not concrete)*:
-  1. Find a basis $f_1, dots, f_k$ of the solution space $S$ of the homoginous ODE.
-  2. Find particular solution $f_0$ of the homoginous ODE.
+  === General Solution Strategy
+  1. Find a basis $f_1, dots, f_k$ of the solution space $S$ of the homogenous ODE.
+  2. Find particular solution $f_0$ of the homogenous ODE.
     The general solution is given by: $f_0 + sum_(i = 1)^k lambda_i f_i$
   3. (Plug in initial values and solve LSE to obtain (some) $lambda_1, dots, lambda_k$)
 ]
@@ -552,13 +552,13 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   + Solving the homogeneous equation $y' + a y = 0$.
   + Finding a solution $f_'$ of the inhomogeneous equation, so that the set $S_b$ contains exactly the functions $f_0 + f$ where $f in S$.
 
-  === Step 1 (solving the homogeneous equation)
+  === Step 1 (Solving the Homogeneous Equation)
   #lem()[
     Any solution of $y' + a y = 0$ is of the form $f(x) = z exp (- A(x))$ where $A$ is a primitive of $a$. The unique solution with $f(x_0) = y_0$ is $ f(x) = y_0 exp (A(x_0) - A(x)). $
   ]
 
-  === Step 2 (solving the inhomogeneous equation)
-  *variation of constants*: \
+  === Step 2 (Solving the Inhomogeneous Equation)
+  ==== Variation of Constants
   $
     f(x) = z(x) e^(-A(x)) &<==> z "is antiderivative of" e^A b
   $
@@ -570,9 +570,9 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #note[
   $y^((k)) + a_(k-1)y^((k-1)) + dots + a_0y = b$ with $a_(k-1), dots, a_0 in CC$ and constant, $b: I -> CC$ continuous.
 
-  === Step 1 (homogeneous ODE) $y = e^(alpha x), alpha in CC$
+  === Step 1 (Homogeneous ODE) $y = e^(alpha x), alpha in CC$
   #def[
-    === characterisitc polynomial of the linear ODE
+    === Characteristic Polynomial of the Linear ODE
     $P(t) = t^k + a_(k - 1) t^(k-1) + dots + a_0$
 
     $
@@ -585,28 +585,30 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   The basis of the solution space is given by
   ${ x^j e^(alpha_i x) | 1 <= i <= l, 0 <= j < v_(i-1) }$
 
-  === Step 2 (inhomogeneous ODE)
+  ==== Real Valued Solution
+
+  To convert a complex solution to a real valued one, replace $x^k e^((a + i b) x)$ and $x^k e^((a - i b)x)$ by $x^k e^(a x) cos (b x)$ and $x^k e^(a x) sin (b x)$.
+
+  === Step 2 (Inhomogeneous ODE)
   #def[
-    *Superposition principle*:
+    ==== Superposition Principle
     $
       f_0 &"sol of ODE with inhomogeneity" &&b, \
       g_0 & wide #line(length: 20%) '' #line(length: 20%) &&c \
       lambda f_0 + mu g_0 & wide #line(length: 20%) '' #line(length: 20%)  &&lambda b + lambda mu
     $
   ]
-  ==== method of undetermined coefficients
-  *Idea*: find a solution of the "same type" as the inhomogeneity $b(x)$
+  ==== Method of Undetermined Coefficients
+  / Idea: find a solution of the "same type" as the inhomogeneity $b(x)$
+  / Case: $b(x) = x^d e^(alpha x)$
 
-  *Case*: $b(x) = x^d e^(alpha x)$ \
-  $==> "solution" f_0(x) = Q(x)e^(alpha x)$ with polynomial $Q$, $deg Q <= d + j$ where $alpha$ zero of $P$ with mult. of $j$
-
-  *Case* $b(x) = x^d cos(alpha x)$ or $b(x) = x^d sin(alpha x)$ \
-  $==> "solution" f_0(x) = Q_1(x)cos(alpha x) + Q_2(x) sin(alpha x)$
-  where $Q_1, Q_2$ are polynomials with $deg <= d + j$ where $alpha$ is zero of $P$ with mult. $j$.
+    $==> "solution" f_0(x) = Q(x)e^(alpha x)$ with polynomial $Q$, $deg Q <= d + j$ where $alpha$ zero of $P$ with mult. of $j$
+  / Case: $b(x) = x^d cos(alpha x)$ or $b(x) = x^d sin(alpha x)$
+    
+    $==> "solution" f_0(x) = Q_1(x)cos(alpha x) + Q_2(x) sin(alpha x)$ where $Q_1, Q_2$ are polynomials with $deg <= d + j$ where $alpha$ is zero of $P$ with mult. $j$.
 
 
 ]
-
 
 == Line Integrals
 
