@@ -1412,29 +1412,29 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   ==== Ellipse
   ===== Clockwise
   $
-    x = a dot cos (t), space y = -b dot sin (t)
+    x = x_0 + a dot cos (t), space y = y_0 - b dot sin (t)
   $
   ===== Counter-clockwise
   $
-    x = a dot cos (t), space y = b dot sin (t)
+    x = x_0 + a dot cos (t), space y = y_0 + b dot sin (t)
   $
 
   $
-    gamma: [0 ; 2 pi] arrow.r (a dot cos (t), plus.minus b dot sin (t))
+    gamma: [0 ; 2 pi] arrow.r (x_0 + a dot cos (t), y_0 plus.minus b dot sin (t))
   $
 
   ==== Circle
   ===== Clockwise
   $
-    x = r dot cos (t), space y = -r dot sin (t)
+    x = x_0 + r dot cos (t), space y = y_0 - r dot sin (t)
   $
   ====== Counter-clockwise
   $
-    x = r dot cos (t), space y = r dot sin (t)
+    x = x_0 + r dot cos (t), space y = y_0 + r dot sin (t)
   $
 
   $
-    gamma: [0 ; 2 pi] arrow.r (r dot cos (t), plus.minus r dot sin (t))
+    gamma: [0 ; 2 pi] arrow.r (x_0 + r dot cos (t), y_0 plus.minus r dot sin (t))
   $
 
   ==== Line-Segment
