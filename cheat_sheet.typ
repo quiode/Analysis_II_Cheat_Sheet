@@ -685,7 +685,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #lem()[
-  Let $X subset.eq RR^n$ be an open set and $f: X -> RR^n$ a vector field of class $C^1$. Write $f(x)= (f_1(x), ..., f_n(x)).$ If *$f$ is conservative*, then we have (a symmetric Jacobi Matrix for all $x in U$)$ (diff f_i) / (diff x_j) = (diff f_j) / (diff x_i) $ for any integers with $1 <= i != j <= n$.
+  Let $X subset.eq RR^n$ be an open set and $f: X -> RR^n$ a vector field of class $C^1$. Write $f(x)= (f_1 (x), ..., f_n (x)).$ If *$f$ is conservative*, then we have (a symmetric Jacobi Matrix for all $x in U$)$ (diff f_i) / (diff x_j) = (diff f_j) / (diff x_i) $ for any integers with $1 <= i != j <= n$.
 ]
 
 #def()[
