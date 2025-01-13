@@ -171,7 +171,7 @@ Let $X subset.eq RR^n$ be an open set.
 #def()[
   + Let $f: X -> RR$ be a function. If all partial derivatives of $f$ exists at $x_0 in X$, then the column vector $ mat(diff_(x_1) f(x_0); ...; diff_(x_n) f(x_0)) $ if called the *gradient* of $f$ at $x_0$, and is denoted $gradient f(x_0)$.
     + _The gradient indicates the direction of the steepest increase of the function $f$, and its magnitude $|gradient f(x_0)|$ represents the rate of change in that direction._
-    + _The gradient is also normal to the Tangent space_
+    + _The gradient is also normal to the Tangent space._
   + Let $f = (f_1, ..., f_n): X -> RR^n$ be a function with values in $RR^n$ sucht that all partial derivatives of all coordinates $f_i$ of $f$ exists at $x_0 in X$. Then the real number $ "Tr"(J_f (x_0)) = sum^n_(i=1) diff_(x_i) f_i (x_0), $ the trace of the Jacobi matrix, is called the *divergence* of $f$ at $x_0$, and is denoted $"div"(f)(x_0)$.
     + _Divergence measures the rate at which the vector field spreads out (positive value, source) or converges (negative value, sink) into a point._
 ]
@@ -605,7 +605,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
     $==> "solution" f_0(x) = Q(x)e^(alpha x)$ with polynomial $Q$, $deg Q <= d + j$ where $alpha$ zero of $P$ with mult. of $j$
   / Case: $b(x) = x^d cos(alpha x)$ or $b(x) = x^d sin(alpha x)$
-    
+
     $==> "solution" f_0(x) = Q_1(x)cos(alpha x) + Q_2(x) sin(alpha x)$ where $Q_1, Q_2$ are polynomials with $deg <= d + j$ where $alpha$ is zero of $P$ with mult. $j$.
 
 
@@ -677,7 +677,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     integral_gamma f(s) dot d arrow(s) = integral_gamma gradient g(s) dot d arrow(s) = g(gamma (b)) - g(gamma (a))
   $
 
-  To find the potential $g$ for a function s.t $gradient g = f$, we can use the following sheme: \
+  To find the potential $g$ for a function s.t $gradient g = f$, we can use the following scheme: \
   - $diff_(x_1) g = f_1(x_1,...,x_n) arrow.r.l.double \ h := g(x_1,...,x_n) = integral f_1(x_1,...,x_n) d x_1$
   - $diff_(x_2) g = f_2(x_1,...,x_n) arrow.r.double diff_(x_2)h = f_2(x_1,...,x_n)$
   - ...
@@ -875,7 +875,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #lem()[
   *Spherical coordinates* $(r, theta, phi)$ in $RR^3$ are useful for integrating over balls centered at $0$, or parts of them. For integrating a function $f$ over a ball $B$ of radius $R$ in $RR^3$, we have the formula $ integral_B f(x,y,z) d x d y d z = integral^R_0 integral^(2 pi)_0 integral^(pi)_0 \ f(r cos (theta) sin (phi), r sin (theta) sin (phi), r cos(phi)) \ r^2 sin (phi) d phi d theta  d r $
-  Where $theta$ is the rotation in the plain and $phi$ is the angle from the z-achsis.
+  Where $theta$ is the rotation in the plain and $phi$ is the angle from the z-axis.
 ]
 
 == Green's Formula
@@ -889,7 +889,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
   _Note that if this condition is not met, it simply means that one must "reverse" the corresponding curve, e.g., replace $gamma : [0,1] -> RR^2$ by $tilde(gamma) (t) = gamma (1-t)$ for $0 <= t <= 1$, which reverses the orientation of the tangent vector._
 
-  _Intuition: Green's theorem relates the *counterclockwise line integral around the boundary of X* to the behavior of a vector field inside X._
+  _Intuition: Green's theorem relates the *counterclockwise line integral around the boundary of $X$* to the behavior of a vector field inside $X$._
 ]
 
 #lem()[
