@@ -306,7 +306,7 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
   where the last sum ranges over the tuples of $n$ non-negative integers such that the sum is $k$ and y = x - $x_0$.
 
   ==== *$k = 1$*
-  $ T_1 f(y; x_0) = f(x_0) + sum^n_(i=1) diff_(x_i) f(x_0) y_i $
+  $ T_1 f(y; x_0) &= f(x_0) + sum^n_(i=1) diff_(x_i) f(x_0) y_i \ &= f(x_0) + gradient f(x_0) dot y $
 
   ==== *$k = 2$*
   $
