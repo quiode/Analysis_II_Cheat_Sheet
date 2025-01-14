@@ -990,9 +990,28 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
       },
     )
   }
+
+  #columns(2)[
+    #figure(image("images/unit_circle.svg", width: 100%))
+    #figure(image("images/unit_triangle.svg", width: 100%))
+  ]
+
+  *Sources:* #link("https://commons.wikimedia.org/w/index.php?curid=11434668")[Wiki Commons: Dnu72, Pengo] and #link("https://commons.wikimedia.org/wiki/File:Sinus_und_Kosinus_am_Einheitskreis_Einfach_Cos.svg")[Wiki Commons: Yomomo]
 ]
 
 === Trigonometric Functions
+
+#form()[
+  $
+    sin (alpha) &= "opposite" / "hypotenuse" \
+    cos (alpha) &= "adjacent" / "hypotenuse" \
+    tan (alpha) &= (sin (alpha)) / (cos (alpha)) = "opposite" / "adjacent" \
+    cot (alpha) &= (1) / (sin (alpha)) = "hypotenuse" / "opposite" \
+    sec (alpha) &= (1) / (cos (alpha)) = "hypotenuse" / "adjacent" \
+  $
+]
+
+=== Trigonometric Values
 
 #form()[
   $ + pi <=> dot -1 $
@@ -1015,10 +1034,10 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   )
 ]
 
-== Trigonometric Identities
+=== Trigonometric Identities
 
 #form()[
-  === Inverse
+  ==== Inverse
 
   $
     cos (x) = cos (-x) &, space - sin (x) = sin (-x) \
@@ -1026,7 +1045,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     |sin (x)| lt.eq.slant x
   $
 
-  === Doubled Angles
+  ==== Doubled Angles
 
   $
     sin (2 alpha) &= 2 sin (alpha) cos (alpha) \
@@ -1034,7 +1053,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     tan (2 alpha) &= (2 tan (alpha)) / (1 - tan^2 (alpha))
   $
 
-  === Addition / Subtraction
+  ==== Addition / Subtraction
 
   $
     sin (alpha plus.minus beta) &= sin (alpha) cos (beta) plus.minus cos (alpha) sin(beta) \
@@ -1042,7 +1061,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     tan (alpha plus.minus beta) &= (tan (alpha) plus.minus tan (beta)) / (1 minus.plus tan (alpha) tan (beta))
   $
 
-  === Multiplication
+  ==== Multiplication
 
   $
     sin (alpha) sin (beta) &= - (cos (alpha + beta) - cos (alpha - beta)) / 2 \
@@ -1050,7 +1069,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     sin (alpha) cos (beta) &= (sin (alpha + beta) + sin (alpha - beta)) / 2
   $
 
-  === Powers
+  ==== Powers
 
   $
     sin^2 (alpha) &= 1 / 2 (1 - cos (2 alpha)) \
@@ -1061,7 +1080,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     sin^2 (alpha) cos^2 (alpha) &= (1 - cos (4 alpha)) / 8
   $
 
-  === Divers
+  ==== Divers
 
   $
     sin^2 (alpha) + cos^2 (alpha) &= 1 \
