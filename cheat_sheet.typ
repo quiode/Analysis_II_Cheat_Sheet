@@ -248,6 +248,8 @@ Let $X subset.eq RR^n$ be an open set.
   from $RR^n$ to $RR^m$, or in other words the set
   $ {(x,y) in RR^n times RR^m: y = f(x_0) + u(x-x_0)} $
   is called the *tangent space* at $x_0$ to the graph of $f$.
+
+  _The tangent space formula can also be directly derived from the first-order Taylor Polynomial._
 ]
 
 === Directional Derivative
