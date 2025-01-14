@@ -1319,7 +1319,12 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     $(x^(n + 1)) / (n + 1) (ln (x) - 1 / (n + 1))_(n != -1)$, $x^n ln(x)$,
     $(e^(c x) (c sin (a x + b) - a cos (a x + b))) / (a^2 + c^2)$, $e^(c x) sin (a x + b)$,
     $(e^(c x) (c cos (a x + b) + a sin (a x + b))) / (a^2 + c^2)$, $e^(c x) cos ( a x + b)$,
-    $(sin^2 (x)) / 2$, $sin (x) cos (x)$
+    $(sin^(n+1) (x)) / (n+1)$, $sin^n (x) cos (x)$,
+    $- (cos^(n+1) (x)) / (n+1)$, $sin (x) cos^n (x)$,
+    $(4 x - sin (4 x)) / 32$, $sin^2 (x) cos^2 (x)$,
+    $(cos ( 6 x) - 9 cos (2 x)) / 192$, $sin^3 (x) cos^3 (x)$,
+    $(cos^3 (x) (3 cos (2 x) - 7)) / 30$, $sin^3 (x) cos^2 (x)$,
+    $(sin^3 (x) (3 sin (2 x) - 7)) / 30$, $sin^2 (x) cos^3 (x)$,
   )
 ]
 
