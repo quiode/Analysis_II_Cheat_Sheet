@@ -707,7 +707,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #lem()[
-  For a $3$-dimensional vector field, $"curl"(f) = 0$ means precisely that $f$ is conservative.
+  For a $3$-dimensional star-shaped vector field, $"curl"(f) = 0$ means precisely that $f$ is conservative.
 ]
 
 #lem()[
