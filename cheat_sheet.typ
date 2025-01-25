@@ -305,15 +305,20 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
   $
     T_k f(y;x_0) = f(x_0) + sum^n_(i=1) (diff f) / (diff x_i) (x_0) y_i + ... \ + sum_(m_1 + ... + m_n = k) 1 / (m_1 ! dots.c m_n !) (diff^k f) / (diff x_1^(m_1) dots.c diff x_n^(m_n)) (x_0) y_1^(m_1) dots.c y_n^(m_n)
   $
-  where the last sum ranges over the tuples of $n$ non-negative integers such that the sum is $k$ and y = x - $x_0$.
+  where the last sum ranges over the tuples of $n$ non-negative integers such that the sum is $k$ and *$y = x - x_0$*.
 
   ==== *$k = 1$*
-  $ T_1 f(y; x_0) &= f(x_0) + sum^n_(i=1) diff_(x_i) f(x_0) y_i \ &= f(x_0) + gradient f(x_0) dot y $
+  $
+    T_1 f(y; x_0) &= f(x_0) + sum^n_(i=1) diff_(x_i) f(x_0) y_i \
+    &= f(x_0) + gradient f(x_0) dot y \
+    &= f(x_0) + gradient f(x_0) dot (x - x_0)
+  $
 
   ==== *$k = 2$*
   $
     T_2 f(y; x_0) &= f(x_0) &&+ sum^n_(i=1) diff_(x_i) f(x_0) y_i \ & &&+ 1 / 2 sum^n_(i=1) diff^2_(x^2_i) f(x_0) y_i^2 \ & &&+ sum_(1 <= i < j <= n) diff^2_(x_i x_j) f(x_0) y_i y_j \
-    &= f(x_0) &&+ gradient f(x_0) dot y + 1 / 2 y^t "Hess"_f (x_0) y
+    &= f(x_0) &&+ gradient f(x_0) dot y + 1 / 2 y^T "Hess"_f (x_0) y \
+    &= f(x_0) &&+ gradient f(x_0) dot (x - x_0) \ & &&+ 1 / 2 (x - x_0)^T "Hess"_f (x_0) (x - x_0)
   $
   _Note that this can also be used to easily *calculate the Hesse Matrix* from a known Taylor polynomial._
 ]
