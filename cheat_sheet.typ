@@ -4,7 +4,7 @@
 
 // CONFIGURATION
 #set document(
-  author: "Dominik Schwaiger",
+  author: ("Dominik Schwaiger", "Ferdinand Pamberger", "Valentin Kaas", "Julian Paul"),
   keywords: ("Spick", "Analysis", "Analysis II", "ETH", "Prüfung", "Exam", "Cheat Sheet"),
   title: "Analysis II Cheat Sheet",
 )
