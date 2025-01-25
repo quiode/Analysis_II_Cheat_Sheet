@@ -1544,10 +1544,10 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
 ]
 
-== LDE with constant coefficients
+=== LDE with constant coefficients
 
 #note()[
-  === Solve homogeneous ODE with initial values
+  ==== Solve homogeneous ODE with initial values
   $
     y'' - 2y' - 8y = 0, space y(1) = 1, space y'(1) = 0
   $
@@ -1596,10 +1596,10 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 ]
 
-== ODE of Order 1
+=== ODE of Order 1
 
 #note()[
-  === Separation of Variable (Homogeneous Solution)
+  ==== Separation of Variable (Homogeneous Solution)
   $
     (x^2 + 1) y' + y^2 = 0
   $
@@ -1612,7 +1612,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     arrow.r.l.double y = 1 / (arctan (x)) + c, space c in RR
   $
 
-  === Variation of Constants (Inhomogeneous Solution)
+  ==== Variation of Constants (Inhomogeneous Solution)
   $
     sin (x) y' + cos (x) y = e^x
   $
@@ -1629,7 +1629,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     arrow.r.double y_p (x) = e^x / (sin (x)) arrow.r.double y = y_h + y_p = (C + e^x) / (sin (x))
   $
 
-  === Substitution (Simplify to use Separation of Variables)
+  ==== Substitution (Simplify to use Separation of Variables)
   if the ODE doesn't seem separable, we can use substitution to simplify the equation and get a solution
   $
     y' = 1 / 2 (y^2 / x^2 + 1)
@@ -1648,4 +1648,12 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     y(x) = x - (2 x) / (log (x) + C)
   $
+]
+
+=== Cartesian to Polar (or general coordinate-conversion)
+
+#note()[
+  _Given a gradient $gradient f (x_0) = alpha$ of a function in one coordinate system, calculate the gradient $ gradient f (c(x_0))$ of the function but with another coordinate system, assume we are given a function $c(v)$ which maps coordinates from one coordinate system to the other._
+
+  We can use the chain rule to solve this. The gradient of $f(c(x_0))$ is $J_(f(c(x_0))) = J_f (c(x_0)) dot J_c (x_0)$. The value of $J_f (c(x_0))$ should be given in the question. So calculate $J_c (x_0)$ by differentiation, do the dot-product and read the desired value in the resulting matrix.
 ]
