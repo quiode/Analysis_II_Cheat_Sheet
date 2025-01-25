@@ -395,7 +395,7 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
   + Otherwise, equivalent if $p q != 0$, the function $f$ does not have a local extremum at $x_0$. One then says that $f$ has a *saddle point* at $x_0$.
   \
   \
-  The condition $ p = n$ means that the Hessian matrix $H$ at $x_0$ is a *positive definite symmetric matrix* (and $q = n$ means that it is a negative definite matrix). This also means that $y^t H y > 0$ for any non-zero vector $y in RR^n$. When $p q != 0$, the Hessian is also said to be *indefinite*.
+  The condition $p = n$ means that the Hessian matrix $H$ at $x_0$ is a *positive definite symmetric matrix* (and $q = n$ means that it is a negative definite matrix). This also means that $y^T H y > 0$ for any non-zero vector $y in RR^n$. When $p q != 0$, the Hessian is also said to be *indefinite*.
 
   === *$n=2$*
 
