@@ -1483,16 +1483,16 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 === Useful Substitutions
 
 #form()[
-  If y' is of form... substitute with: \
-  ==== *$y' = h (y / x)$:*
+  ==== *If $y'$ is of form *...* substitute with *...* *
+  ===== *$y' = h (y / x)$*
   $
     z(x) = y / x, space y(x) = x z, space y' = z + x z'
   $
-  ==== *$y' = h(a x + b y + c)$:*
+  ===== *$y' = h(a x + b y + c)$*
   $
     z(x) = a x + b y + c, space y(x) = (z - a x - c) / b, space y' = (z' - a) / b
   $
-  ==== *$y' = h((a x + b y + c) / (d x + c y + f))$:*
+  ===== *$y' = h((a x + b y + c) / (d x + c y + f))$*
   First check det if solution is unique then solve the LSE
   $
     det(mat(a, b; d, e)) eq.not 0 \
@@ -1501,7 +1501,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     y = z + y_0, space x = t - x_0, space y' = z'
   $
-  ==== *$y' = y / x h(x y)$:*
+  ===== *$y' = y / x h(x y)$*
   $
     z(x) = x y, space y(x) = z / x, space y' = (x z' - z) / x^2
   $
@@ -1560,7 +1560,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     y'(x) = 4 A e^(4 x) - 2 B e^(-2 x) \
     y'(1) = 4 A e^(4) - 2 B e^(-2) eq.quest 0
   $
-  Solve the LSE y(1) and y'(1) to get
+  Solve the LSE $y(1)$ and $y'(1)$ to get
   $
     2*y(1) + y(2) arrow.r.l.double 6 A e^4 = 2 \
     arrow.r.l.double A = 1 / 3 e^(-4), space B = 2 / 3 e^2 \
