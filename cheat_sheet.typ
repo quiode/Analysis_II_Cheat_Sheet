@@ -929,6 +929,10 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     "Area"(X) = integral_X 1 d x d y = integral_X (diff f_2) / (diff x) - (diff f_1) / (diff y) =  integral_gamma f dot d vec(s)
   $
+  One can choose f to be
+  $
+    f(x,y) = (0,x) "or" f(x,y) = (-y,0)
+  $
 ]
 
 #lem()[
