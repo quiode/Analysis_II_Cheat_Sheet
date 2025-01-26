@@ -365,7 +365,7 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
     o(h) = {f: U arrow.r RR | lim^(x arrow.r y)_(x eq.not y) f(x) / h(x) = 0}
   $
 
-  $o(h)$ describes the set of functions that approach 0 faster than h as $x arrow.r y$
+  $o(h)$ describes the set of functions that approach $0$ faster than $h$ as $x arrow.r y$
 ]
 
 #lem()[
