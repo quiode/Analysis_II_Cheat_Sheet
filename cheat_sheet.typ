@@ -931,7 +931,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
   One can choose $f$ to be
   $
-    f(x,y) = (0,x) "or" f(x,y) = (-y,0)
+    f(x,y) = (0,x) space.quad "or" space.quad f(x,y) = (-y,0)
   $
 ]
 
