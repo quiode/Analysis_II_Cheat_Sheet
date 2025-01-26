@@ -236,8 +236,8 @@ Let $X subset.eq RR^n$ be an open set.
 ]
 
 
+==== Chain Rule
 #lem()[
-  ==== Chain Rule
   Let $Y subset.eq RR^m$ be open and let $f: X -> Y$ and $g: Y -> RR^p$ be differentiable functions. Then $g compose f: X -> RR^p$ is differentiable on $X$, and for any $x_0 in X$, its differential is given by the composition
   $ d (g compose f)(x_0) = d g (f(x_0)) compose d f(x_0) $
   In particular, the Jacobi matrix satisfies
