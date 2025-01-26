@@ -913,7 +913,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #lem()[
-  Let $X subset.eq RR^2$ be a compact set with a boundary $diff X$ that is the union of finitely many simple closed parameterized curves $gamma_1, dots, gamma_k$. Assume that $ gamma_i : [a_i, b_i] -> RR^2 $ has the property that $X$ lies always "to the left" of the tangent vector $gamma_i ' (t)$ based at $gamma_i (t)$. Let $f = vec(f_1 (x,y), f_2 (x,y))$ be a vector field of class $C^1$ defined on some open set containing $X$. Then we have $ integral_X ((diff f_2) / (diff_x) - (diff f_1) / (diff y)) d x d y = sum^k_(i = 1) integral_(gamma_1) f dot d arrow(s). $
+  Let $X subset.eq RR^2$ be a compact set with a boundary $diff X$ that is the union of finitely many simple closed parameterized curves $gamma_1, dots, gamma_k$. Assume that $ gamma_i : [a_i, b_i] -> RR^2 $ has the property that $X$ lies always "to the left" of the tangent vector $gamma_i ' (t)$ based at $gamma_i (t)$. Let $f = vec(f_1 (x,y), f_2 (x,y))$ be a vector field of class $C^1$ defined on some open set containing $X$. Then we have $ integral_X ((diff f_2) / (diff_x) - (diff f_1) / (diff y)) d x d y = sum^k_(i = 1) integral_(gamma_i) f dot d arrow(s). $
 
   _Note that if this condition is not met, it simply means that one must "reverse" the corresponding curve, e.g., replace $gamma : [0,1] -> RR^2$ by $tilde(gamma) (t) = gamma (1-t)$ for $0 <= t <= 1$, which reverses the orientation of the tangent vector._
 
@@ -925,7 +925,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #note()[
-  To compute the area enclosed by the border given by a parameterization $gamma$. Choose $X$ as the area that $gamma$ encloses. Find f such that it satisfies the formula below and compute the line-integral
+  To compute the area enclosed by the border given by a parameterization $gamma$. Choose $X$ as the area that $gamma$ encloses. Find $f$ such that it satisfies the formula below and compute the line-integral
   $
     "Area"(X) = integral_X 1 d x d y = integral_X (diff f_2) / (diff x) - (diff f_1) / (diff y) =  integral_gamma f dot d vec(s)
   $
