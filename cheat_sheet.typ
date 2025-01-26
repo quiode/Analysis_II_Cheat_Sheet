@@ -659,6 +659,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #def()[
   Let $gamma : [a, b] -> RR^n$ be a parameterized curve. An *oriented reparameterization* of $gamma$ is a parameterized curve $sigma : [c,d] -> RR^n$ such that $sigma = gamma compose phi$, where $phi : [c, d] -> [a, b]$ is a continuous map, differentiable on $]c,d[$, that is strictly increasing and satisfies $phi (c) = a$ and $phi (d) = b$.
+
+  _We change only the "speed" at which we traverse $gamma$._
 ]
 
 #lem()[
