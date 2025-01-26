@@ -169,7 +169,7 @@ Let $X subset.eq RR^n$ be an open set.
   $ J_f(x) = (diff_(x_j) f_i (x))^(1 <= i <= m)_(1 <= j <=n) $
   with $m$ rows and $n$ columns is called the *Jacobi matrix* of $f$ at $x$.
 
-  _In each row we "fix" a variable and then derive it in each column._
+  _In each row we "fix" a $f_i$ and then derive it in each column._
 ]
 
 === Gradient
