@@ -1252,7 +1252,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     (a f plus.minus b g)' &= a f' plus.minus b g' \
     (f g)' (x) &= f' (x) g(x) + f (x) g' (x) \
     (f (g (x)))' &= f' (g (x)) dot g' (x) \
-    g' &= 1 / (f' compose g), space.quad g "inverse of" f \
+    g' &= 1 / (f' compose g), space.quad g = f^(-1) \
     (1 / f(x))' &= - (f' (x)) / (f (x))^2 \
     (f / g)' &= (f' g - g' f) / g^2 \
     (a^f)' &= ln (a) dot a^f dot f'
