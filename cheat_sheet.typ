@@ -729,7 +729,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #lem()[
   #diagram(
-    node-stroke: black + 0.25pt,
+    node-stroke: black + 0.5pt,
 
     // Nodes
     node((0, 0), [$f$ = $gradient g$]),
