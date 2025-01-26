@@ -789,7 +789,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   The center of mass $dash(x)$ in $RR^n$ of a compact set $U subset.eq RR^n$ is defined as:
 
   $
-    dash(x)_i = 1 / "Vol(U)" integral_U x_i "dx"
+    dash(x)_i = 1 / ("Vol"(U)) integral_U x_i d x
   $
 
   === Multiple Integral / Fubini's Theorem
