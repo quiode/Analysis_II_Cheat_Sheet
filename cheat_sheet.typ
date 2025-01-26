@@ -918,6 +918,10 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   _Note that if this condition is not met, it simply means that one must "reverse" the corresponding curve, e.g., replace $gamma : [0,1] -> RR^2$ by $tilde(gamma) (t) = gamma (1-t)$ for $0 <= t <= 1$, which reverses the orientation of the tangent vector._
 
   _Intuition: Green's theorem relates the *counterclockwise line integral around the boundary of $X$* to the behavior of a vector field inside $X$._
+
+  #figure(image("images/greens-theorem.svg", width: 75%))
+
+  *Source:* #link("https://commons.wikimedia.org/wiki/File:Green%27s-theorem-simple-region.svg")[Wiki Commons: Cronholm144]
 ]
 
 #lem()[
