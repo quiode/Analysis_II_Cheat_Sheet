@@ -925,13 +925,9 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #note()[
-  To compute the area enclosed by the border given by a parameterization $gamma$. Choose $X$ as the area that $gamma$ encloses. This area is given by the formula.
+  To compute the area enclosed by the border given by a parameterization $gamma$. Choose $X$ as the area that $gamma$ encloses. Find f such that it satisfies the formula below and compute the line-integral
   $
-    integral_X (diff f_2) / (diff x) - (diff f_1) / (diff y) = integral_X 1 d x d y = "Area"(X)
-  $
-  We can find such f to compute the area through a line-integral.
-  $
-    integral_X (diff f_2) / (diff x) - (diff f_1) / (diff y) = integral_gamma f dot d vec(s)
+    integral_X (diff f_2) / (diff x) - (diff f_1) / (diff y) = integral_X 1 d x d y = "Area"(X) = integral_gamma f dot d vec(s)
   $
 ]
 
