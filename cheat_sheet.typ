@@ -284,12 +284,14 @@ Let $X subset.eq RR^n$ be an open set.
   If $f in C^k (X; RR^m)$ for all $k >= 1$, then we say that $f$ is of class $C^infinity$. The set of sucht functions is denoted $C^infinity (X; RR^m)$.
 ]
 
+=== Schwarz's Theorem
 #lem()[
-  Let $K >= 2$ and $f: X -> RR^m$ be a function of class $C^k$. Then the partial derivatives of order $k$ are independent of the order in which the partial derivatives are taken: for any variables x and y, we have:
-  $ diff_(x,y) f = diff_(y,x) f, $
-  and for any variables $x$, $y$, $z$, we have
-  $ diff_(x,y,z) f = diff_(x,z,y) f = diff_(y,z,x) f = diff_(z,x,y) f = ... $
-  etc...
+  Let $K >= 2$ and $f: X -> RR^m$ be a function of class $C^k$. Then the partial derivatives of order $k$ are independent of the order in which the partial derivatives are taken:
+  - for any variables $x$ and $y$, we have:
+    $ diff_(x,y) f = diff_(y,x) f, $
+  - and for any variables $x$, $y$, $z$, we have:
+    $ diff_(x,y,z) f = diff_(x,z,y) f = diff_(y,z,x) f = diff_(z,x,y) f = ... $
+  - etc...
 ]
 
 === Hessian Matrix
