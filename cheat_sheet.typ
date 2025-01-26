@@ -1414,7 +1414,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #form()[
   $
     pi &= #calc.pi \
-    e &= #calc.e
+    e &= #calc.e \
+    c &= 299792458 m/s
   $
 ]
 
