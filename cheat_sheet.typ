@@ -461,6 +461,8 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR^n$ be differentiable.
 
 #def()[
   Let $x_0 in X$. We say that $f$ is a *change of variable* around $x_0$ if there is a radius $r > 0$ sucht that the restriction of $f$ to the ball $ B = {x in RR^n: ||x - x_0|| < r} $ of radius $r$ around $x_0$ has the property that the image $Y = f(B)$ is open in $RR^n$, and if there is a differentiable map $g: Y -> B$ such that $f compose g = "Id"_Y$ and $g compose f = "Id"_B$.
+
+  _It can thus be understood as a "local inverse"._
 ]
 
 #def()[
