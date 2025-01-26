@@ -223,9 +223,9 @@ Let $X subset.eq RR^n$ be an open set.
 
       // Nodes
       node((0, 0), [$f$ cont.#footnote()[continuous] differentiable]),
-      node((1, 0), [$f$ cont. derivatives]),
+      node((1, 0), [$delta_j f_i$ exist & cont. ]),
       node((0, 1), [$f$ differentiable]),
-      node((1, 1), [$f$ derivatives exist]),
+      node((1, 1), [$delta_j f_i$ exist]),
       node((0, 2), [$f$ continuous]),
 
       // Edges
