@@ -300,6 +300,7 @@ Let $X subset.eq RR^n$ be an open set.
   Let $f: X -> RR$ a $C^2$ function. For $x_0 in X$, the *Hessian matrix* of $f$ at $x_0$ is the *symmetric square* matrix
   $ "Hess"_f (x_0) = ((diff^2 f(x_0)) / (diff x_i diff x_j))_(1 <= i,j <= n) $
   We also sometimes write simply $H_f (x_0)$.
+
   *Reminder:* Use Taylor polynomials (up to second order) if a specific value for $x_0$ is provided, to simplify the identification of differences.
 ]
 
