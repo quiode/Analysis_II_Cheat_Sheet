@@ -710,7 +710,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #def()[
   A subset $X subset.eq RR^n$ is *star shaped* if there exists $x_0 in X$ such that, for all $x in X$, the line segment joining $x_0$ to $x$ is contained in $X$. We then also say that $X$ is star-shaped around $x_0$.
 
-  _konvex $arrow.r$ star shaped $arrow.r$ path-connected_
+  _konvex $>$ star shaped $>$ path-connected $>$ disjoint_
 ]
 
 #lem()[
