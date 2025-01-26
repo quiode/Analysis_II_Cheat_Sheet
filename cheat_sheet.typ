@@ -1593,7 +1593,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
   Solve the LSE $y(1)$ and $y'(1)$ to get
   $
-    2*y(1) + y(2) arrow.r.l.double 6 A e^4 = 2 \
+    2 y(1) + y(2) arrow.r.l.double 6 A e^4 = 2 \
     arrow.r.l.double A = 1 / 3 e^(-4), space B = 2 / 3 e^2 \
     arrow.r.l.double y(x) = 1 / 3 e^(4 x - 4) + 2 / 3 e^(2 - 2 x)
   $
