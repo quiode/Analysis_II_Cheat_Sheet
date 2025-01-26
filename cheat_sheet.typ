@@ -66,7 +66,7 @@ Let $x_0 in X subset.eq RR^n$ and $f: X -> RR^m$
 
 #lem()[
   The sequence $(x_k)$ converges to $y$ as $k -> + infinity$ iff#footnote("if and only if")one of the following *equivalent* conditions holds:
-  + For each $i$, $i <= i <= n$, the sequence $(x_(k,i))$ of real numbers converges to $y_i$.
+  + For each $i$, $1 <= i <= n$, the sequence $(x_(k,i))$ of real numbers converges to $y_i$.
   + The sequence of real numbers $||x_k - y||$ converges to $0$ as $k -> + infinity$.
 ]
 
