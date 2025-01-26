@@ -1237,11 +1237,11 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #form()[
   $
-    exp (x) exp (y) &= exp (x + y) \
-    exp (x) &gt 1, space.quad x > 0 \
-    x^a &= exp (a dot ln (x)) \
-    exp (i z) &= cos (z) + i sin (z) \
-    exp ((i pi) / 2) = i, space exp (i pi) &= -1, space exp (2i pi) = 1
+    e^(x) e^(y) &= e^(x + y) \
+    e^(x) &gt 1, space.quad x > 0 \
+    x^a &= e^(a dot ln (x)) \
+    e^(i z) &= cos (z) + i sin (z) \
+    e^((i pi) / 2) = i, space e^(i pi) &= -1, space e^(2i pi) = 1
   $
 ]
 
