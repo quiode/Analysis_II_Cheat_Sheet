@@ -827,7 +827,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   For such domains, the following formula holds:
 
   $
-    integral_Omega f d mu = integral_a^b d x_1 integral_(f_1(x_1))^(g_1(x_1)) d x_2 ... integral_(f_(n-1)(x_1, x_2,..., x_(n-1)))^(g_(n-1)(x_1, x_2,..., x_(n-1))) d x_n
+    integral_Omega f d mu = integral_a^b d x_1 integral_(f_1(x_1))^(g_1(x_1)) d x_2 dots.c integral_(f_(n-1)(x_1, x_2,..., x_(n-1)))^(g_(n-1)(x_1, x_2,..., x_(n-1))) d x_n
   $
 ]
 
