@@ -924,6 +924,17 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   *Source:* #link("https://commons.wikimedia.org/wiki/File:Green%27s-theorem-simple-region.svg")[Wiki Commons: Cronholm144]
 ]
 
+#note()[
+  To compute the area enclosed by the border given by a parameterization $gamma$. Choose $X$ as the area that $gamma$ encloses. This area is given by the formula.
+  $
+    integral_X (diff f_2) / (diff x) - (diff f_1) / (diff y) = integral_X 1 d x d y = "Area"(X)
+  $
+  We can find such f to compute the area through a line-integral.
+  $
+    integral_X (diff f_2) / (diff x) - (diff f_1) / (diff y) = integral_gamma f dot d vec(s)
+  $
+]
+
 #lem()[
   Let $X subset.eq RR^2$ be a compact set with a boundary $diff X$ that is the union of finitely many simple closed parameterized curves $gamma_1, ..., gamma_k$. Assume that $ gamma_i = (gamma_(i,1), gamma_(i,2)) : [a_i, b_i] -> RR^2 $ has the property that $X$ lies always "to the left" of the tangent vector $gamma_i ' (t)$ based at $gamma_i (t)$. Then we have $ "Vol"(X) = sum^k_(i = 1) integral_(gamma_i) x dot d arrow(s) = sum^k_(i = 1) integral^(b_i)_(a_i) gamma_(i,1) (t) gamma_(i,2) ' (t) d t . $
 ]
