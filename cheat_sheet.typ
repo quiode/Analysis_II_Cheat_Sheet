@@ -75,6 +75,8 @@ Let $x_0 in X subset.eq RR^n$ and $f: X -> RR^m$
 #def()[
   + We say that $f$ is *continuous at $x_0$* if $forall epsilon > 0: exists delta > 0: forall x in X:$ $ ||x - x_0|| < delta ==> || f(x) - f(x_0) || < epsilon $
   + We say that $f$ is *continuous on $X$* if it is continuous at $x_0$ for all $x_0 in X$
+
+  _If we can draw the graph of $f$ without lifting a pen, it is continuous._
 ]
 
 #lem()[
