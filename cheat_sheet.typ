@@ -73,14 +73,14 @@ Let $x_0 in X subset.eq RR^n$ and $f: X -> RR^m$
 === Continuity
 
 #def()[
-  + We say that $f$ is *continuous at $x_0$* if $forall epsilon > 0: exists delta > 0: forall x in X:$ $ ||x - x_0|| < delta ==> || f(x) - f(x_0) || < epsilon $
-  + We say that $f$ is *continuous on $X$* if it is continuous at $x_0$ for all $x_0 in X$
+  + $f$ is *continuous at $x_0$* if $forall epsilon > 0: exists delta > 0: forall x in X:$ $ ||x - x_0|| < delta ==> || f(x) - f(x_0) || < epsilon $
+  + $f$ is *continuous on $X$* if it is continuous at $x_0$ for all $x_0 in X$
 
   _If we can draw the graph of $f$ without lifting a pen, it is continuous._
 ]
 
 #lem()[
-  The function $f$ is continuous at $x_0$ iff, for every sequence $(x_k)_(k >= 1)$ in $X$ such that $x_k -> x_0$ as $k -> + infinity$, the sequence $(f(x_k))_(k >= 1)$ in $RR^m$ converges to $f(x)$.
+  $f$ is continuous at $x_0 <=> forall (x_k)_(k >= 1)$ in $X$ : $ attach(lim, b: k -> infinity) x_k = x_0 => attach(lim, b: k -> infinity) f(x_k) = f(x_0) $ 
 ]
 
 === Limit
@@ -112,7 +112,7 @@ Let $y in RR^m$.
 ]
 
 #lem()[
-  Let $f: RR^n -> RR^m$ be a continuous map. For any closed set $Y subset.eq RR^m$, the set
+  Let $f: RR^n -> RR^m$ be continuous. For any closed set $Y subset.eq RR^m$, the set
   $ f^(-1)(Y) = {x in RR^n: f(x) in Y} subset.eq RR^n $
   is closed.
 ]
