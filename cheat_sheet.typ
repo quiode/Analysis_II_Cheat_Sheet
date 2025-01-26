@@ -743,8 +743,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     edge((1, 1), (1, 0), "<|-|>", stroke: green + 0.5pt),
     edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
     edge((1, 1), (0, 2), "-|>", stroke: green + 0.5pt),
-    edge((0, 2), (1, 1), "-|>", label: "if U is star-shaped", stroke: blue + 0.5pt, bend: 30deg),
-    edge((1, 2), (0, 2), "<|-|>", label: "n = 3", stroke: orange + 0.5pt),
+    edge((0, 2), (1, 1), "-|>", label: [$U$ star-shaped], stroke: orange + 0.5pt, bend: 30deg),
+    edge((1, 2), (0, 2), "<|-|>", label: $RR^3$, stroke: orange + 0.5pt),
   )
 ]
 
