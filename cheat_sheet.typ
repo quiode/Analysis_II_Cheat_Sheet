@@ -820,7 +820,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   A set $Omega subset.eq RR^n$ is called a *normal domain* if it can be expressed as:
 
   $
-    Omega = {(x_1,..., x_n) in RR^n | a lt.eq x_1 lt.eq b, f_1(x_1) lt.eq x_2 lt.eq g_1(x_1)\ ,..., f_(n-1)(x_1, x_2,..., x_(n-1)) lt.eq x_n lt.eq g_(n-1)(x_1, x_2,..., x_(n-1))}
+    Omega = { (x_1,..., x_n) in RR^n | \ a lt.eq x_1 lt.eq b, f_1(x_1) lt.eq x_2 lt.eq g_1(x_1), \ ... , \ f_(n-1)(x_1, x_2,..., x_(n-1)) lt.eq x_n lt.eq g_(n-1)(x_1, x_2,..., x_(n-1)) \ }
   $
   where $f_i$ and $g_i$ are continuous functions. \
 
