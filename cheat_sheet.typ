@@ -1140,7 +1140,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
 ]
 
-=== Midnight Formula
+=== Midnight / Quadratic Formula
 
 #form()[
   ==== General ($a x^2 + b x + c = 0$)
