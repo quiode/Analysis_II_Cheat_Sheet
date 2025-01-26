@@ -214,24 +214,27 @@ Let $X subset.eq RR^n$ be an open set.
 ]
 
 #lem()[
-  #diagram(
-    node-stroke: black + 0.5pt,
+  #align(
+    center,
+    diagram(
+      node-stroke: black + 0.5pt,
 
-    // Nodes
-    node((0, 0), [$f$ cont.#footnote()[continuous] differentiable]),
-    node((1, 0), [$f$ cont. derivatives]),
-    node((0, 1), [$f$ differentiable]),
-    node((1, 1), [$f$ derivatives exist]),
-    node((0, 2), [$f$ continuous]),
+      // Nodes
+      node((0, 0), [$f$ cont.#footnote()[continuous] differentiable]),
+      node((1, 0), [$f$ cont. derivatives]),
+      node((0, 1), [$f$ differentiable]),
+      node((1, 1), [$f$ derivatives exist]),
+      node((0, 2), [$f$ continuous]),
 
-    // Edges
-    edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
-    edge((0, 0), (0, 1), "-|>", stroke: green + 0.5pt),
-    edge((0, 1), (0, 2), "-|>", stroke: green + 0.5pt),
-    edge((1, 0), (1, 1), "-|>", stroke: green + 0.5pt),
-    edge((0, 1), (1, 1), "-|>", stroke: green + 0.5pt, bend: 10deg),
-    edge((1, 1), (0, 1), "-x-|>", stroke: red + 0.5pt, bend: 10deg),
-    edge((1, 1), (0, 2), "-x-|>", stroke: red + 0.5pt),
+      // Edges
+      edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
+      edge((0, 0), (0, 1), "-|>", stroke: green + 0.5pt),
+      edge((0, 1), (0, 2), "-|>", stroke: green + 0.5pt),
+      edge((1, 0), (1, 1), "-|>", stroke: green + 0.5pt),
+      edge((0, 1), (1, 1), "-|>", stroke: green + 0.5pt, bend: 10deg),
+      edge((1, 1), (0, 1), "-x-|>", stroke: red + 0.5pt, bend: 10deg),
+      edge((1, 1), (0, 2), "-x-|>", stroke: red + 0.5pt),
+    ),
   )
 ]
 
@@ -418,27 +421,30 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
   - $H_f(y)$ indef. $arrow.r.double$ $y$ saddle
   - $det(H_f(y)) = 0$ $arrow.r.double$ $y$ is degenerated
 
-  #diagram(
-    node-stroke: black + 0.5pt,
-    spacing: (0.25cm, 1cm),
-    edge((1, -0.75), auto, "-|>"),
-    node((1, 0), $det (A)$, shape: shapes.diamond),
-    node((0, 1), $tr (A)$, shape: shapes.diamond),
-    node((2, 1), $tr (A)$, shape: shapes.diamond),
-    node((0, 2), "indef."),
-    node((1, 2), "neg. semidef."),
-    node((2, 2), $A = mat(0,0;0,0)$),
-    node((0, 3), "pos. semidef."),
-    node((1, 3), "neg. def."),
-    node((2, 3), "pos. def."),
-    edge((1, 0), (0, 2), "-|>", `neg.`, bend: +10deg, label-pos: 0.1),
-    edge((1, 0), (0, 1), "-|>", $0$),
-    edge((1, 0), (2, 1), "-|>", `pos.`),
-    edge((0, 1), (1, 2), "-|>", `neg.`, label-pos: 0.75),
-    edge((0, 1), (2, 2), "-|>", $0$, bend: +30deg),
-    edge((0, 1), (0, 3), "-|>", `pos.`, bend: +33deg, label-pos: 0.75),
-    edge((2, 1), (1, 3), "-|>", `neg.`, bend: +30deg, label-pos: 0.7),
-    edge((2, 1), (2, 3), "-|>", `pos.`, bend: +20deg, label-pos: 0.75),
+  #align(
+    center,
+    diagram(
+      node-stroke: black + 0.5pt,
+      spacing: (0.25cm, 1cm),
+      edge((1, -0.75), auto, "-|>"),
+      node((1, 0), $det (A)$, shape: shapes.diamond),
+      node((0, 1), $tr (A)$, shape: shapes.diamond),
+      node((2, 1), $tr (A)$, shape: shapes.diamond),
+      node((0, 2), "indef."),
+      node((1, 2), "neg. semidef."),
+      node((2, 2), $A = mat(0,0;0,0)$),
+      node((0, 3), "pos. semidef."),
+      node((1, 3), "neg. def."),
+      node((2, 3), "pos. def."),
+      edge((1, 0), (0, 2), "-|>", `neg.`, bend: +10deg, label-pos: 0.1),
+      edge((1, 0), (0, 1), "-|>", $0$),
+      edge((1, 0), (2, 1), "-|>", `pos.`),
+      edge((0, 1), (1, 2), "-|>", `neg.`, label-pos: 0.75),
+      edge((0, 1), (2, 2), "-|>", $0$, bend: +30deg),
+      edge((0, 1), (0, 3), "-|>", `pos.`, bend: +33deg, label-pos: 0.75),
+      edge((2, 1), (1, 3), "-|>", `neg.`, bend: +30deg, label-pos: 0.7),
+      edge((2, 1), (2, 3), "-|>", `pos.`, bend: +20deg, label-pos: 0.75),
+    ),
   )
 
   === *$n = 3$*
@@ -728,23 +734,26 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #lem()[
-  #diagram(
-    node-stroke: black + 0.5pt,
+  #align(
+    center,
+    diagram(
+      node-stroke: black + 0.5pt,
 
-    // Nodes
-    node((0, 0), [$f$ = $gradient g$]),
-    node((1, 1), [$f$ conservative]),
-    node((1, 0), [$integral_gamma f(s) dot d arrow(s) = 0$]),
-    node((0, 2), [$J_f$ symmetric]),
-    node((1, 2), [curl $f = 0$]),
+      // Nodes
+      node((0, 0), [$f$ = $gradient g$]),
+      node((1, 1), [$f$ conservative]),
+      node((1, 0), [$integral_gamma f(s) dot d arrow(s) = 0$]),
+      node((0, 2), [$J_f$ symmetric]),
+      node((1, 2), [curl $f = 0$]),
 
-    // Edges
-    edge((0, 0), (1, 1), "<|-|>", stroke: green + 0.5pt),
-    edge((1, 1), (1, 0), "<|-|>", stroke: green + 0.5pt),
-    edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
-    edge((1, 1), (0, 2), "-|>", stroke: green + 0.5pt),
-    edge((0, 2), (1, 1), "-|>", label: [$U$ star-shaped], stroke: orange + 0.5pt, bend: 30deg),
-    edge((1, 2), (0, 2), "<|-|>", label: $RR^3$, stroke: orange + 0.5pt),
+      // Edges
+      edge((0, 0), (1, 1), "<|-|>", stroke: green + 0.5pt),
+      edge((1, 1), (1, 0), "<|-|>", stroke: green + 0.5pt),
+      edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
+      edge((1, 1), (0, 2), "-|>", stroke: green + 0.5pt),
+      edge((0, 2), (1, 1), "-|>", label: [$U$ star-shaped], stroke: orange + 0.5pt, bend: 30deg),
+      edge((1, 2), (0, 2), "<|-|>", label: $RR^3$, stroke: orange + 0.5pt),
+    ),
   )
 ]
 
