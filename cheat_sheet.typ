@@ -268,7 +268,7 @@ Let $X subset.eq RR^n$ be an open set.
   \
   \
   _What is important to notice in this proposition, is that the
-values of the directional derivatives are linear with respect to the vector $v$._
+values of the directional derivatives are *linear with respect to the vector $v$*._
 ]
 
 == Higher Derivatives
