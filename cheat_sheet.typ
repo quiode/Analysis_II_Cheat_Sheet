@@ -537,9 +537,13 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 == Linear Differential Equations
 
 #def()[
-  Let $I subset.eq RR$ be an open interval and $k >= 1$ an integer. An *homogeneous linear ordinary differential equation* of order $k$ on $I$ is an equation of the form $ y^((k)) + a_(k-1) y^((k-1)) + dots.c + a_1 y' + a_0 y = 0 $ where the coefficients $a_0, ..., a_(k-1)$ are complex-valued functions on $I$, and the unknown is a complex valued function from $I$ to $CC$ that is $k$-times differentiable on $I$.
+  A linear ODE of order $k$ is
+  $
+    y^((k)) + a_(k-1)y^((k-1)) + a_(k-2)y^((k-2)) + ... + a_0y = b 
+  $
+  where the "coefficients" $a_(k-1),...,a_0$ and the inhomogeneity $b$ are functions $I->CC$. If $b=0$ the ODE is *homogeneous*, otherwise *inhomogeneous*. In the latter case, the associated homogeneous ODE is obtained by setting $b=0$.
 
-  An equation of the form $ y^((k)) + a_(k-1) y^((k-1)) + dots.c + a_1 y' + a_0 y = b $ where $b: I -> CC$ is another function, is called an *inhomogeneous linear ordinary differential equation*, with associated homogeneous equation the one with $b = 0$.
+  A solution is a $k$-times differentiable function $f: I->CC$ which satisfies $ f^((k))(x) + a_(k-1)(x)f^((k-1))(x) + ... + a_0(x)f(x) = b(x) $ $forall x in I,$ with $f^((j))(x)= (Re f(x))^((j)) + i(Im f(x))^((j))$
 ]
 
 #def()[
