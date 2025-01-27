@@ -392,6 +392,7 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
     o(o(h)) &subset.eq o(h) \
     o(||x - y||^d) &subset.eq o(||x - y||^e) space "for" e lt.eq d
   $
+  / Remark: As abuse of noatation, $f in o(g)$ and $o(f) subset.eq o(g)$ are often written as $f = o(g)$ and $o(f) = o(g)$.
 ]
 
 == Critical Points
