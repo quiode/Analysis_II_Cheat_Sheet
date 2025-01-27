@@ -29,7 +29,7 @@ upload-comsol:
         -F "file=@cheat_sheet.pdf" \
         -f
     - |
-      curl https://exams.vis.ethz.ch/api/document/dschwaiger/analysis-ii-cheatsheet-hs24/files/402/update/ \
-        -H "Authorization: $TOKEN_CATS" \
+      curl https://exams.vis.ethz.ch/api/document/dschwaiger/analysis-ii-cheatsheet-hs24/files/424/update/ \
+        -H "Authorization: $TOKEN" \
         -F "file=@cheat_sheet-no_cats.pdf" \
         -f
