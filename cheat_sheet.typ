@@ -80,7 +80,7 @@ Let $x_0 in X subset.eq RR^n$ and $f: X -> RR^m$
 ]
 
 #lem()[
-  $f$ is continuous at $x_0 <=> forall (x_k)_(k >= 1)$ in $X$ : $ attach(lim, b: k -> infinity) x_k = x_0 => attach(lim, b: k -> infinity) f(x_k) = f(x_0) $ 
+  $f$ is continuous at $x_0 <=> forall (x_k)_(k >= 1)$ in $X$ : $ attach(lim, b: k -> infinity) x_k = x_0 => attach(lim, b: k -> infinity) f(x_k) = f(x_0) $
 ]
 
 === Limit
@@ -223,9 +223,9 @@ Let $X subset.eq RR^n$ be an open set.
 
       // Nodes
       node((0, 0), [$f$ cont.#footnote()[continuous] differentiable]),
-      node((1, 0), [$f$ cont. derivatives]),
+      node((1, 0), [$f$ part.#footnote()[partial] derivatives \ exist & cont.]),
       node((0, 1), [$f$ differentiable]),
-      node((1, 1), [$f$ derivatives exist]),
+      node((1, 1), [$f$ part. derivatives exist]),
       node((0, 2), [$f$ continuous]),
 
       // Edges
@@ -929,7 +929,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #note()[
   To compute the area enclosed by the border given by a parameterization $gamma$. Choose $X$ as the area that $gamma$ encloses. Find $f$ such that it satisfies the formula below and compute the line-integral
   $
-    "Area"(X) = integral_X 1 d x d y = integral_X (diff f_2) / (diff x) - (diff f_1) / (diff y) =  integral_gamma f dot d vec(s)
+    "Area"(X) = integral_X 1 d x d y = integral_X (diff f_2) / (diff x) - (diff f_1) / (diff y) = integral_gamma f dot d vec(s)
   $
   One can choose $f$ to be
   $
