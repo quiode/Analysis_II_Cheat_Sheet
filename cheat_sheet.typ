@@ -333,7 +333,7 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
     &= f(x_0) &&+ gradient f(x_0) dot y + 1 / 2 y^T "Hess"_f (x_0) y \
     &= f(x_0) &&+ gradient f(x_0) dot (x - x_0) \ & &&+ 1 / 2 (x - x_0)^T "Hess"_f (x_0) (x - x_0)
   $
-  _Note that this can also be used to easily *calculate the Hesse Matrix* from a known Taylor polynomial._
+  _Note that the *Hesse Matrix at a point $x_0$ can be easily calculated* from a known Taylor polynomial at $x_0$ by identifying the coefficients of $x^2$, $x y$, and $y^2$ and reading them off from $(1 / 2)(a x^2 + 2b x y + c y^2)$ where the Hesse Matrix is $matrix(a, b; b, c)$._
 ]
 
 #def()[
