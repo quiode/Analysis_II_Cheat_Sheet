@@ -529,7 +529,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #note[
-  *Separation of Variables*: ODE of the form $y' = a(y)b(x)$,
+  *separation of variables*: ODE of the form $y' = a(y)b(x)$,
   for $a, b$ continuous. Find the antiderivative
   $A, B$ of $1/a, b ==> "Solve" A(y) = B(x) + c "with" c in RR$, i.e. if $A^(-1)$ exists: $y=A^(-1)(B(x) + c).$
 ]
@@ -593,9 +593,9 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
         table.hline(),
       ),
       table.cell(colspan: 2)[Homogeneous ODE], table.hline(),
-      [create a vector space $S$ with $dim_CC (S) = k$], [create a $RR$-vector space $S_RR$ of $S$ with $dim_RR (S_RR) = k$],
+      [create a vector space $S$ with $dim_CC (S) = k$], [create a $RR$-vector subspace $S_RR$ of $S$ with $dim_RR (S_RR) = k$],
       table.cell(colspan: 2)[Inhomogeneous ODE], table.hline(),
-      [has a solution for $f_0$ with solution space $= f_0 + S = {f_0 + f | f in S}$], [has a real-valued solution $f_0$ with real-valued solution space $= f_0 + S_RR$],
+      [has a solution $f_0$. Then solution space $= f_0 + S = {f_0 + f | f in S}$], [has a real-valued solution $f_0$. Then real-valued solution space $= f_0 + S_RR$],
       table.cell(
         colspan: 2,
       )[Initial Value Problem (IVP/AWP) \ $y(x_0) = y_0$ \ $y'(x_0) = y_1,...,y^((k-1)) (x_0) = y_(k-1)$], table.hline(),
