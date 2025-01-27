@@ -525,6 +525,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #def()[
   Suppose $F: U -> RR$ is a continuous function of two variables, with $U subset.eq RR^2$ open and $(x_0, y_0) in U$. Then the IVP $ y' = F(x,y), quad y(x_0)=y_0 $ has a solution. If $F$ is additionally continuously differentiable with respect to $y$, the IVP has a unique solution $f$ defined on a "largest" open interval $I$ containing $x_0$. In other words, there exists $I$ and a function $f: I -> RR$ such that for all $x in I$, we have $f'(x) = F(x, f(x))$, and one cannot find a larger interval containing $I$ with such a solution.
+  / Remark: Such explicit ODEs $y' = F(x, y)$ can be visualised through the vector field $V: U->RR^2: V(x, y) = (1, F(x, y))$. A solution $f: I->RR$ of the ODE has as a graph the curve $phi: I->RR^2: phi(x)=(x, f(x)).$
 ]
 
 #note[
