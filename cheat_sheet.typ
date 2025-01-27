@@ -269,9 +269,8 @@ Let $X subset.eq RR^n$ be an open set.
 ]
 
 #lem()[
-  Let $f: X -> RR^m$ be a differentiable function. Then for any $x in X$ and non-zero $v in RR^n$, the function $f$ has a directional derivative at $x_0$ in the direction $v$, equal to $d f(x_0)(v)$.
-  \
-  \
+  Let $f: X -> RR^m$ be a differentiable function. Then for any $x in X$ and non-zero $v in RR^n$, the function $f$ has a directional derivative at $x_0$ in the direction $v$, equal to $d f(x_0)(v) = gradient f(x_0) dot v$.
+  
   _What is important to notice in this proposition, is that the
 values of the directional derivatives are *linear with respect to the vector $v$*._
 ]
