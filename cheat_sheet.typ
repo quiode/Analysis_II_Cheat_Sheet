@@ -45,13 +45,16 @@
 #let form(body) = _block(body, stroke: black)
 #let not_relevant(body) = _block(body, stroke: (paint: gray, dash: "dashed"))
 #let limit = $attach(lim, tr: x -> x_0, br: x != x_0)$
+#let cats = (sys.inputs.at("CATS", default: "true") == "true")
 
 #underline()[= Analysis II Cheat Sheet]
 
-#figure(
-  image("images/toshi.jpeg", width: 75%),
-  caption: [ Toshi believes in you `<3`],
-)
+#if (cats) {
+  figure(
+    image("images/toshi.jpeg", width: 75%),
+    caption: [ Toshi believes in you `<3`],
+  )
+}
 
 == Continuity in $RR^n$
 
@@ -240,12 +243,12 @@ Let $X subset.eq RR^n$ be an open set.
   )
 ]
 
-
-
-#figure(
-  image("images/gin.jpeg", width: 100%),
-  caption: [ Keep going! ],
-)
+#if (cats) {
+  figure(
+    image("images/gin.jpeg", width: 75%),
+    caption: [ Keep going! ],
+  )
+}
 
 ==== Chain Rule
 #lem()[
@@ -276,7 +279,7 @@ Let $X subset.eq RR^n$ be an open set.
 
 #lem()[
   Let $f: X -> RR^m$ be a differentiable function. Then for any $x in X$ and non-zero $v in RR^n$, the function $f$ has a directional derivative at $x_0$ in the direction $v$, equal to $d f(x_0)(v) = gradient f(x_0) dot v$.
-  
+
   _What is important to notice in this proposition, is that the
 values of the directional derivatives are *linear with respect to the vector $v$*._
 ]
@@ -409,10 +412,13 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
 #def()[
   Let $f in C^2$. A critical point $x_0 in X$ of $f$ is called *non-degenerate* if the Hessian matrix has non-zero determinant.
 ]
-#figure(
-  image("images/toshi2.jpeg", width: 100%),
-  caption: [ Stay comfy! ],
-)
+
+#if (cats) {
+  figure(
+    image("images/toshi2.jpeg", width: 75%),
+    caption: [ Stay comfy! ],
+  )
+}
 
 
 #lem()[
@@ -580,10 +586,13 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   )
 ]
 
-#figure(
-  image("images/twocats.jpeg", width: 100%),
-  caption: [ Almost done! ],
-)
+#if (cats) {
+  figure(
+    image("images/twocats.jpeg", width: 75%),
+    caption: [ Almost done! ],
+  )
+}
+
 == (Solving) Linear Differential Equations Of Order 1
 
 #note()[
@@ -829,10 +838,13 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   Otherwise by Inclusion-Exclusion $ integral_(X_1 union X_2) f(x) d x = integral_(X_1) f(x) d x + integral_(X_2) f(x) d x - integral_(X_1 sect X_2) f(x) d x$
 ]
 
-#figure(
-  image("images/gin2.jpeg", width: 100%),
-  caption: [ Me after the exam: ],
-)
+#if (cats) {
+  figure(
+    image("images/gin2.jpeg", width: 75%),
+    caption: [ Me after the exam: ],
+  )
+}
+
 === Negligibleness
 
 #def()[
@@ -979,10 +991,13 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     Let $X subset.eq RR^3$ be a compact set with a boundary $diff X$ that is parameterized surface $sum : [a,b] times [c,d] -> RR^3$. Assume that $sum$ is injective in $]a,b[ times ]c,d[$, and that $sum$ has the property that the normal vector $arrow(n)$ points away from $sum$ at all points. Let $arrow(u) = arrow(n)/(||arrow(n)||)$ be the unit exterior normal vector. Let $f = (f_1, f_2, f_3)$ be a vector field of class $C^1$ defined on some open set containing $X$. Then we have $ integral_X "div"(f) d x d y d z = integral_sum (f dot arrow(u)) d sigma. $
   ]
 ]
-#figure(
-  image("images/toshi3.jpeg", width: 100%),
-  caption: [ Keep calm! ],
-)
+
+#if (cats) {
+  figure(
+    image("images/toshi3.jpeg", width: 75%),
+    caption: [ Keep calm! ],
+  )
+}
 
 #pagebreak() // formula collection should start on a new page if enough space is available
 
@@ -1187,10 +1202,13 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   ]
 ]
 
-#figure(
-  image("images/toshi4.jpeg", width: 100%),
-  caption: [ Stay determined! ],
-)
+#if (cats) {
+  figure(
+    image("images/toshi4.jpeg", width: 75%),
+    caption: [ Stay determined! ],
+  )
+}
+
 === Determinant
 
 #form()[
@@ -1288,10 +1306,13 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     e^((i pi) / 2) = i, space e^(i pi) &= -1, space e^(2i pi) = 1
   $
 ]
-#figure(
-  image("images/twocats2.jpeg", width: 100%),
-  caption: [ Me and my homies after the exam ],
-)
+
+#if (cats) {
+  figure(
+    image("images/twocats2.jpeg", width: 75%),
+    caption: [ Me and my homies after the exam ],
+  )
+}
 
 === Differentiation Rules
 
@@ -1585,10 +1606,13 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     z(x) = x y, space y(x) = z / x, space y' = (x z' - z) / x^2
   $
 ]
-#figure(
-  image("images/toshi5.jpeg", width: 100%),
-  caption: [ Ready for a nap? ],
-)
+
+#if (cats) {
+  figure(
+    image("images/toshi5.jpeg", width: 75%),
+    caption: [ Ready for a nap? ],
+  )
+}
 
 === Areas and Volumina
 
@@ -1799,7 +1823,9 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   We can use the chain rule to solve this. The gradient of $f(c(x_0))$ is $J_(f(c(x_0))) = J_f (c(x_0)) dot J_c (x_0)$. The value of $J_f (c(x_0))$ should be given in the question ($alpha$), but better check if both points are the same. So calculate $J_c (x_0)$ by differentiation, do the dot-product and read the desired value in the resulting matrix.
 ]
 
-#figure(
-  image("images/toshi6.jpeg", width: 100%),
-  caption: [ Done! ],
-)
+#if (cats) {
+  figure(
+    image("images/toshi6.jpeg", width: 75%),
+    caption: [ Done! ],
+  )
+}
