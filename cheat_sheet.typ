@@ -4,7 +4,7 @@
 
 // CONFIGURATION
 #set document(
-  author: "Dominik Schwaiger",
+  author: ("Dominik Schwaiger", "Ferdinand Pamberger", "Valentin Kaas", "Julian Paul"),
   keywords: ("Spick", "Analysis", "Analysis II", "ETH", "Prüfung", "Exam", "Cheat Sheet"),
   title: "Analysis II Cheat Sheet",
 )
@@ -66,19 +66,21 @@ Let $x_0 in X subset.eq RR^n$ and $f: X -> RR^m$
 
 #lem()[
   The sequence $(x_k)$ converges to $y$ as $k -> + infinity$ iff#footnote("if and only if")one of the following *equivalent* conditions holds:
-  + For each $i$, $i <= i <= n$, the sequence $(x_(k,i))$ of real numbers converges to $y_i$.
+  + For each $i$, $1 <= i <= n$, the sequence $(x_(k,i))$ of real numbers converges to $y_i$.
   + The sequence of real numbers $||x_k - y||$ converges to $0$ as $k -> + infinity$.
 ]
 
 === Continuity
 
 #def()[
-  + We say that $f$ is *continuous at $x_0$* if $forall epsilon > 0: exists delta > 0: forall x in X:$ $ ||x - x_0|| < delta ==> || f(x) - f(x_0) || < epsilon $
-  + We say that $f$ is *continuous on $X$* if it is continuous at $x_0$ for all $x_0 in X$
+  + $f$ is *continuous at $x_0$* if $forall epsilon > 0: exists delta > 0: forall x in X:$ $ ||x - x_0|| < delta ==> || f(x) - f(x_0) || < epsilon $
+  + $f$ is *continuous on $X$* if it is continuous at $x_0$ for all $x_0 in X$
+
+  _If we can draw the graph of $f$ without lifting a pen, it is continuous._
 ]
 
 #lem()[
-  The function $f$ is continuous at $x_0$ iff, for every sequence $(x_k)_(k >= 1)$ in $X$ sucht that $x_k -> x_0$ as $k -> + infinity$, the sequence $(f(x_k))_(k >= 1)$ in $RR^m$ converges to $f(x)$.
+  $f$ is continuous at $x_0 <=> forall (x_k)_(k >= 1)$ in $X$ : $ attach(lim, b: k -> infinity) x_k = x_0 => attach(lim, b: k -> infinity) f(x_k) = f(x_0) $
 ]
 
 === Limit
@@ -94,7 +96,7 @@ Let $y in RR^m$.
 ]
 
 #lem()[
-  We have $ limit f(x) = y $ iff, for every sequence $(x_k)$ in $X$ sucht that $x_k -> x_0$ as $k -> + infinity$, and $x_k != x_0$, the sequence $(f(x_k))$ in $RR^m$ converges to $y$.
+  We have $ limit f(x) = y $ iff, for every sequence $(x_k)$ in $X$ such that $x_k -> x_0$ as $k -> + infinity$, and $x_k != x_0$, the sequence $(f(x_k))$ in $RR^m$ converges to $y$.
 ]
 
 #lem()[
@@ -110,7 +112,7 @@ Let $y in RR^m$.
 ]
 
 #lem()[
-  Let $f: RR^n -> RR^m$ be a continuous map. For any closed set $Y subset.eq RR^m$, the set
+  Let $f: RR^n -> RR^m$ be continuous. For any closed set $Y subset.eq RR^m$, the set
   $ f^(-1)(Y) = {x in RR^n: f(x) in Y} subset.eq RR^n $
   is closed.
 ]
@@ -118,6 +120,8 @@ Let $y in RR^m$.
 #lem()[
   Let $X subset.eq RR^n$ be a non-empty compact set and $f: X -> RR$ a continuous function. Then $f$ is bounded and achieves its *maximum* and *minimum*, or in other words, there exist $x_+$ and $x_-$ in $X$, such that
   $ f(x_+) = sup_(x in X) f(x), space.quad f(x_-) = inf_(x in X) f(x) $
+
+  / Remark: It follows for $f: RR^n -> RR^m:$ \ $C subset.eq RR^n$ bounded $=> f(C)$ bounded
 ]
 
 == Partial Derivatives
@@ -162,17 +166,19 @@ Let $X subset.eq RR^n$ be an open set.
   Let $f: X -> RR^m$ be a function with partial derivatives on $X$. Write
   $ f(x) = (f_1 (x), ..., f_m (x)) $
   For any $x in X$, the matrix
-  $ J_f(x) = (diff_(x_j) f_i (x))_(1 <= i <= m)^(1 <= j <=n) $
+  $ J_f(x) = (diff_(x_j) f_i (x))^(1 <= i <= m)_(1 <= j <=n) $
   with $m$ rows and $n$ columns is called the *Jacobi matrix* of $f$ at $x$.
+
+  _In each row we "fix" a $f_i$ and then derive it in each column._
 ]
 
 === Gradient
 
 #def()[
-  + Let $f: X -> RR$ be a function. If all partial derivatives of $f$ exists at $x_0 in X$, then the column vector $ mat(diff_(x_1) f(x_0); ...; diff_(x_n) f(x_0)) $ if called the *gradient* of $f$ at $x_0$, and is denoted $gradient f(x_0)$.
-    + _The gradient indicates the direction of the steepest increase of the function $f$, and its magnitude $|gradient f(x_0)|$ represents the rate of change in that direction._
+  + Let $f: X -> RR$ be a function. If all partial derivatives of $f$ exists at $x_0 in X$, then the column vector $ (J_(f(x)))^T = mat(diff_(x_1) f(x_0); ...; diff_(x_n) f(x_0)) $ if called the *gradient* of $f$ at $x_0$, and is denoted $gradient f(x_0)$.
+    + _The gradient indicates the *direction of the steepest increase* of the function $f$, and its magnitude $|gradient f(x_0)|$ represents the rate of change in that direction._
     + _The gradient is also normal to the Tangent space._
-  + Let $f = (f_1, ..., f_n): X -> RR^n$ be a function with values in $RR^n$ sucht that all partial derivatives of all coordinates $f_i$ of $f$ exists at $x_0 in X$. Then the real number $ "Tr"(J_f (x_0)) = sum^n_(i=1) diff_(x_i) f_i (x_0), $ the trace of the Jacobi matrix, is called the *divergence* of $f$ at $x_0$, and is denoted $"div"(f)(x_0)$.
+  + Let $f = (f_1, ..., f_n): X -> RR^n$ be a function with values in $RR^n$ such that all partial derivatives of all coordinates $f_i$ of $f$ exists at $x_0 in X$. Then the real number $ "Tr"(J_f (x_0)) = sum^n_(i=1) diff_(x_i) f_i (x_0), $ the trace of the Jacobi matrix, is called the *divergence* of $f$ at $x_0$, and is denoted $"div"(f)(x_0)$.
     + _Divergence measures the rate at which the vector field spreads out (positive value, source) or converges (negative value, sink) into a point._
 ]
 
@@ -210,28 +216,32 @@ Let $X subset.eq RR^n$ be an open set.
 ]
 
 #lem()[
-  #diagram(
-    node-stroke: black + 0.5pt,
+  #align(
+    center,
+    diagram(
+      node-stroke: black + 0.5pt,
 
-    // Nodes
-    node((0, 0), [$f$ cont.#footnote()[continuous] differentiable]),
-    node((1, 0), [$f$ cont. derivatives]),
-    node((0, 1), [$f$ differentiable]),
-    node((1, 1), [$f$ derivatives exist]),
-    node((0, 2), [$f$ continuous]),
+      // Nodes
+      node((0, 0), [$f$ cont.#footnote()[continuous] differentiable]),
+      node((1, 0), [$f$ part.#footnote()[partial] derivatives \ exist & cont.]),
+      node((0, 1), [$f$ differentiable]),
+      node((1, 1), [$f$ part. derivatives exist]),
+      node((0, 2), [$f$ continuous]),
 
-    // Edges
-    edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
-    edge((0, 0), (0, 1), "-|>", stroke: green + 0.5pt),
-    edge((0, 1), (0, 2), "-|>", stroke: green + 0.5pt),
-    edge((1, 0), (1, 1), "-|>", stroke: green + 0.5pt),
-    edge((0, 1), (1, 1), "-|>", stroke: green + 0.5pt, bend: 10deg),
-    edge((1, 1), (0, 1), "-x-|>", stroke: red + 0.5pt, bend: 10deg),
-    edge((1, 1), (0, 2), "-x-|>", stroke: red + 0.5pt),
+      // Edges
+      edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
+      edge((0, 0), (0, 1), "-|>", stroke: green + 0.5pt),
+      edge((0, 1), (0, 2), "-|>", stroke: green + 0.5pt),
+      edge((1, 0), (1, 1), "-|>", stroke: green + 0.5pt),
+      edge((0, 1), (1, 1), "-|>", stroke: green + 0.5pt, bend: 10deg),
+      edge((1, 1), (0, 1), "-x-|>", stroke: red + 0.5pt, bend: 10deg),
+      edge((1, 1), (0, 2), "-x-|>", stroke: red + 0.5pt),
+    ),
   )
 ]
 
 
+==== Chain Rule
 #lem()[
   Let $Y subset.eq RR^m$ be open and let $f: X -> Y$ and $g: Y -> RR^p$ be differentiable functions. Then $g compose f: X -> RR^p$ is differentiable on $X$, and for any $x_0 in X$, its differential is given by the composition
   $ d (g compose f)(x_0) = d g (f(x_0)) compose d f(x_0) $
@@ -263,7 +273,7 @@ Let $X subset.eq RR^n$ be an open set.
   \
   \
   _What is important to notice in this proposition, is that the
-values of the directional derivatives are linear with respect to the vector $v$._
+values of the directional derivatives are *linear with respect to the vector $v$*._
 ]
 
 == Higher Derivatives
@@ -276,15 +286,17 @@ Let $X subset.eq RR^n$ be an open set.
 
   Let $k >= 2$. We say, by induction, that $f$ is of class $C^k$ if it is differentiable and each partial derivative $diff_(x_i) f : X -> RR^m$ is of class $C^(k-1)$. The set of functions of class *$C^k$* from $X$ to $RR^m$ is denoted $C^k (X; RR^m)$.
 
-  If $f in C^k (X; RR^m)$ for all $k >= 1$, then we say that $f$ is of class $C^infinity$. The set of sucht functions is denoted $C^infinity (X; RR^m)$.
+  If $f in C^k (X; RR^m)$ for all $k >= 1$, then we say that $f$ is of class $C^infinity$. The set of such functions is denoted $C^infinity (X; RR^m)$.
 ]
 
+=== Schwarz's Theorem
 #lem()[
-  Let $K >= 2$ and $f: X -> RR^m$ be a function of class $C^k$. Then the partial derivatives of order $k$ are independent of the order in which the partial derivatives are taken: for any variables x and y, we have:
-  $ diff_(x,y) f = diff_(y,x) f, $
-  and for any variables $x$, $y$, $z$, we have
-  $ diff_(x,y,z) f = diff_(x,z,y) f = diff_(y,z,x) f = diff_(z,x,y) f = ... $
-  etc...
+  Let $K >= 2$ and $f: X -> RR^m$ be a function of class $C^k$. Then the partial derivatives of order $k$ are independent of the order in which the partial derivatives are taken:
+  - for any variables $x$ and $y$, we have:
+    $ diff_(x,y) f = diff_(y,x) f, $
+  - and for any variables $x$, $y$, $z$, we have:
+    $ diff_(x,y,z) f = diff_(x,z,y) f = diff_(y,z,x) f = diff_(z,x,y) f = ... $
+  - etc...
 ]
 
 === Hessian Matrix
@@ -293,6 +305,7 @@ Let $X subset.eq RR^n$ be an open set.
   Let $f: X -> RR$ a $C^2$ function. For $x_0 in X$, the *Hessian matrix* of $f$ at $x_0$ is the *symmetric square* matrix
   $ "Hess"_f (x_0) = ((diff^2 f(x_0)) / (diff x_i diff x_j))_(1 <= i,j <= n) $
   We also sometimes write simply $H_f (x_0)$.
+
   *Reminder:* Use Taylor polynomials (up to second order) if a specific value for $x_0$ is provided, to simplify the identification of differences.
 ]
 
@@ -305,15 +318,20 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
   $
     T_k f(y;x_0) = f(x_0) + sum^n_(i=1) (diff f) / (diff x_i) (x_0) y_i + ... \ + sum_(m_1 + ... + m_n = k) 1 / (m_1 ! dots.c m_n !) (diff^k f) / (diff x_1^(m_1) dots.c diff x_n^(m_n)) (x_0) y_1^(m_1) dots.c y_n^(m_n)
   $
-  where the last sum ranges over the tuples of $n$ non-negative integers such that the sum is $k$ and y = x - $x_0$.
+  where the last sum ranges over the tuples of $n$ non-negative integers such that the sum is $k$ and *$y = x - x_0$*.
 
   ==== *$k = 1$*
-  $ T_1 f(y; x_0) &= f(x_0) + sum^n_(i=1) diff_(x_i) f(x_0) y_i \ &= f(x_0) + gradient f(x_0) dot y $
+  $
+    T_1 f(y; x_0) &= f(x_0) + sum^n_(i=1) diff_(x_i) f(x_0) y_i \
+    &= f(x_0) + gradient f(x_0) dot y \
+    &= f(x_0) + gradient f(x_0) dot (x - x_0)
+  $
 
   ==== *$k = 2$*
   $
     T_2 f(y; x_0) &= f(x_0) &&+ sum^n_(i=1) diff_(x_i) f(x_0) y_i \ & &&+ 1 / 2 sum^n_(i=1) diff^2_(x^2_i) f(x_0) y_i^2 \ & &&+ sum_(1 <= i < j <= n) diff^2_(x_i x_j) f(x_0) y_i y_j \
-    &= f(x_0) &&+ gradient f(x_0) dot y + 1 / 2 y^t "Hess"_f (x_0) y
+    &= f(x_0) &&+ gradient f(x_0) dot y + 1 / 2 y^T "Hess"_f (x_0) y \
+    &= f(x_0) &&+ gradient f(x_0) dot (x - x_0) \ & &&+ 1 / 2 (x - x_0)^T "Hess"_f (x_0) (x - x_0)
   $
   _Note that this can also be used to easily *calculate the Hesse Matrix* from a known Taylor polynomial._
 ]
@@ -338,7 +356,7 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
 ]
 
 #note()[
-  When we want to find the Taylor Polynomial of $n$-th order of a function that consists of other functions with already known (Taylor) Polynomials, we can just replace each function with their respective Taylor Polynomial and "ignore" all terms with order higher than $n$.
+  When we want to find the Taylor Polynomial of $n$-th order of a function that consists of other functions with already known (Taylor) Polynomials, we can just replace each function with their respective Taylor Polynomial and "ignore" all terms with order higher than $n$. Note: the Taylor polynomial of a constant function is the constant.
   $
     T_n [f±g](x) = T_n [f](x) ± T_n [g](x) \
     T_n [f⋅g](x) = T_n [f](x) dot T_n [g](x)
@@ -352,7 +370,7 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
     o(h) = {f: U arrow.r RR | lim^(x arrow.r y)_(x eq.not y) f(x) / h(x) = 0}
   $
 
-  $o(h)$ describes the set of functions that approach 0 faster than h as $x arrow.r y$
+  $o(h)$ describes the set of functions that approach $0$ faster than $h$ as $x arrow.r y$
 ]
 
 #lem()[
@@ -390,7 +408,7 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
   + Otherwise, equivalent if $p q != 0$, the function $f$ does not have a local extremum at $x_0$. One then says that $f$ has a *saddle point* at $x_0$.
   \
   \
-  The condition $ p = n$ means that the Hessian matrix $H$ at $x_0$ is a *positive definite symmetric matrix* (and $q = n$ means that it is a negative definite matrix). This also means that $y^t H y > 0$ for any non-zero vector $y in RR^n$. When $p q != 0$, the Hessian is also said to be *indefinite*.
+  The condition $p = n$ means that the Hessian matrix $H$ at $x_0$ is a *positive definite symmetric matrix* (and $q = n$ means that it is a negative definite matrix). This also means that $y^T H y > 0$ for any non-zero vector $y in RR^n$. When $p q != 0$, the Hessian is also said to be *indefinite*.
 
   === *$n=2$*
 
@@ -405,27 +423,30 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
   - $H_f(y)$ indef. $arrow.r.double$ $y$ saddle
   - $det(H_f(y)) = 0$ $arrow.r.double$ $y$ is degenerated
 
-  #diagram(
-    node-stroke: black + 0.5pt,
-    spacing: (0.25cm, 1cm),
-    edge((1, -0.75), auto, "-|>"),
-    node((1, 0), $det (A)$, shape: shapes.diamond),
-    node((0, 1), $tr (A)$, shape: shapes.diamond),
-    node((2, 1), $tr (A)$, shape: shapes.diamond),
-    node((0, 2), "indef."),
-    node((1, 2), "neg. semidef."),
-    node((2, 2), $A = mat(0,0;0,0)$),
-    node((0, 3), "pos. semidef."),
-    node((1, 3), "neg. def."),
-    node((2, 3), "pos. def."),
-    edge((1, 0), (0, 2), "-|>", `neg.`, bend: +10deg, label-pos: 0.1),
-    edge((1, 0), (0, 1), "-|>", $0$),
-    edge((1, 0), (2, 1), "-|>", `pos.`),
-    edge((0, 1), (1, 2), "-|>", `neg.`, label-pos: 0.75),
-    edge((0, 1), (2, 2), "-|>", $0$, bend: +30deg),
-    edge((0, 1), (0, 3), "-|>", `pos.`, bend: +33deg, label-pos: 0.75),
-    edge((2, 1), (1, 3), "-|>", `neg.`, bend: +30deg, label-pos: 0.7),
-    edge((2, 1), (2, 3), "-|>", `pos.`, bend: +20deg, label-pos: 0.75),
+  #align(
+    center,
+    diagram(
+      node-stroke: black + 0.5pt,
+      spacing: (0.25cm, 1cm),
+      edge((1, -0.75), auto, "-|>"),
+      node((1, 0), $det (A)$, shape: shapes.diamond),
+      node((0, 1), $tr (A)$, shape: shapes.diamond),
+      node((2, 1), $tr (A)$, shape: shapes.diamond),
+      node((0, 2), "indef."),
+      node((1, 2), "neg. semidef."),
+      node((2, 2), $A = mat(0,0;0,0)$),
+      node((0, 3), "pos. semidef."),
+      node((1, 3), "neg. def."),
+      node((2, 3), "pos. def."),
+      edge((1, 0), (0, 2), "-|>", `neg.`, bend: +10deg, label-pos: 0.1),
+      edge((1, 0), (0, 1), "-|>", $0$),
+      edge((1, 0), (2, 1), "-|>", `pos.`),
+      edge((0, 1), (1, 2), "-|>", `neg.`, label-pos: 0.75),
+      edge((0, 1), (2, 2), "-|>", $0$, bend: +30deg),
+      edge((0, 1), (0, 3), "-|>", `pos.`, bend: +33deg, label-pos: 0.75),
+      edge((2, 1), (1, 3), "-|>", `neg.`, bend: +30deg, label-pos: 0.7),
+      edge((2, 1), (2, 3), "-|>", `pos.`, bend: +20deg, label-pos: 0.75),
+    ),
   )
 
   === *$n = 3$*
@@ -447,7 +468,9 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
 Let $X subset.eq RR^n$ be open and $f: X -> RR^n$ be differentiable.
 
 #def()[
-  Let $x_0 in X$. We say that $f$ is a *change of variable* around $x_0$ if there is a radius $r > 0$ sucht that the restriction of $f$ to the ball $ B = {x in RR^n: ||x - x_0|| < r} $ of radius $r$ around $x_0$ has the property that the image $Y = f(B)$ is open in $RR^n$, and if there is a differentiable map $g: Y -> B$ such that $f compose g = "Id"_Y$ and $g compose f = "Id"_B$.
+  Let $x_0 in X$. We say that $f$ is a *change of variable* around $x_0$ if there is a radius $r > 0$ such that the restriction of $f$ to the ball $ B = {x in RR^n: ||x - x_0|| < r} $ of radius $r$ around $x_0$ has the property that the image $Y = f(B)$ is open in $RR^n$, and if there is a differentiable map $g: Y -> B$ such that $f compose g = "Id"_Y$ and $g compose f = "Id"_B$.
+
+  _It can thus be understood as a "local inverse"._
 ]
 
 #def()[
@@ -644,6 +667,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #def()[
   Let $gamma : [a, b] -> RR^n$ be a parameterized curve. An *oriented reparameterization* of $gamma$ is a parameterized curve $sigma : [c,d] -> RR^n$ such that $sigma = gamma compose phi$, where $phi : [c, d] -> [a, b]$ is a continuous map, differentiable on $]c,d[$, that is strictly increasing and satisfies $phi (c) = a$ and $phi (d) = b$.
+
+  _We change only the "speed" at which we traverse $gamma$._
 ]
 
 #lem()[
@@ -693,7 +718,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #def()[
   A subset $X subset.eq RR^n$ is *star shaped* if there exists $x_0 in X$ such that, for all $x in X$, the line segment joining $x_0$ to $x$ is contained in $X$. We then also say that $X$ is star-shaped around $x_0$.
 
-  _konvex $arrow.r$ star shaped $arrow.r$ path-connected_
+  #align(center)[_konvex $>$ star shaped $>$ path-connected $>$ disjoint_]
 ]
 
 #lem()[
@@ -707,27 +732,30 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #lem()[
-  For a $3$-dimensional vector field, $"curl"(f) = 0$ means precisely that $f$ is conservative.
+  For a $3$-dimensional star-shaped vector field, $"curl"(f) = 0$ means precisely that $f$ is conservative.
 ]
 
 #lem()[
-  #diagram(
-    node-stroke: black + 0.25pt,
+  #align(
+    center,
+    diagram(
+      node-stroke: black + 0.5pt,
 
-    // Nodes
-    node((0, 0), [$f$ = $gradient g$]),
-    node((1, 1), [$f$ conservative]),
-    node((1, 0), [$integral_gamma f(s) dot d arrow(s) = 0$]),
-    node((0, 2), [$J_f$ symmetric]),
-    node((1, 2), [curl $f = 0$]),
+      // Nodes
+      node((0, 0), [$f$ = $gradient g$]),
+      node((1, 1), [$f$ conservative]),
+      node((1, 0), [$integral_gamma f(s) dot d arrow(s) = 0$]),
+      node((0, 2), [$J_f$ symmetric]),
+      node((1, 2), [curl $f = 0$]),
 
-    // Edges
-    edge((0, 0), (1, 1), "<|-|>", stroke: green + 0.5pt),
-    edge((1, 1), (1, 0), "<|-|>", stroke: green + 0.5pt),
-    edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
-    edge((1, 1), (0, 2), "-|>", stroke: green + 0.5pt),
-    edge((0, 2), (1, 1), "-|>", label: "if U is star-shaped", stroke: blue + 0.5pt, bend: 30deg),
-    edge((1, 2), (0, 2), "<|-|>", label: "n = 3", stroke: orange + 0.5pt),
+      // Edges
+      edge((0, 0), (1, 1), "<|-|>", stroke: green + 0.5pt),
+      edge((1, 1), (1, 0), "<|-|>", stroke: green + 0.5pt),
+      edge((0, 0), (1, 0), "<|-|>", stroke: green + 0.5pt),
+      edge((1, 1), (0, 2), "-|>", stroke: green + 0.5pt),
+      edge((0, 2), (1, 1), "-|>", label: [$U$ star-shaped], stroke: orange + 0.5pt, bend: 30deg),
+      edge((1, 2), (0, 2), "<|-|>", label: $RR^3$, stroke: orange + 0.5pt),
+    ),
   )
 ]
 
@@ -763,7 +791,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   The center of mass $dash(x)$ in $RR^n$ of a compact set $U subset.eq RR^n$ is defined as:
 
   $
-    dash(x)_i = 1 / "Vol(U)" integral_U x_i "dx"
+    dash(x)_i = 1 / ("Vol"(U)) integral_U x_i d x
   $
 
   === Multiple Integral / Fubini's Theorem
@@ -815,14 +843,14 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   A set $Omega subset.eq RR^n$ is called a *normal domain* if it can be expressed as:
 
   $
-    Omega = {(x_1,..., x_n) in RR^n | a lt.eq x_1 lt.eq b, f_1(x_1) lt.eq x_2 lt.eq g_1(x_1)\ ,..., f_(n-1)(x_1, x_2,..., x_(n-1)) lt.eq x_n lt.eq g_(n-1)(x_1, x_2,..., x_(n-1))}
+    Omega = { (x_1,..., x_n) in RR^n | \ a lt.eq x_1 lt.eq b, f_1(x_1) lt.eq x_2 lt.eq g_1(x_1), \ ... , \ f_(n-1)(x_1, x_2,..., x_(n-1)) lt.eq x_n lt.eq g_(n-1)(x_1, x_2,..., x_(n-1)) \ }
   $
   where $f_i$ and $g_i$ are continuous functions. \
 
   For such domains, the following formula holds:
 
   $
-    integral_Omega f d mu = integral_a^b d x_1 integral_(f_1(x_1))^(g_1(x_1)) d x_2 ... integral_(f_(n-1)(x_1, x_2,..., x_(n-1)))^(g_(n-1)(x_1, x_2,..., x_(n-1))) d x_n
+    integral_Omega f d mu = integral_a^b d x_1 integral_(f_1(x_1))^(g_1(x_1)) d x_2 dots.c integral_(f_(n-1)(x_1, x_2,..., x_(n-1)))^(g_(n-1)(x_1, x_2,..., x_(n-1))) d x_n
   $
 ]
 
@@ -887,11 +915,26 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #lem()[
-  Let $X subset.eq RR^2$ be a compact set with a boundary $diff X$ that is the union of finitely many simple closed parameterized curves $gamma_1, dots, gamma_k$. Assume that $ gamma_i : [a_i, b_i] -> RR^2 $ has the property that $X$ lies always "to the left" of the tangent vector $gamma_i ' (t)$ based at $gamma_i (t)$. Let $f = (f_1, f_2)$ be a vector field of class $C^1$ defined on some open set containing $X$. Then we have $ integral_X ((diff f_2) / (diff_x) - (diff f_1) / (diff y)) d x d y = sum^k_(i = 1) integral_(gamma_1) f dot d arrow(s). $
+  Let $X subset.eq RR^2$ be a compact set with a boundary $diff X$ that is the union of finitely many simple closed parameterized curves $gamma_1, dots, gamma_k$. Assume that $ gamma_i : [a_i, b_i] -> RR^2 $ has the property that $X$ lies always "to the left" of the tangent vector $gamma_i ' (t)$ based at $gamma_i (t)$. Let $f = vec(f_1 (x,y), f_2 (x,y))$ be a vector field of class $C^1$ defined on some open set containing $X$. Then we have $ integral_X ((diff f_2) / (diff_x) - (diff f_1) / (diff y)) d x d y = sum^k_(i = 1) integral_(gamma_i) f dot d arrow(s). $
 
   _Note that if this condition is not met, it simply means that one must "reverse" the corresponding curve, e.g., replace $gamma : [0,1] -> RR^2$ by $tilde(gamma) (t) = gamma (1-t)$ for $0 <= t <= 1$, which reverses the orientation of the tangent vector._
 
   _Intuition: Green's theorem relates the *counterclockwise line integral around the boundary of $X$* to the behavior of a vector field inside $X$._
+
+  #figure(image("images/greens-theorem.svg", width: 75%))
+
+  *Source:* #link("https://commons.wikimedia.org/wiki/File:Green%27s-theorem-simple-region.svg")[Wiki Commons: Cronholm144]
+]
+
+#note()[
+  To compute the area enclosed by the border given by a parameterization $gamma$. Choose $X$ as the area that $gamma$ encloses. Find $f$ such that it satisfies the formula below and compute the line-integral
+  $
+    "Area"(X) = integral_X 1 d x d y = integral_X (diff f_2) / (diff x) - (diff f_1) / (diff y) = integral_gamma f dot d vec(s)
+  $
+  One can choose $f$ to be
+  $
+    f(x,y) = (0,x) space.quad "or" space.quad f(x,y) = (-y,0)
+  $
 ]
 
 #lem()[
@@ -1099,7 +1142,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
 ]
 
-=== Midnight Formula
+=== Midnight / Quadratic Formula
 
 #form()[
   ==== General ($a x^2 + b x + c = 0$)
@@ -1207,11 +1250,11 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 #form()[
   $
-    exp (x) exp (y) &= exp (x + y) \
-    exp (x) &gt 1, space.quad x > 0 \
-    x^a &= exp (a dot ln (x)) \
-    exp (i z) &= cos (z) + i sin (z) \
-    exp ((i pi) / 2) = i, space exp (i pi) &= -1, space exp (2i pi) = 1
+    e^(x) e^(y) &= e^(x + y) \
+    e^(x) &gt 1, space.quad x > 0 \
+    x^a &= e^(a dot ln (x)) \
+    e^(i z) &= cos (z) + i sin (z) \
+    e^((i pi) / 2) = i, space e^(i pi) &= -1, space e^(2i pi) = 1
   $
 ]
 
@@ -1222,7 +1265,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     (a f plus.minus b g)' &= a f' plus.minus b g' \
     (f g)' (x) &= f' (x) g(x) + f (x) g' (x) \
     (f (g (x)))' &= f' (g (x)) dot g' (x) \
-    g' &= 1 / (f' compose g), space.quad g "inverse of" f \
+    g' &= 1 / (f' compose g), space.quad g = f^(-1) \
     (1 / f(x))' &= - (f' (x)) / (f (x))^2 \
     (f / g)' &= (f' g - g' f) / g^2 \
     (a^f)' &= ln (a) dot a^f dot f'
@@ -1384,7 +1427,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 #form()[
   $
     pi &= #calc.pi \
-    e &= #calc.e
+    e &= #calc.e \
+    c &= 299792458 m/s
   $
 ]
 
@@ -1483,16 +1527,16 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 === Useful Substitutions
 
 #form()[
-  If y' is of form... substitute with: \
-  ==== *$y' = h (y / x)$:*
+  ==== *If $y'$ is of form *...* substitute with *...* *
+  ===== *$y' = h (y / x)$*
   $
     z(x) = y / x, space y(x) = x z, space y' = z + x z'
   $
-  ==== *$y' = h(a x + b y + c)$:*
+  ===== *$y' = h(a x + b y + c)$*
   $
     z(x) = a x + b y + c, space y(x) = (z - a x - c) / b, space y' = (z' - a) / b
   $
-  ==== *$y' = h((a x + b y + c) / (d x + c y + f))$:*
+  ===== *$y' = h((a x + b y + c) / (d x + c y + f))$*
   First check det if solution is unique then solve the LSE
   $
     det(mat(a, b; d, e)) eq.not 0 \
@@ -1501,7 +1545,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     y = z + y_0, space x = t - x_0, space y' = z'
   $
-  ==== *$y' = y / x h(x y)$:*
+  ===== *$y' = y / x h(x y)$*
   $
     z(x) = x y, space y(x) = z / x, space y' = (x z' - z) / x^2
   $
@@ -1539,10 +1583,10 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
 ]
 
-== LDE with constant coefficients
+=== LDE with constant coefficients
 
 #note()[
-  === Solve homogeneous ODE with initial values
+  ==== Solve homogeneous ODE with initial values
   $
     y'' - 2y' - 8y = 0, space y(1) = 1, space y'(1) = 0
   $
@@ -1560,9 +1604,9 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     y'(x) = 4 A e^(4 x) - 2 B e^(-2 x) \
     y'(1) = 4 A e^(4) - 2 B e^(-2) eq.quest 0
   $
-  Solve the LSE y(1) and y'(1) to get
+  Solve the LSE $y(1)$ and $y'(1)$ to get
   $
-    2*y(1) + y(2) arrow.r.l.double 6 A e^4 = 2 \
+    2 y(1) + y(2) arrow.r.l.double 6 A e^4 = 2 \
     arrow.r.l.double A = 1 / 3 e^(-4), space B = 2 / 3 e^2 \
     arrow.r.l.double y(x) = 1 / 3 e^(4 x - 4) + 2 / 3 e^(2 - 2 x)
   $
@@ -1591,10 +1635,10 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
 ]
 
-== ODE of Order 1
+=== ODE of Order 1
 
 #note()[
-  === Separation of Variable (Homogeneous Solution)
+  ==== Separation of Variable (Homogeneous Solution)
   $
     (x^2 + 1) y' + y^2 = 0
   $
@@ -1607,7 +1651,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     arrow.r.l.double y = 1 / (arctan (x)) + c, space c in RR
   $
 
-  === Variation of Constants (Inhomogeneous Solution)
+  ==== Variation of Constants (Inhomogeneous Solution)
   $
     sin (x) y' + cos (x) y = e^x
   $
@@ -1624,7 +1668,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     arrow.r.double y_p (x) = e^x / (sin (x)) arrow.r.double y = y_h + y_p = (C + e^x) / (sin (x))
   $
 
-  === Substitution (Simplify to use Separation of Variables)
+  ==== Substitution (Simplify to use Separation of Variables)
   if the ODE doesn't seem separable, we can use substitution to simplify the equation and get a solution
   $
     y' = 1 / 2 (y^2 / x^2 + 1)
@@ -1643,4 +1687,12 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     y(x) = x - (2 x) / (log (x) + C)
   $
+]
+
+=== Cartesian to Polar (or general coordinate-conversion)
+
+#note()[
+  _Given a gradient $gradient f (x_0) = alpha$ of a function in one coordinate system, calculate the gradient $ gradient f (c(x_0))$ of the function but with another coordinate system, assume we are given a function $c(v)$ which maps coordinates from one coordinate system to the other._
+
+  We can use the chain rule to solve this. The gradient of $f(c(x_0))$ is $J_(f(c(x_0))) = J_f (c(x_0)) dot J_c (x_0)$. The value of $J_f (c(x_0))$ should be given in the question ($alpha$), but better check if both points are the same. So calculate $J_c (x_0)$ by differentiation, do the dot-product and read the desired value in the resulting matrix.
 ]
