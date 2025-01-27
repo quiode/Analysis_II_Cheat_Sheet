@@ -529,7 +529,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #note[
-  *separation of variables*: ODE of the form $y' = a(y)b(x)$,
+  *Separation of Variables*: ODE of the form $y' = a(y)b(x)$,
   for $a, b$ continuous. Find the antiderivative
   $A, B$ of $1/a, b ==> "Solve" A(y) = B(x) + c "with" c in RR$, i.e. if $A^(-1)$ exists: $y=A^(-1)(B(x) + c).$
 ]
