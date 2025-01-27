@@ -512,6 +512,18 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR^n$ be differentiable.
 _A differential equation is an equation where the unknown (or unknowns) is a function $f$, and the equation relates values of $f$ at a point $x$ with values of derivatives of the function at the same point $x$. If the function has one variable only, one speaks of ordinary differential equations._
 
 #def()[
+  Let $k >= 1, U subset.eq RR^(k+2), space G: U -> RR$. Then
+  $
+    G(x, y, y',..., y^((k))) = 0
+  $  
+  is called a *ordinary differential equation* (ODE) of $k$-th order. A solution to this ODE is a $k$-times differential function $f:I->RR$ on a open intervall $I subset.eq RR$ with $G(x, f(x), f'(x),..., f^((k))(x)) = 0 quad forall x in I$
+
+  - Are there additionally *initial values* $y(x_0) = y_0, y'(x_0)=y_1,...,y^(k-1)(x_0) = y_(k-1)$ with $x_0,y_0,...y_(k-1) in RR$ given, then this is called an *initial value problem* (IVP).
+  - Is $G$ not dependent of $x$, the ODE is called *autonomous*.
+  - An ODE of form $y^((k)) = F(x, y,...,y^((k-1)))$ is called *explicit*.
+]
+
+#def()[
   Suppose $F: RR^2 -> RR$ is a continuously differentiable function of two variables. Let $x_0 in RR$ and $y_0 in RR$. Then the *ordinary differential equation* $ y' = F(x,y) $ has a unique solution $f$ defined on a "largest" open interval $I$ containing $x_0$ such that $f(x_0) = y_0$. In other words, there exists $I$ and a function $f: I -> RR$ such that for all $x in I$, we have $f'(x) = F(x, f(x))$, and one cannot find a larger interval containing $I$ with such a solution.
 ]
 
