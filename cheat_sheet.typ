@@ -348,7 +348,7 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
 ]
 
 #def()[
-  Let $f in C^k (U, RR)$ and $y in U$. Then the $k$-th *Taylor polynomial* of $f$ at $y$ is given by:
+  Let $f in C^k (U, RR)$ and $y in U$. Then the $k$-th *Taylor polynomial* of $f$ at $y$ can also be defined as:
 
   $
     T_k f(x) = sum_(|i| <= k) (partial_i f(y) (x - y)^i) / (i!)
