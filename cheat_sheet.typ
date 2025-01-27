@@ -1551,6 +1551,69 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
 ]
 
+=== Areas and Volumina
+
+#form()[
+  === Circle
+  Centered at $(a,b)$ with radius $r$.
+
+  #columns(
+    2,
+    align(
+      center,
+      [
+        ==== Formula
+        $ (x - a)^2 + (y - b)^2 = r^2 $
+        #colbreak()
+
+        ==== Area
+        $ A = pi r^2 $
+      ],
+    ),
+  )
+
+  === Ellipse
+  Centered at $(h,k)$ with max-length on the x-axis of $a$ and on the y-axis of $b$.
+
+  ==== Formula
+  $ ((x - h)^2) / a^2 + ((y - k)^2) / b^2 = 1 space.quad "or" space.quad vec(a cos (t) + h, b sin (t) + k) $
+
+  ==== Area
+  $ A = pi a b $
+
+  === Triangle
+  With a base $b$ and a height $h$ or sides $a$, $b$ and $c$.
+
+  ==== Area
+  $ A = (b h) / 2 $
+  $ A = sqrt(s (s - a) (s - b) (s - c)), space.quad s = (a + b + c) / 2 $
+
+  === Sphere
+  Centered at $(a, b, c)$ with radius $r$.
+
+  ==== Formula
+  $ (x - a)^2 + (y - b)^2 + (z - c)^2 = r^2 $
+
+  ==== Area
+  $ V = 4 / 3 r^3 pi $
+
+  === Cylinder
+  With height $h$ and radius $r$.
+
+  ==== Formula
+  $ vec(r cos (theta), r sin (theta), z) $
+  $ r^2 = x^2 + y^2, space.quad tan (theta) = y x, space.quad z = z $
+
+  ==== Volume
+  $ V = pi r^2 h $
+
+  === Pyramid
+  With height $h$ and base area of $A_"base"$.
+
+  ==== Volume
+  $ V = (A_"base" h) / 3 $
+]
+
 == Examples
 
 #note()[
