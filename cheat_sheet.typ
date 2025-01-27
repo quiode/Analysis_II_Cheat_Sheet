@@ -626,7 +626,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
   === Step 1 (Solving the Homogeneous Equation)
   #lem()[
-    Any solution of $y' + a y = 0$ is of the form $f(x) = z exp (- A(x))$ where $A$ is a primitive of $a$. The unique solution with $f(x_0) = y_0$ is $ f(x) = y_0 exp (A(x_0) - A(x)). $
+    Any solution of $y' + a y = 0$ is of the form $f(x) = z e^(- A(x))$ where $A$ is a primitive of $a$. 
+    / Remark: The unique solution with $f(x_0) = y_0$ i.e. for the homogeneous IVP is $f(x) = y_0 e^(A(x_0) - A(x)).$ 
   ]
 
   === Step 2 (Solving the Inhomogeneous Equation)
@@ -634,7 +635,8 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
     f(x) = z(x) e^(-A(x)) &<==> z "is antiderivative of" e^A b
   $
-  Integrate $z' = e^A b$, plug in initial values, solve LSE.
+  Integrate $z' = e^A b$.
+  Complete solution then: $ f(x) = f_0 + lambda f_1 = z(x)e^(-A(x)) + lambda e^(-A(x)) $ For IVP plug in initial values, solve for $c in CC$.
 ]
 
 == Linear Differential Equations With Constant Coefficients
