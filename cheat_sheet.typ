@@ -524,7 +524,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #def()[
-  Suppose $F: RR^2 -> RR$ is a continuously differentiable function of two variables. Let $x_0 in RR$ and $y_0 in RR$. Then the *ordinary differential equation* $ y' = F(x,y) $ has a unique solution $f$ defined on a "largest" open interval $I$ containing $x_0$ such that $f(x_0) = y_0$. In other words, there exists $I$ and a function $f: I -> RR$ such that for all $x in I$, we have $f'(x) = F(x, f(x))$, and one cannot find a larger interval containing $I$ with such a solution.
+  Suppose $F: U -> RR$ is a continuous function of two variables, with $U subset.eq RR^2$ open and $(x_0, y_0) in U$. Then the IVP $ y' = F(x,y), quad y(x_0)=y_0 $ has a solution. If $F$ is additionally continuously differentiable with respect to $y$, the IVP has a unique solution $f$ defined on a "largest" open interval $I$ containing $x_0$. In other words, there exists $I$ and a function $f: I -> RR$ such that for all $x in I$, we have $f'(x) = F(x, f(x))$, and one cannot find a larger interval containing $I$ with such a solution.
 ]
 
 #note[
