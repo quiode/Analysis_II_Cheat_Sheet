@@ -356,7 +356,7 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
 ]
 
 #note()[
-  When we want to find the Taylor Polynomial of $n$-th order of a function that consists of other functions with already known (Taylor) Polynomials, we can just replace each function with their respective Taylor Polynomial and "ignore" all terms with order higher than $n$.
+  When we want to find the Taylor Polynomial of $n$-th order of a function that consists of other functions with already known (Taylor) Polynomials, we can just replace each function with their respective Taylor Polynomial and "ignore" all terms with order higher than $n$. Note: the Taylor polynomial of a constant function is the constant.
   $
     T_n [f±g](x) = T_n [f](x) ± T_n [g](x) \
     T_n [f⋅g](x) = T_n [f](x) dot T_n [g](x)
