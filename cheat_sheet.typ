@@ -1837,7 +1837,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 === Cartesian to Polar (or general coordinate-conversion)
 
 #note()[
-  _Given a gradient $gradient f (x_0) = alpha$ of a function in one coordinate system, calculate the gradient $ gradient f (c(x_0))$ of the function but with another coordinate system, assume we are given a function $c(v)$ which maps coordinates from one coordinate system to the other._
+  _Given a gradient $gradient f (x_0) = alpha$ of a function in one coordinate system, calculate the gradient $ gradient f (c(x_0))$ of the function but with another coordinate system, assuming we are given a function $c(v)$ which maps coordinates from one coordinate system to the other._
 
   We can use the chain rule to solve this. The gradient of $f(c(x_0))$ is $J_(f(c(x_0))) = J_f (c(x_0)) dot J_c (x_0)$. The value of $J_f (c(x_0))$ should be given in the question ($alpha$), but better check if both points are the same. So calculate $J_c (x_0)$ by differentiation, do the dot-product and read the desired value in the resulting matrix.
 ]
