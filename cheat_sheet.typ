@@ -243,7 +243,7 @@ Let $X subset.eq RR^n$ be an open set.
 
 
 #figure(
-  image("images/gin.jpeg", width: 100%),
+  image("images/gin.jpeg", width: 75%),
   caption: [ Keep going! ],
 )
 
@@ -410,7 +410,7 @@ Let $X subset.eq RR^n$ be open and $f: X -> RR$ a differentiable function.
   Let $f in C^2$. A critical point $x_0 in X$ of $f$ is called *non-degenerate* if the Hessian matrix has non-zero determinant.
 ]
 #figure(
-  image("images/toshi2.jpeg", width: 100%),
+  image("images/toshi2.jpeg", width: 75%),
   caption: [ Stay comfy! ],
 )
 
@@ -581,7 +581,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #figure(
-  image("images/twocats.jpeg", width: 100%),
+  image("images/twocats.jpeg", width: 75%),
   caption: [ Almost done! ],
 )
 == (Solving) Linear Differential Equations Of Order 1
@@ -830,7 +830,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #figure(
-  image("images/gin2.jpeg", width: 100%),
+  image("images/gin2.jpeg", width: 75%),
   caption: [ Me after the exam: ],
 )
 === Negligibleness
@@ -980,7 +980,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   ]
 ]
 #figure(
-  image("images/toshi3.jpeg", width: 100%),
+  image("images/toshi3.jpeg", width: 75%),
   caption: [ Keep calm! ],
 )
 
@@ -1188,7 +1188,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #figure(
-  image("images/toshi4.jpeg", width: 100%),
+  image("images/toshi4.jpeg", width: 75%),
   caption: [ Stay determined! ],
 )
 === Determinant
@@ -1289,7 +1289,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
 ]
 #figure(
-  image("images/twocats2.jpeg", width: 100%),
+  image("images/twocats2.jpeg", width: 75%),
   caption: [ Me and my homies after the exam ],
 )
 
@@ -1586,7 +1586,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   $
 ]
 #figure(
-  image("images/toshi5.jpeg", width: 100%),
+  image("images/toshi5.jpeg", width: 75%),
   caption: [ Ready for a nap? ],
 )
 
@@ -1800,6 +1800,6 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 ]
 
 #figure(
-  image("images/toshi6.jpeg", width: 100%),
+  image("images/toshi6.jpeg", width: 75%),
   caption: [ Done! ],
 )
