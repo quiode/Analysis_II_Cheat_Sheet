@@ -18,7 +18,7 @@ To compile the pdf run `typst watch cheat_sheet.typ --open`.
 The document supports a couple of inputs to allow customization at build time. These include:
 
 - `REV`: Revision name shown in the footer of the pdf, default is `local`. Mainly used in CI to show the git hash.
-- `CATS`: Boolean ("true" or "false") which determine if the cat images should be included, default is false
+- `CATS`: Boolean ("true" or "false") which determine if the cat images should be included, default is "true"
 
 ### Example
 
