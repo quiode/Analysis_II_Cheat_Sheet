@@ -515,7 +515,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   Let $k >= 1, U subset.eq RR^(k+2), space G: U -> RR$. Then
   $
     G(x, y, y',..., y^((k))) = 0
-  $  
+  $
   is called a *ordinary differential equation* (ODE) of $k$-th order. A solution to this ODE is a $k$-times differential function $f:I->RR$ on a open intervall $I subset.eq RR$ with $G(x, f(x), f'(x),..., f^((k))(x)) = 0 quad forall x in I$
 
   - Are there additionally *initial values* $y(x_0) = y_0, y'(x_0)=y_1,...,y^(k-1)(x_0) = y_(k-1)$ with $x_0,y_0,...y_(k-1) in RR$ given, then this is called an *initial value problem* (IVP).
@@ -1104,6 +1104,18 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   ]
 
   *Sources:* #link("https://commons.wikimedia.org/w/index.php?curid=11434668")[Wiki Commons: Dnu72, Pengo] and #link("https://commons.wikimedia.org/wiki/File:Sinus_und_Kosinus_am_Einheitskreis_Einfach_Cos.svg")[Wiki Commons: Yomomo]
+]
+
+=== Pythagoras
+
+#form()[
+  Let $a$ be the adjacent, $b$ be the opposite and $c$ be the hypotenuse. Then:
+
+  $ a^2 + b^2 = c^2 $
+
+  #figure(image("images/Pythagoras.svg", width: 50%))
+
+  *Source:* #link("https://commons.wikimedia.org/wiki/File:Pythagoras.svg")[Wiki Commons: FirefoxRocks]
 ]
 
 === Trigonometric Functions
