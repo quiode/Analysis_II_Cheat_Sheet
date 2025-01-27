@@ -873,6 +873,12 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
   Also $ integral_(RR^2) f(x,y) d x d y = \ integral^(+ infinity)_(- infinity) (integral^(+ infinity)_(- infinity) f(x, y) d y) d x = \ integral^(+ infinity)_(- infinity) (integral^(+ infinity)_(- infinity) f(x, y) d x) d y. $
 ]
 
+== L'Hôpital's Rule
+
+#def()[
+  When having limits of the form $ 0 / 0, space 0 dot infinity, space infinity - infinity, space infinity / infinity, space 0^0, space infinity^0, space 1^infinity $ one can solve them using the following rule: $ lim_(x -> x_0) f(x) / g(x) = lim_(x -> x_0) (f'(x)) / (g'(x)) $
+]
+
 == Normaldomains
 
 #def()[
