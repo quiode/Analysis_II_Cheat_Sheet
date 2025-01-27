@@ -361,6 +361,10 @@ Let $k >= 1$ be an integer. Let $f: X -> RR$ be a function of class $C^k$ on $X$
     T_n [f±g](x) = T_n [f](x) ± T_n [g](x) \
     T_n [f⋅g](x) = T_n [f](x) dot T_n [g](x)
   $
+  For development point $x_0 = 0$ and if $g(0) = 0$ the same holds for the composition $f compose g$ of $g: RR^n->RR, f: RR->RR$
+  $
+    T_n [f compose g](x) = T_n [f](T_n [g](x))
+  $
 ]
 
 === Landau Notation
