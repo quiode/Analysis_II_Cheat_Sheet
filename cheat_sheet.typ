@@ -681,7 +681,9 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
 
     $==> "solution" f_0(x) = Q_1(x)cos(alpha x) + Q_2(x) sin(alpha x)$ where $Q_1, Q_2$ are polynomials with $deg <= d + j$ where $alpha$ is zero of $P$ with mult. $j$.
 
+\
 
+  / Remark: To find $Q$, plug in possible solution with $Q$ as polynom into ODE, do the needed derivations, then set $Q= lambda_(deg Q) x^(deg Q) + ... + lambda_1 x + lambda_0$ as well as $Q'=...$ and do "equating the coefficients" to find $lambda$'s  
 ]
 
 == Line Integrals
