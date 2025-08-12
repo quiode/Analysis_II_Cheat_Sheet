@@ -1133,7 +1133,7 @@ _A differential equation is an equation where the unknown (or unknowns) is a fun
     sin (alpha) &= "opposite" / "hypotenuse" \
     cos (alpha) &= "adjacent" / "hypotenuse" \
     tan (alpha) &= (sin (alpha)) / (cos (alpha)) = "opposite" / "adjacent" \
-    cot (alpha) &= (1) / (sin (alpha)) = "hypotenuse" / "opposite" \
+    cot (alpha) &= (1) / (tan (alpha)) = "adjacent" / "opposite" \
     sec (alpha) &= (1) / (cos (alpha)) = "hypotenuse" / "adjacent" \
   $
 ]
